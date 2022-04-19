@@ -1,3 +1,4 @@
+/* hides form label from users, only screen readers can "see" it */
 .srOnly {
   position: absolute;
   left: -10000px;
