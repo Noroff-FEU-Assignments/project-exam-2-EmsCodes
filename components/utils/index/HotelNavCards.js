@@ -9,17 +9,23 @@ function HotelNavCards() {
       <ul className={styles.ul}>
         <li className={styles.listItem}>
           <Link href="/accommodations">
-            <a>Hotels</a>
+            <a>
+              <p>Hotels</p>
+            </a>
           </Link>
         </li>
         <li className={styles.listItem}>
           <Link href="/accommodations">
-            <a>B&B</a>
+            <a>
+              <p>B&B</p>
+            </a>
           </Link>
         </li>
         <li className={styles.listItem}>
           <Link href="/accommodations">
-            <a>Guesthouses</a>
+            <a>
+              <p>Guesthouses</p>
+            </a>
           </Link>
         </li>
       </ul>

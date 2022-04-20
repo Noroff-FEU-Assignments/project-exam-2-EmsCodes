@@ -1,6 +1,7 @@
 .cardContainer {
   width: 90vw;
   margin: 0 auto;
+  max-width: 1000px;
 }
 
 .ul {
@@ -12,5 +13,4 @@
 }
 
 .listItem {
-  background: blue;
 }

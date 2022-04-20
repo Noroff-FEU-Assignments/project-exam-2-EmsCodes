@@ -2,31 +2,40 @@
 import Link from "next/link";
 // import { useContext } from "react";
 // import { AuthContext } from "../context/AuthContext";
-
+import styles from "../../styles/layout/Layout.module.css";
+import logo from "../../public/images/white-logo.png";
 import React from "react";
+import Image from "next/image";
 
 function Layout({ children }) {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/accommodations">
-              <a>Accommodations</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <div className={styles.header}>
+        <Image
+          src={logo}
+          alt="Holidaze logo, white on blue background"
+          className="logo"
+        />
+        <nav className={styles.nav}>
+          <ul className={styles.ul}>
+            <li>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/accommodations">
+                <a>Accommodations</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact">
+                <a>Contact</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <div className="container">{children}</div>
     </>
