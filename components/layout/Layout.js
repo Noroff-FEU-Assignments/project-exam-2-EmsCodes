@@ -14,7 +14,7 @@ function Layout({ children }) {
         <Image
           src={logo}
           alt="Holidaze logo, white on blue background"
-          className="logo"
+          className={styles.logo}
         />
         <nav className={styles.nav}>
           <ul className={styles.ul}>

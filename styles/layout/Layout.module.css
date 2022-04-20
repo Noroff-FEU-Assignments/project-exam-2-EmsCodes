@@ -1,7 +1,7 @@
 .header {
   background: var(--main-blue);
   padding: 0;
-  height: 5vh;
+  height: 8vh;
   display: flex;
   justify-content: space-between;
 }
@@ -10,4 +10,8 @@
   padding: 0;
   margin: 0;
   display: flex;
+}
+.logo {
+  width: 75px;
+  height: auto;
 }
