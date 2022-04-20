@@ -16,8 +16,8 @@ function Layout({ children }) {
             </Link>
           </li>
           <li>
-            <Link href="/hotels">
-              <a>Hotels</a>
+            <Link href="/accommodations">
+              <a>Accommodations</a>
             </Link>
           </li>
           <li>

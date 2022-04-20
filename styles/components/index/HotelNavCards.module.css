@@ -1,0 +1,16 @@
+.cardContainer {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2vw;
+  width: 100%;
+  padding: 0;
+}
+
+.listItem {
+  background: blue;
+}
