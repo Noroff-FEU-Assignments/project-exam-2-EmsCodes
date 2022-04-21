@@ -12,3 +12,7 @@ function Heading({ size = 1, content }) {
 // };
 
 export default Heading;
+
+Heading.propTypes = {
+  content: propTypes.string.isRequired,
+};

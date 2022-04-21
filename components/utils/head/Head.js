@@ -18,8 +18,8 @@ function Head({ title = "" }) {
   );
 }
 
-// Head.propTypes = {
-//   title: propTypes.string,
-// };
+Head.propTypes = {
+  title: propTypes.string,
+};
 
 export default Head;

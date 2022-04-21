@@ -19,14 +19,14 @@ function Footer() {
         <nav aria-label="social media links">
           <ul>
             <li>
-              <Link href="facebook.com">
+              <Link href="https://www.facebook.com/">
                 <a>
                   <FontAwesomeIcon icon={faFacebookF} />
                 </a>
               </Link>
             </li>
             <li>
-              <Link href="instagram.com">
+              <Link href="https://www.instagram.com/">
                 <a>
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>

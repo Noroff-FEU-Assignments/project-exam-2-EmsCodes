@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import propTypes from "prop-types";
 
 function Icons({ icon, text }) {
   return (
@@ -11,3 +12,8 @@ function Icons({ icon, text }) {
 }
 
 export default Icons;
+
+Icons.propTypes = {
+  icon: propTypes.object.isRequired,
+  text: propTypes.string.isRequired,
+};

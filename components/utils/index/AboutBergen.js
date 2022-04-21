@@ -74,7 +74,7 @@ function AboutBergen() {
         </div>
         <p>
           More at{" "}
-          <Link href="visitbergen.no">
+          <Link href="https://www.visitbergen.no/">
             <a>visitbergen.no</a>
           </Link>
         </p>

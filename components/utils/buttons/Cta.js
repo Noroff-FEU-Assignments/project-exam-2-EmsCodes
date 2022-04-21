@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../../styles/components/utils/buttons/Cta.module.css";
 import Link from "next/link";
+import propTypes from "prop-types";
 
 function Cta({ content }) {
   return (
@@ -11,3 +12,7 @@ function Cta({ content }) {
 }
 
 export default Cta;
+
+Cta.propTypes = {
+  content: propTypes.string.isRequired,
+};

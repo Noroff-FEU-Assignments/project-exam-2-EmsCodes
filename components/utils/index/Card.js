@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import propTypes from "prop-types";
 
 function Card({
   img,
@@ -25,3 +25,12 @@ function Card({
 }
 
 export default Card;
+
+Card.propTypes = {
+  img: propTypes.any.isRequired,
+  altText: propTypes.string.isRequired,
+  name: propTypes.string.isRequired,
+  place: propTypes.string,
+  price: propTypes.any,
+  rating: propTypes.number,
+};
