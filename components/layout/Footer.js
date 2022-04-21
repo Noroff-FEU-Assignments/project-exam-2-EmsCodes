@@ -1,17 +1,39 @@
 import Link from "next/link";
 import styles from "../../styles/layout/Footer.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   return (
     <div>
       <div>
-        <h6>Holidaze</h6>
-        <p>
-          A booking website, located in Bergen, Norway. Our main goal is to make
-          booking the easiest part of your journey, by providing a wide
-          selection of accommodations, with good prices, safe transactions, and
-          the Holidaze team always ready to help if needed.
-        </p>
+        <div>
+          <h6>Holidaze</h6>
+          <p>
+            A booking website, located in Bergen, Norway. Our main goal is to
+            make booking the easiest part of your journey, by providing a wide
+            selection of accommodations, with good prices, safe transactions,
+            and the Holidaze team always ready to help if needed.
+          </p>
+        </div>
+        <nav aria-label="social media links">
+          <ul>
+            <li>
+              <Link href="facebook.com">
+                <a>
+                  <FontAwesomeIcon icon={faFacebookF} />
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="instagram.com">
+                <a>
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
       <div>
         <p>Menu</p>
