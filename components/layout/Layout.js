@@ -11,11 +11,15 @@ function Layout({ children }) {
   return (
     <>
       <div className={styles.header}>
-        <Image
-          src={logo}
-          alt="Holidaze logo, white on blue background"
-          className={styles.logo}
-        />
+        <Link href="/">
+          <a>
+            <Image
+              src={logo}
+              alt="Holidaze logo, white on blue background"
+              className={styles.logo}
+            />
+          </a>
+        </Link>
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li>
