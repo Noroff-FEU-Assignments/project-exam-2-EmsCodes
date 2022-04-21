@@ -6,6 +6,7 @@ import styles from "../../styles/layout/Layout.module.css";
 import logo from "../../public/images/white-logo.png";
 import React from "react";
 import Image from "next/image";
+import Footer from "./Footer";
 
 function Layout({ children }) {
   return (
@@ -42,6 +43,7 @@ function Layout({ children }) {
       </div>
 
       <div className="container">{children}</div>
+      <Footer />
     </>
   );
 }
