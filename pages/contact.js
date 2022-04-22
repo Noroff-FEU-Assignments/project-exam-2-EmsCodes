@@ -1,6 +1,6 @@
-import HeroSection from "../components/utils/global/HeroSection";
-import Head from "../components/head/Head";
-import Heading from "../components/utils/heading/Heading";
+import HeroSection from "../components/utils/global/hero-section/HeroSection";
+import Head from "../components/utils/global/head/Head";
+import Heading from "../components/utils/global/heading/Heading";
 
 function contact() {
   return <div>contact</div>;
