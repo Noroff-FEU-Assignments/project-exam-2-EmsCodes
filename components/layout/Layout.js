@@ -13,12 +13,15 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Layout({ children }) {
   const [menuBtn, setMenuBtn] = useState(faBars);
+  const [menuState, setMenuState] = useState(styles.hidden);
 
   function menuFunction() {
     if (menuBtn === faBars) {
       setMenuBtn(faXmark);
+      setMenuState(styles.displayed);
     } else {
       setMenuBtn(faBars);
+      setMenuState(styles.hidden);
     }
   }
 
@@ -37,7 +40,7 @@ function Layout({ children }) {
         <button onClick={menuFunction} aria-label="Open menu">
           <FontAwesomeIcon icon={menuBtn} aria-hidden="true" />
         </button>
-        <div className={styles.hidden}>
+        <div className={menuState}>
           <nav className={styles.nav}>
             <ul className={styles.ul}>
               <li>
