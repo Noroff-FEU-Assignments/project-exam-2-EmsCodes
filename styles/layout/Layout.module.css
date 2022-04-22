@@ -4,12 +4,27 @@
   height: 7.5vh;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
 }
 .hidden {
   display: none;
 }
+.burgerBtn {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--secondary-white);
+  font-size: 1.5em;
+}
 .displayed {
   display: block;
+  position: absolute;
+  width: 100%;
+  background-color: var(--white);
+  top: 7.5vh;
+  z-index: 10;
 }
 .ul {
   padding: 0;

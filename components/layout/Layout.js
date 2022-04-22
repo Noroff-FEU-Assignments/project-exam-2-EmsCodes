@@ -37,7 +37,11 @@ function Layout({ children }) {
             />
           </a>
         </Link>
-        <button onClick={menuFunction} aria-label="Open menu">
+        <button
+          onClick={menuFunction}
+          aria-label="Open menu"
+          className={styles.burgerBtn}
+        >
           <FontAwesomeIcon icon={menuBtn} aria-hidden="true" />
         </button>
         <div className={menuState}>
