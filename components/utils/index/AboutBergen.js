@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "../heading/Heading";
+import Heading from "../global/heading/Heading";
 import Card from "./Card";
 import discover from "../../../public/images/styling/discoverBergen.jpg";
 import fjordTour from "../../../public/images/styling/fjordTour.jpg";

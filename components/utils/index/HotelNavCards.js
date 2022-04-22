@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Heading from "../heading/Heading";
+import Heading from "../global/heading/Heading";
 import Link from "next/link";
 import styles from "../../../styles/components/index/HotelNavCards.module.css";
 

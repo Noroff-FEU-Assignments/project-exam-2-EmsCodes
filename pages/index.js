@@ -1,5 +1,5 @@
-import Head from "../components/utils/head/Head";
-import Heading from "../components/utils/heading/Heading";
+import Head from "../components/utils/global/head/Head";
+import Heading from "../components/utils/global/heading/Heading";
 import Layout from "../components/layout/Layout";
 import Cta from "../components/utils/buttons/Cta";
 import SearchField from "../components/utils/buttons/SearchField";
@@ -26,8 +26,8 @@ export default function Home() {
           <Heading content="Holidaze" />
           <Heading
             size="2"
-            content="Booking company in Bergen.  
-            Easy and safe, with some of the best prices"
+            content="  
+            Our goal is to make booking the easiest part of your journey!"
           />
           <Cta content="Find your hotel" />
           <SearchField />

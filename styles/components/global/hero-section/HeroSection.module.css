@@ -1,0 +1,14 @@
+.container {
+  position: relative;
+}
+.absolutePositioning {
+  position: absolute;
+  z-index: 1;
+  width: 90%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -10,10 +10,11 @@ function Footer() {
         <div>
           <h6>Holidaze</h6>
           <p>
-            A booking website, located in Bergen, Norway. Our main goal is to
-            make booking the easiest part of your journey, by providing a wide
-            selection of accommodations, with good prices, safe transactions,
-            and the Holidaze team always ready to help if needed.
+            A booking website with offices in Bergen, Norway. Our main goal is
+            to make booking a home away from home the easiest part of your
+            journey, by providing a wide selection of accommodations, good
+            prices, safe transactions, and the Holidaze team always ready to
+            help if needed.
           </p>
         </div>
         <nav aria-label="social media links">

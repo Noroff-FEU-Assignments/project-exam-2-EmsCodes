@@ -1,14 +1,15 @@
 import Image from "next/image";
-import React from "react";
 import propTypes from "prop-types";
+import styles from "../../../../styles/components/global/hero-section/HeroSection.module.css";
 
 //  component used for several of the websites pages with
 //  image on one side of the screen and whatever content added on the other
 
 function HeroSection({ img, altText = "alt text missing", children }) {
   return (
-    <div>
-      <div>{children}</div>
+    //absolute positioning styling used for mobile only
+    <div className={styles.container}>
+      <div className={styles.absolutePositioning}>{children}</div>
       <Image src={img} alt={altText} />
     </div>
   );
