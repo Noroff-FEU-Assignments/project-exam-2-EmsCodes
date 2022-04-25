@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
-import { BASE_URL, AUTH_URL } from "../constants/api";
+import { HOLIDAZE_BASE_URL, AUTH_URL } from "../constants/api";
 
-const url = BASE_URL + AUTH_URL;
+const url = HOLIDAZE_BASE_URL + "/auth/local";
 
 export default function useAxios() {
   const [auth] = useContext(AuthContext);
