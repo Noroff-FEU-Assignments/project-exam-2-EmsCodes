@@ -29,7 +29,7 @@ export default function Home() {
             content="  
             Our goal is to make booking the easiest part of your journey!"
           />
-          <Cta content="Find your hotel" />
+          <Cta content="Find your hotel" link="/accommodations" />
           <SearchField />
           <HotelNavCards />
         </div>

@@ -1,23 +1,85 @@
-import React from "react";
-import Cta from "../buttons/Cta";
+import { useState, useContext } from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { BASE_URL, AUTH_URL } from "../../data/Api";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/router";
+import { AuthContext } from "../../context/AuthContext";
+import ValidationError from "./FormError";
+
+const url = BASE_URL + AUTH_URL;
+
+const schema = yup.object().shape({
+  username: yup.string().required("Please enter username"),
+  password: yup.string().required("Please enter password"),
+});
 
 function LoginForm() {
+  const [submitting, setSubmitting] = useState(false);
+  const [loginError, setLoginError] = useState(false);
+
+  const router = useRouter();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const [, setAuth] = useContext(AuthContext);
+
+  async function onSubmit(data) {
+    setSubmitting(true);
+    setLoginError(null);
+    console.log(data);
+
+    try {
+      const response = await axios.post(url, data);
+      console.log("response", response.data);
+      setAuth(response.data);
+      router.push("/admin");
+    } catch (error) {
+      console.log(error);
+      setLoginError("Login failed");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
-    <form>
-      <fieldset>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <fieldset disabled={submitting}>
         <div>
           <label htmlFor="username" className="srOnly">
             Username
           </label>
-          <input name="username" placeholder="Username"></input>
+          <input
+            name="username"
+            placeholder="Username"
+            {...register("username", { required: true })}
+          ></input>
+          {errors.username && (
+            <ValidationError>{errors.username.message}</ValidationError>
+          )}
         </div>
         <div>
           <label htmlFor="password" className="srOnly">
             Password
           </label>
-          <input name="password" placeholder="Password"></input>
+          <input
+            name="password"
+            placeholder="Password"
+            type="password"
+            {...register("password", { required: true })}
+          ></input>
+          {errors.password && (
+            <ValidationError>{errors.password.message}</ValidationError>
+          )}
         </div>
-        <Cta content="Login" />
+        <button>{submitting ? "Logging in..." : "Login"}</button>
       </fieldset>
     </form>
   );
