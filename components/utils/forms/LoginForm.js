@@ -1,14 +1,15 @@
 import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { HOLIDAZE_BASE_URL, AUTH_URL } from "../../data/Api";
+import { HOLIDAZE_BASE_URL } from "../../data/Api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { AuthContext } from "../../context/AuthContext";
 import ValidationError from "./FormError";
-
-const url = HOLIDAZE_BASE_URL + "/auth/local";
+import styles from "../../../styles/components/utils/forms/LoginForm.module.css";
+import Heading from "../global/heading/Heading";
+const url = HOLIDAZE_BASE_URL + "auth/local/";
 
 const schema = yup.object().shape({
   username: yup.string().required("Please enter username"),
@@ -31,7 +32,7 @@ function LoginForm() {
 
   const [, setAuth] = useContext(AuthContext);
 
-  async function onSubmit(data) {
+  async function OnSubmit(data) {
     setSubmitting(true);
     setLoginError(null);
     console.log(data);
@@ -39,21 +40,22 @@ function LoginForm() {
     try {
       const response = await axios.post(url, data);
       console.log(response);
-      setAuth(result);
+      setAuth(response.data);
       router.push("/");
     } catch (error) {
-      console.log(error);
       setLoginError("Login failed");
+      console.log(error);
     } finally {
       setSubmitting(false);
     }
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(OnSubmit)} className={styles.loginForm}>
+      <Heading content="Admin login" className={styles.headingOne} />
       {loginError && <ValidationError>{loginError}</ValidationError>}
-      <fieldset disabled={submitting}>
-        <div>
+      <fieldset disabled={submitting} className={styles.fieldSet}>
+        <div className={styles.inputContainer}>
           <label htmlFor="username" className="srOnly">
             Username
           </label>
@@ -61,12 +63,13 @@ function LoginForm() {
             name="username"
             placeholder="Username"
             {...register("username", { required: true })}
+            className={styles.formInput}
           ></input>
           {errors.username && (
             <ValidationError>{errors.username.message}</ValidationError>
           )}
         </div>
-        <div>
+        <div className={styles.inputContainer}>
           <label htmlFor="password" className="srOnly">
             Password
           </label>
@@ -75,6 +78,7 @@ function LoginForm() {
             placeholder="Password"
             type="password"
             {...register("password", { required: true })}
+            className={styles.formInput}
           ></input>
           {errors.password && (
             <ValidationError>{errors.password.message}</ValidationError>

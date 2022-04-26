@@ -1,0 +1,21 @@
+.loginForm {
+  background: rgba(255, 255, 255, 0.705);
+
+  padding: 20px 10px;
+  margin-top: 50px;
+}
+.fieldSet {
+  border: none;
+}
+.formInput {
+  border: none;
+  border-bottom: 1px solid gray;
+  background: none;
+  padding: 10px 5px;
+}
+.inputContainer {
+  padding: 5px;
+}
+.headingOne {
+  padding-top: 20px;
+}
