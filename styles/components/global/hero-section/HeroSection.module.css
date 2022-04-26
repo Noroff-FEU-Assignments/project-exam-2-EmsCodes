@@ -1,5 +1,6 @@
 .container {
-  position: relative;
+  /* position: relative; */
+  height: ;
 }
 .absolutePositioning {
   position: absolute;
@@ -8,11 +9,12 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 40%;
+  top: 20%;
   text-align: center;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
 }
 
 .heroImg {
-  height: 100%;
+  height: auto;
+  position: relative;
 }
