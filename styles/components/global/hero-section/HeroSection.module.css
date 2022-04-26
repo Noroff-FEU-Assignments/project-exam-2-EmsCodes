@@ -4,11 +4,15 @@
 .absolutePositioning {
   position: absolute;
   z-index: 1;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   left: 0;
   right: 0;
+  top: 40%;
   text-align: center;
-  top: 50%;
   transform: translateY(-50%);
+}
+
+.heroImg {
+  height: 100%;
 }

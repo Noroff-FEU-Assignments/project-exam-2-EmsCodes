@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { HOLIDAZE_BASE_URL } from "../../data/Api";
+import { HOLIDAZE_BASE_URL, AUTH_URL } from "../../data/Api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
@@ -9,7 +9,8 @@ import { AuthContext } from "../../context/AuthContext";
 import ValidationError from "./FormError";
 import styles from "../../../styles/components/utils/forms/LoginForm.module.css";
 import Heading from "../global/heading/Heading";
-const url = HOLIDAZE_BASE_URL + "auth/local/";
+
+const url = HOLIDAZE_BASE_URL + AUTH_URL;
 
 const schema = yup.object().shape({
   username: yup.string().required("Please enter username"),
