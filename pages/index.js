@@ -20,19 +20,22 @@ import AboutBergen from "../components/utils/index/AboutBergen";
 export default function Home() {
   return (
     <Layout>
-      <Head title="Home" />
+      <Head title="Home">
+        <link rel="stylesheet" href="https://use.typekit.net/ckg1pdt.css" />
+      </Head>
       <div className={styles.wrapper}>
         <div className={styles.main}>
-          <Heading content="Holidaze" />
-          <Heading
-            size="2"
-            content="  
-            Our goal is to make booking the easiest part of your journey!"
-          />
+          <Heading content="Holidaze" style={styles.headingOne} />
+          <p className={styles.p}>
+            Our goal is to make booking the easiest part of your journey!
+          </p>
           <Cta content="Find your hotel" link="/accommodations" />
           <SearchField />
-          <HotelNavCards />
         </div>
+      </div>
+      <div>
+        <Heading size="2" content=" accommodation categories" style="srOnly" />
+        <HotelNavCards />
       </div>
       <div>
         <Image
@@ -40,7 +43,7 @@ export default function Home() {
           alt="a woman and a man smiling while looking at an iphone"
         />
         <div>
-          <Heading size="4" content="Why choose us?" />
+          <Heading size="3" content="Why choose us?" />
           <div>
             <Icons icon={faHotel} text="Easy booking" />
             <Icons icon={faMoneyCheckDollar} text="Secure pay" />

@@ -10,7 +10,9 @@ function Login() {
   return (
     <Layout>
       <div className={styles.loginContainer}>
-        <Head title="Admin login" />
+        <Head title="Admin login">
+          <link rel="stylesheet" href="https://use.typekit.net/ckg1pdt.css" />
+        </Head>
         <HeroSection
           img={mainImg}
           alt="modern looking hotel room, with big twin bed, and walk-in-closet"

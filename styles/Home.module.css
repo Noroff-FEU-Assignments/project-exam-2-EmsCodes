@@ -16,4 +16,19 @@
 .main {
   position: relative;
   z-index: 5;
+  padding-top: 10vh;
+}
+
+/* typography */
+
+.headingOne {
+  margin-top: 0;
+  color: var(--secondary-white);
+  text-align: center;
+}
+.p {
+  color: var(--secondary-white);
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
 }

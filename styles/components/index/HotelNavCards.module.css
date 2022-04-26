@@ -6,8 +6,20 @@
 
 .ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2vw;
+  grid-template-columns: 1fr;
+  gap: 25px;
   width: 100%;
   padding: 0;
+
+  text-align: center;
+}
+
+.listItem {
+  list-style-type: none;
+  background: var(--main-blue);
+}
+
+.listLink {
+  text-decoration: none;
+  color: var(--secondary-white);
 }

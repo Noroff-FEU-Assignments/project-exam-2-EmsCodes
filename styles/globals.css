@@ -4,6 +4,9 @@
   --text-color: #3e3e3e;
   --white: #fff;
   --secondary-white: #f4f4f4;
+
+  --heading-font: "objektiv-mk1", sans-serif;
+  --body-text-font: "roboto", verdana, sans-serif;
 }
 
 body {

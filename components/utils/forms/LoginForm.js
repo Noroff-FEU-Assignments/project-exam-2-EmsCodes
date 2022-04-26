@@ -42,7 +42,7 @@ function LoginForm() {
       const response = await axios.post(url, data);
       console.log(response);
       setAuth(response.data);
-      router.push("/");
+      //   router.push("/");
     } catch (error) {
       setLoginError("Login failed");
       console.log(error);

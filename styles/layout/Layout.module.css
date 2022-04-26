@@ -4,6 +4,7 @@
   height: 7.5vh;
   display: flex;
   justify-content: space-between;
+  /* position: fixed; */
   z-index: 100;
   width: 100%;
 }
