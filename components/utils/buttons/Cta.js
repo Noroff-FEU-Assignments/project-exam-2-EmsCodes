@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "../../../styles/components/utils/buttons/Cta.module.css";
+
 import Link from "next/link";
 import propTypes from "prop-types";
 
-function Cta({ content, link = "/" }) {
+function Cta({ content, link = "/", styles }) {
   return (
     <Link href={link}>
-      <a className={styles.btn}>{content}</a>
+      <a className={styles}>{content}</a>
     </Link>
   );
 }

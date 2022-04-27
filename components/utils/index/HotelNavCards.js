@@ -8,27 +8,23 @@ function HotelNavCards() {
     <nav aria-label="accommodation navigation" className={styles.cardContainer}>
       <ul className={styles.ul}>
         <li className={styles.listItem}>
-          <Image src={img} alt="alt text" className={styles.cardImage} />
           <Link href="/accommodations">
             <a className={styles.listLink}>
-              <p>Hotels</p>
+              <Image src={img} alt="alt text" className={styles.cardImage} />
+              Hotels
             </a>
           </Link>
         </li>
         <li className={styles.listItem}>
           <Image src={img} alt="alt text" className={styles.cardImage} />
           <Link href="/accommodations">
-            <a className={styles.listLink}>
-              <p>B&B</p>
-            </a>
+            <a className={styles.listLink}>B&B</a>
           </Link>
         </li>
         <li className={styles.listItem}>
           <Image src={img} alt="alt text" className={styles.cardImage} />
           <Link href="/accommodations">
-            <a className={styles.listLink}>
-              <p>Guesthouses</p>
-            </a>
+            <a className={styles.listLink}>Guesthouses</a>
           </Link>
         </li>
       </ul>

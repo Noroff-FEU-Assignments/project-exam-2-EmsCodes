@@ -1,10 +1,12 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../../styles/components/utils/buttons/SearchField.module.css";
 
-function SearchField() {
+function SearchField(form, input) {
   return (
-    <form>
-      <label htmlFor="search" className={styles.srOnly}>
+    <form className={form}>
+      <label htmlFor="search" className="srOnly">
         Search for hotel
       </label>
       <input
@@ -12,8 +14,11 @@ function SearchField() {
         id="search"
         name="search"
         placeholder="Search for hotel..."
+        className={input}
       ></input>
-      <button>Search</button>
+      <button className={styles.searchBtn}>
+        <FontAwesomeIcon icon={faSearch} />
+      </button>
     </form>
   );
 }

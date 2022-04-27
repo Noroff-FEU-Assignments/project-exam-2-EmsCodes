@@ -8,6 +8,10 @@
   --heading-font: "objektiv-mk1", sans-serif;
   --body-text-font: "roboto", verdana, sans-serif;
 }
+/* 
+* {
+  border: 1px solid green;
+} */
 
 body {
   margin: 0;

@@ -38,30 +38,29 @@ function LoginForm() {
     setLoginError(null);
     console.log(data);
 
-    const test = JSON.stringify({
-      identifier: data.username,
-      password: data.password,
-    });
+    // const test = JSON.stringify({
+    //   identifier: data.username,
+    //   password: data.password,
+    // });
 
-    const options = {
-      method: "POST",
-      body: test,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+    // const options = {
+    //   method: "POST",
+    //   body: test,
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // };
 
     try {
-      //   const response = await axios.post(url, data);
-      const response = await fetch(url, options);
+      const response = await axios.post(url, {
+        identifier: data.username,
+        password: data.password,
+      });
 
-      const result = await response.json();
-      //   const response = await fetch(url, data);
-      //   const result = await response.json();
-      //   console.log(response.data);
-      console.log(result);
-      setAuth(response.data);
-      router.push("/");
+      console.log(response.data.jwt);
+      setAuth(response.data.jwt);
+      //   setAuth(result.jwt);
+      router.push("/admin");
     } catch (error) {
       setLoginError("Login failed");
       console.log(error);

@@ -5,6 +5,7 @@ import Cta from "../components/utils/buttons/Cta";
 import SearchField from "../components/utils/buttons/SearchField";
 import HotelNavCards from "../components/utils/index/HotelNavCards";
 import styles from "../styles/Home.module.css";
+import cta from "../styles/components/utils/buttons/Cta.module.css";
 import Icons from "../components/utils/index/Icons";
 import img from "../public/images/styling/customerImg.jpg";
 import {
@@ -29,8 +30,13 @@ export default function Home() {
           <p className={styles.p}>
             Our goal is to make booking the easiest part of your journey!
           </p>
-          <Cta content="Find your hotel" link="/accommodations" />
-          <SearchField />
+
+          <Cta
+            content="Find your hotel"
+            link="/accommodations"
+            styles={cta.btn}
+          />
+          <SearchField form={styles.search} input={styles.input} />
         </div>
       </div>
       <div>

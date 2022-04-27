@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 92.5vh;
   background-image: url("../public/images/main-images/home-main-img.jpg");
   background-size: cover;
   background-position: center;
@@ -11,18 +11,27 @@
   content: "";
   inset: 0;
   background-color: black;
-  opacity: 35%;
+  opacity: 45%;
 }
 .main {
   position: relative;
   z-index: 5;
   padding-top: 10vh;
 }
+/* search field  */
+.search {
+  width: 50vw;
+  max-width: 400px;
+}
+.input {
+  padding: 10px;
+}
 
 /* typography */
 
 .headingOne {
   margin-top: 0;
+  margin-bottom: 15px;
   color: var(--secondary-white);
   text-align: center;
 }
@@ -31,4 +40,7 @@
   text-align: center;
   width: 75%;
   margin: 0 auto;
+  font-weight: 300;
+  font-size: 1.1em;
+  margin-bottom: 50px;
 }
