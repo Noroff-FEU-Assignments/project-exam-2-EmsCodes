@@ -1,10 +1,17 @@
 h1 {
   margin-top: 0;
-  font-family: var(--heading-font);
   font-weight: 400;
-  font-size: 3em;
   font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h6 {
+  font-family: var(--heading-font);
 }
 p {
   font-family: var(--body-text-font);
+  font-size: 1.1em;
+  font-weight: 100;
 }

@@ -1,0 +1,58 @@
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.headingFour {
+  font-size: 1.8em;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 0;
+}
+.quote {
+  font-family: var(--body-text-font);
+  font-weight: 100;
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.headingFive {
+  font-size: 1.1em;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  font-family: var(--body-text-font);
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.cardsContainer > span {
+  width: 90vw;
+  margin: 0 auto;
+}
+.card {
+  position: relative;
+}
+
+.cardContent {
+  position: absolute;
+  margin-bottom: 0;
+  margin-top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.658);
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px;
+}
+
+.cardImg {
+  height: 150px !important;
+}

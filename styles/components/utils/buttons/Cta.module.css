@@ -5,6 +5,10 @@
   padding: 15px 20px;
   border-radius: 50px;
   text-decoration: none;
+  display: block;
+  width: 35vw;
+  max-width: 250px;
   color: var(--white);
+  text-align: center;
   font-family: var(--heading-font);
 }

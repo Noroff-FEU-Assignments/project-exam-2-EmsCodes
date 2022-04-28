@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Heading from "../global/heading/Heading";
 import Link from "next/link";
 import styles from "../../../styles/components/index/HotelNavCards.module.css";
 import img from "../../../public/images/hotel-images/hotel-image.jpg";
@@ -11,20 +10,24 @@ function HotelNavCards() {
           <Link href="/accommodations">
             <a className={styles.listLink}>
               <Image src={img} alt="alt text" className={styles.cardImage} />
-              Hotels
+              <p className={styles.linkText}>Hotels</p>
             </a>
           </Link>
         </li>
         <li className={styles.listItem}>
-          <Image src={img} alt="alt text" className={styles.cardImage} />
           <Link href="/accommodations">
-            <a className={styles.listLink}>B&B</a>
+            <a className={styles.listLink}>
+              <Image src={img} alt="alt text" className={styles.cardImage} />
+              <p className={styles.linkText}>Hotels</p>
+            </a>
           </Link>
         </li>
         <li className={styles.listItem}>
-          <Image src={img} alt="alt text" className={styles.cardImage} />
           <Link href="/accommodations">
-            <a className={styles.listLink}>Guesthouses</a>
+            <a className={styles.listLink}>
+              <Image src={img} alt="alt text" className={styles.cardImage} />
+              <p className={styles.linkText}>Hotels</p>
+            </a>
           </Link>
         </li>
       </ul>

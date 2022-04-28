@@ -5,21 +5,22 @@ function Card({
   img,
   altText = "alt text missing",
   name,
-  place = null,
-  price = null,
-  rating = null,
+  containerStyle,
+  contentStyle,
+  imageStyle,
 }) {
   return (
-    <div>
-      <Image src={img} alt={altText} />
-      <p>{rating}</p>
+    <div className={containerStyle}>
       <div>
-        <div>
-          <p>{name}</p>
-          <p>{place}</p>
-        </div>
-        {price}
+        <Image
+          src={img}
+          alt={altText}
+          className={imageStyle}
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
+      <p className={contentStyle}>{name}</p>
     </div>
   );
 }

@@ -15,4 +15,5 @@ export default Cta;
 
 Cta.propTypes = {
   content: propTypes.string.isRequired,
+  link: propTypes.string,
 };
