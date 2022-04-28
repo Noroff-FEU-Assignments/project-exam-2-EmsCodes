@@ -43,19 +43,53 @@ export default function Home() {
         <Heading size="2" content=" accommodation categories" style="srOnly" />
         <HotelNavCards />
       </div>
-      <div>
+      <div className={styles.whyUsSection}>
         <Image
           src={img}
           alt="a woman and a man smiling while looking at an iphone"
         />
         <div>
-          <Heading size="3" content="Why choose us?" />
-          <div>
-            <Icons icon={faHotel} text="Easy booking" />
-            <Icons icon={faMoneyCheckDollar} text="Secure pay" />
-            <Icons icon={faHeadset} text="24/hour support" />
-            <Icons icon={faSignsPost} text="Local knowledge" />
-            <Icons icon={faPeopleGroup} text="5000+ satisfied customers" />
+          <Heading
+            size="3"
+            content="Why choose us?"
+            style={styles.headingThree}
+          />
+          <div className={styles.iconsContainer}>
+            <Icons
+              icon={faHotel}
+              text="Easy booking"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
+            <Icons
+              icon={faMoneyCheckDollar}
+              text="Secure pay"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
+            <Icons
+              icon={faHeadset}
+              text="24/hour support"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
+            <Icons
+              icon={faSignsPost}
+              text="Local knowledge"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
+            <Icons
+              icon={faPeopleGroup}
+              text="5000+ satisfied customers"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
           </div>
         </div>
         <div>

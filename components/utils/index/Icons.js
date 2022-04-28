@@ -2,11 +2,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import propTypes from "prop-types";
 
-function Icons({ icon, text }) {
+function Icons({ icon, text, iconStyle, textStyle, iconContainer }) {
   return (
-    <div>
-      <FontAwesomeIcon icon={icon} />
-      <p>{text}</p>
+    <div className={iconContainer}>
+      <FontAwesomeIcon icon={icon} className={iconStyle} />
+      <p className={textStyle}>{text}</p>
     </div>
   );
 }

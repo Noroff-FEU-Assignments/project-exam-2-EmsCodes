@@ -9,7 +9,15 @@ function HotelNavCards() {
         <li className={styles.listItem}>
           <Link href="/accommodations">
             <a className={styles.listLink}>
-              <Image src={img} alt="alt text" className={styles.cardImage} />
+              <div>
+                <Image
+                  src={img}
+                  alt="alt text"
+                  className={styles.cardImage}
+                  layou="fill"
+                  objectFit="cover"
+                />
+              </div>
               <p className={styles.linkText}>Hotels</p>
             </a>
           </Link>
@@ -17,7 +25,15 @@ function HotelNavCards() {
         <li className={styles.listItem}>
           <Link href="/accommodations">
             <a className={styles.listLink}>
-              <Image src={img} alt="alt text" className={styles.cardImage} />
+              <div>
+                <Image
+                  src={img}
+                  alt="alt text"
+                  className={styles.cardImage}
+                  layou="fill"
+                  objectFit="cover"
+                />
+              </div>
               <p className={styles.linkText}>Hotels</p>
             </a>
           </Link>
@@ -25,7 +41,15 @@ function HotelNavCards() {
         <li className={styles.listItem}>
           <Link href="/accommodations">
             <a className={styles.listLink}>
-              <Image src={img} alt="alt text" className={styles.cardImage} />
+              <div>
+                <Image
+                  src={img}
+                  alt="alt text"
+                  className={styles.cardImage}
+                  layou="fill"
+                  objectFit="cover"
+                />
+              </div>
               <p className={styles.linkText}>Hotels</p>
             </a>
           </Link>

@@ -45,3 +45,27 @@
   font-size: 1.1em;
   margin-bottom: 50px;
 }
+
+/* why choose us section  */
+
+/* .whyUsSection {
+} */
+.iconsContainer {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.text {
+  font-family: var(--heading-font);
+}
+.icon {
+  font-size: 1.5em;
+  color: var(--text-color);
+}
+
+.iconContainer {
+  width: 50%;
+  text-align: center;
+}
