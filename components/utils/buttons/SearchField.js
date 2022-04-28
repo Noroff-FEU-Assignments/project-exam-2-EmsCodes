@@ -16,7 +16,7 @@ function SearchField() {
         placeholder="Search for hotel..."
       ></input>
       <button className={styles.searchBtn}>
-        <FontAwesomeIcon icon={faSearch} />
+        <FontAwesomeIcon icon={faSearch} className={styles.icon} />
       </button>
     </form>
   );

@@ -16,25 +16,23 @@
 .main {
   position: relative;
   z-index: 5;
-  padding-top: 10vh;
+  padding-top: 15vh;
 }
 /* search field  */
 
 .formContainer {
   margin: 0 auto;
   margin-top: 85px;
-  width: 95%;
   text-align: center;
 }
 .formContainer input {
-  padding: 10px;
-  border-color: rgba(255, 255, 255, 0);
-}
-.formContainer input:focus {
-  border: 1px solid var(--orange);
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  font-size: 1em;
+  width: 50%;
 }
 .formContainer form {
-  width: 100%;
   margin: 0 auto;
 }
 
