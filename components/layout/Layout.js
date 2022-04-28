@@ -1,9 +1,9 @@
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
-// import { useContext } from "react";
-// import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 import styles from "../../styles/layout/Layout.module.css";
-import logo from "../../public/images/white-logo.png";
+import logo from "../../public/logo.png";
 import React, { useState } from "react";
 import Image from "next/image";
 import Footer from "./Footer";
@@ -14,6 +14,10 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 function Layout({ children }) {
   const [menuBtn, setMenuBtn] = useState(faBars);
   const [menuState, setMenuState] = useState(styles.hidden);
+
+  const [auth, setAuth] = useContext(AuthContext);
+
+  const router = useRouter();
 
   function menuFunction() {
     if (menuBtn === faBars) {
@@ -28,15 +32,13 @@ function Layout({ children }) {
   return (
     <>
       <div className={styles.header}>
-        <Link href="/">
-          <a>
-            <Image
-              src={logo}
-              alt="Holidaze logo, white on blue background"
-              className={styles.logo}
-            />
-          </a>
-        </Link>
+        <div className={styles.logo}>
+          <Link href="/">
+            <a>
+              <Image src={logo} alt="Holidaze logo, white on blue background" />
+            </a>
+          </Link>
+        </div>
         <button
           onClick={menuFunction}
           aria-label="Open menu"
@@ -49,15 +51,17 @@ function Layout({ children }) {
             <ul className={styles.ul}>
               <li>
                 <Link href="/">
-                  <a>Home</a>
+                  <a className={router.pathname == "/" ? "active" : ""}>Home</a>
                 </Link>
               </li>
-              <li>
+              <li
+                className={router.pathname == "/accommodations" ? "active" : ""}
+              >
                 <Link href="/accommodations">
                   <a>Accommodations</a>
                 </Link>
               </li>
-              <li>
+              <li className={router.pathname == "/contact" ? "active" : ""}>
                 <Link href="/contact">
                   <a>Contact</a>
                 </Link>

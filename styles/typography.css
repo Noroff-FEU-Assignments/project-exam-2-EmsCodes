@@ -15,3 +15,8 @@ p {
   font-size: 1.1em;
   font-weight: 100;
 }
+.active {
+  background: var(--main-blue);
+  display: block;
+  color: var(--secondary-white) !important;
+}
