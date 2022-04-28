@@ -54,16 +54,22 @@ function Layout({ children }) {
                   <a className={router.pathname == "/" ? "active" : ""}>Home</a>
                 </Link>
               </li>
-              <li
-                className={router.pathname == "/accommodations" ? "active" : ""}
-              >
+              <li>
                 <Link href="/accommodations">
-                  <a>Accommodations</a>
+                  <a
+                    className={
+                      router.pathname == "/accommodations" ? "active" : ""
+                    }
+                  >
+                    Accommodations
+                  </a>
                 </Link>
               </li>
-              <li className={router.pathname == "/contact" ? "active" : ""}>
+              <li>
                 <Link href="/contact">
-                  <a>Contact</a>
+                  <a className={router.pathname == "/contact" ? "active" : ""}>
+                    Contact
+                  </a>
                 </Link>
               </li>
             </ul>
