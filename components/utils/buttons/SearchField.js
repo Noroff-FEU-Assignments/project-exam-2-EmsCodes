@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../../styles/components/utils/buttons/SearchField.module.css";
 
-function SearchField(form, input) {
+function SearchField() {
   return (
-    <form className={form}>
+    <form>
       <label htmlFor="search" className="srOnly">
         Search for hotel
       </label>
@@ -14,7 +14,6 @@ function SearchField(form, input) {
         id="search"
         name="search"
         placeholder="Search for hotel..."
-        className={input}
       ></input>
       <button className={styles.searchBtn}>
         <FontAwesomeIcon icon={faSearch} />

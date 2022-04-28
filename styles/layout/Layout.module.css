@@ -23,6 +23,7 @@
   display: block;
   position: absolute;
   inset: 0;
+  top: 7.5vh;
   background-color: var(--white);
   z-index: 10;
   animation: slideInMenu 0.3s ease-in-out 1;
@@ -41,4 +42,6 @@
 }
 .logo {
   flex: 1;
+  width: 100px;
+  height: auto;
 }

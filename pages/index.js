@@ -36,7 +36,9 @@ export default function Home() {
             link="/accommodations"
             styles={cta.btn}
           />
-          <SearchField form={styles.search} input={styles.input} />
+          <div className={styles.formContainer}>
+            <SearchField />
+          </div>
         </div>
       </div>
       <div>
@@ -44,53 +46,51 @@ export default function Home() {
         <HotelNavCards />
       </div>
       <div className={styles.whyUsSection}>
+        <Heading
+          size="3"
+          content="Why choose us?"
+          style={styles.headingThree}
+        />
         <Image
           src={img}
           alt="a woman and a man smiling while looking at an iphone"
         />
-        <div>
-          <Heading
-            size="3"
-            content="Why choose us?"
-            style={styles.headingThree}
+        <div className={styles.iconsContainer}>
+          <Icons
+            icon={faHotel}
+            text="Easy booking"
+            iconStyle={styles.icon}
+            textStyle={styles.text}
+            iconContainer={styles.iconContainer}
           />
-          <div className={styles.iconsContainer}>
-            <Icons
-              icon={faHotel}
-              text="Easy booking"
-              iconStyle={styles.icon}
-              textStyle={styles.text}
-              iconContainer={styles.iconContainer}
-            />
-            <Icons
-              icon={faMoneyCheckDollar}
-              text="Secure pay"
-              iconStyle={styles.icon}
-              textStyle={styles.text}
-              iconContainer={styles.iconContainer}
-            />
-            <Icons
-              icon={faHeadset}
-              text="24/hour support"
-              iconStyle={styles.icon}
-              textStyle={styles.text}
-              iconContainer={styles.iconContainer}
-            />
-            <Icons
-              icon={faSignsPost}
-              text="Local knowledge"
-              iconStyle={styles.icon}
-              textStyle={styles.text}
-              iconContainer={styles.iconContainer}
-            />
-            <Icons
-              icon={faPeopleGroup}
-              text="5000+ satisfied customers"
-              iconStyle={styles.icon}
-              textStyle={styles.text}
-              iconContainer={styles.iconContainer}
-            />
-          </div>
+          <Icons
+            icon={faMoneyCheckDollar}
+            text="Secure payment options"
+            iconStyle={styles.icon}
+            textStyle={styles.text}
+            iconContainer={styles.iconContainer}
+          />
+          <Icons
+            icon={faHeadset}
+            text="24/hour support"
+            iconStyle={styles.icon}
+            textStyle={styles.text}
+            iconContainer={styles.iconContainer}
+          />
+          <Icons
+            icon={faSignsPost}
+            text="Local knowledge"
+            iconStyle={styles.icon}
+            textStyle={styles.text}
+            iconContainer={styles.iconContainer}
+          />
+          <Icons
+            icon={faPeopleGroup}
+            text="5000+ satisfied customers"
+            iconStyle={styles.icon}
+            textStyle={styles.text}
+            iconContainer={styles.iconContainer}
+          />
         </div>
         <div>
           <AboutBergen />
