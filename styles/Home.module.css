@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-image: url("../public/images/main-images/home-main-img.jpg");
   background-size: cover;
   background-position: center;
@@ -43,13 +43,14 @@
   margin-bottom: 15px;
   color: var(--secondary-white);
   text-align: center;
-  font-size: 2.8em;
+  font-size: calc(45px + (100 - 45) * ((100vw - 320px) / (2000 - 320)));
 }
 .headingThree {
-  font-size: 1.3em;
-  font-weight: 400;
+  font-size: calc(22px + (40 - 22) * ((100vw - 320px) / (2000 - 320)));
+  font-weight: 300;
   text-align: center;
   position: static;
+  margin-top: 50px;
 }
 .p {
   color: var(--secondary-white);
@@ -58,7 +59,7 @@
   max-width: 400px;
   margin: 0 auto;
   font-weight: 300;
-  font-size: 1.1em;
+  font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (2000 - 320)));
   margin-bottom: 30px;
 }
 

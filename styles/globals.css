@@ -4,14 +4,10 @@
   --text-color: #3e3e3e;
   --white: #fff;
   --secondary-white: #f4f4f4;
-  --white-linear-bg: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.49938679060409696) 16%,
-    rgba(255, 255, 255, 1) 100%
-  );
   --heading-font: "objektiv-mk1", sans-serif;
   --body-text-font: "roboto", verdana, sans-serif;
+
+  --box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 /* 
 * {

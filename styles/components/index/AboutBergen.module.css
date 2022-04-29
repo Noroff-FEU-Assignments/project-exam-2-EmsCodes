@@ -4,23 +4,23 @@
 }
 
 .headingFour {
-  font-size: 1.8em;
+  font-size: calc(30px + (40 - 30) * ((100vw - 320px) / (2000 - 320)));
   font-weight: 200;
   text-align: center;
   margin-bottom: 0;
 }
 .quote {
   font-family: var(--body-text-font);
+  font-size: calc(20px + (25 - 20) * ((100vw - 320px) / (2000 - 320)));
   font-weight: 100;
   font-style: italic;
-  font-size: 1.2em;
   margin: 0;
   margin-top: 10px;
   text-align: center;
 }
 
 .headingFive {
-  font-size: 1.1em;
+  font-size: calc(18px + (25 - 18) * ((100vw - 320px) / (2000 - 320)));
   font-weight: 400;
   text-transform: capitalize;
   margin-bottom: 0;

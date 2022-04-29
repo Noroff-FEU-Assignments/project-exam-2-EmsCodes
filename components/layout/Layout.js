@@ -74,7 +74,9 @@ function Layout({ children }) {
               </li>
             </ul>
           </nav>
-          <SearchField />
+          <div className={styles.menuSearchField}>
+            <SearchField />
+          </div>
         </div>
       </div>
 

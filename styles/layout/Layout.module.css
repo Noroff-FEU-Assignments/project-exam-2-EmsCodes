@@ -29,6 +29,7 @@
   background-color: var(--white);
   z-index: 10;
   animation: slideInMenu 0.3s ease-in-out 1;
+  box-shadow: var(--box-shadow);
 }
 
 @keyframes slideInMenu {
@@ -44,7 +45,7 @@
   margin: 0;
   text-align: center;
   margin-bottom: 50px;
-  margin-top: 15vh;
+  transform: translateY(65%);
   text-decoration: none;
 }
 .ul li {
@@ -64,4 +65,10 @@
   width: 75px !important;
   height: auto;
   margin-left: 10px !important;
+}
+
+/* search field  */
+
+.menuSearchField form {
+  display: none;
 }
