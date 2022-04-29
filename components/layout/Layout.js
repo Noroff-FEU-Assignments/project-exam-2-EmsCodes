@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import styles from "../../styles/layout/Layout.module.css";
 import logo from "../../public/holidaze-logo.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Footer from "./Footer";
 import SearchField from "../utils/buttons/SearchField";
@@ -29,6 +29,10 @@ function Layout({ children }) {
     }
   }
 
+  function logOut() {
+    setAuth(null);
+    router.push("/");
+  }
   return (
     <>
       <div className={styles.header}>
@@ -72,6 +76,20 @@ function Layout({ children }) {
                   </a>
                 </Link>
               </li>
+              {auth ? (
+                <>
+                  <li>
+                    <Link href="/admin">
+                      <a
+                        className={router.pathname == "/admin" ? "active" : ""}
+                      >
+                        Admin
+                      </a>
+                    </Link>
+                  </li>
+                  <button onClick={logOut}>Logout</button>
+                </>
+              ) : null}
             </ul>
           </nav>
           <div className={styles.menuSearchField}>

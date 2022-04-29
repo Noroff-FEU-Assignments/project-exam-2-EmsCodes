@@ -1,8 +1,7 @@
 .header {
   background: var(--main-blue);
   padding: 0;
-  height: 10vh;
-  max-height: 75px;
+  height: 8vh;
   display: flex;
   justify-content: space-between;
   z-index: 100;
@@ -25,7 +24,7 @@
   display: block;
   position: absolute;
   inset: 0;
-  top: 9vh;
+  top: 7vh;
   background-color: var(--white);
   z-index: 10;
   animation: slideInMenu 0.3s ease-in-out 1;
@@ -71,4 +70,41 @@
 
 .menuSearchField form {
   display: none;
+}
+
+@media (min-width: 1000px) {
+  .hidden {
+    display: block;
+  }
+  .burgerBtn {
+    display: none;
+  }
+  .displayed {
+    display: block;
+    position: static;
+    top: 0;
+    background-color: none;
+    z-index: 10;
+    box-shadow: none;
+  }
+  .ul {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+    transform: translateY(0%);
+    display: flex;
+    align-content: center;
+  }
+  .ul li {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-right: 5px;
+  }
+  .ul a {
+    text-decoration: none;
+    color: var(--secondary-white);
+    font-family: var(--body-text-font);
+    font-size: 1em;
+    padding: 100% 10px;
+  }
 }

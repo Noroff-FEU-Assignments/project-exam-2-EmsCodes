@@ -59,7 +59,6 @@ function LoginForm() {
 
       console.log(response.data.jwt);
       setAuth(response.data.jwt);
-      //   setAuth(result.jwt);
       router.push("/admin");
     } catch (error) {
       setLoginError("Login failed");

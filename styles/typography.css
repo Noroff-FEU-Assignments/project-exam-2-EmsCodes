@@ -20,3 +20,11 @@ p {
   display: block;
   color: var(--secondary-white) !important;
 }
+
+@media (min-width: 1000px) {
+  .active {
+    background: var(--white);
+    display: inline;
+    color: var(--main-blue) !important;
+  }
+}

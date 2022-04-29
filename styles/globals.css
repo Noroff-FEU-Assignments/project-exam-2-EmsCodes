@@ -7,7 +7,7 @@
   --heading-font: "objektiv-mk1", sans-serif;
   --body-text-font: "roboto", verdana, sans-serif;
 
-  --box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  --box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 /* 
 * {
@@ -17,6 +17,26 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+/* sticky footer */
+body,
+html {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+  display: flex;
 }
 
 /* hides form label from users, only screen readers can "see" it */

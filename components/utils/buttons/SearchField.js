@@ -15,7 +15,7 @@ function SearchField() {
         name="search"
         placeholder="Search for hotel..."
       ></input>
-      <button className={styles.searchBtn} disabled="true" aria-hidden="true">
+      <button className={styles.searchBtn} disabled={true} aria-hidden="true">
         <FontAwesomeIcon icon={faSearch} className={styles.icon} />
       </button>
     </form>
