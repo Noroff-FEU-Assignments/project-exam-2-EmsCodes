@@ -101,8 +101,8 @@ function AboutBergen() {
             imageStyle={styles.cardImg}
           />
         </div>
-        <p>
-          More at{" "}
+        <p className={styles.moreLink}>
+          More at -{" "}
           <Link href="https://www.visitbergen.no/">
             <a>visitbergen.no</a>
           </Link>

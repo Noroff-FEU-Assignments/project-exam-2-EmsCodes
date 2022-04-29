@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import styles from "../../styles/layout/Layout.module.css";
-import logo from "../../public/logo.png";
+import logo from "../../public/holidaze-logo.png";
 import React, { useState } from "react";
 import Image from "next/image";
 import Footer from "./Footer";

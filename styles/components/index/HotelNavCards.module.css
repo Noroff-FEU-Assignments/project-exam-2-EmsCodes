@@ -35,6 +35,6 @@
   padding-bottom: 10px;
 }
 
-.cardImage {
+.listItem span {
   height: 200px !important;
 }
