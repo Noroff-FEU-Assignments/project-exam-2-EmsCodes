@@ -1,7 +1,12 @@
 import propTypes from "prop-types";
+import styles from "../../../styles/components/utils/buttons/categoryBtn.module.css";
 
 function MenuBtn({ onclickFunction, name }) {
-  return <button onClick={onclickFunction}>{name}</button>;
+  return (
+    <button className={styles.nav} onClick={onclickFunction}>
+      {name}
+    </button>
+  );
 }
 
 export default MenuBtn;

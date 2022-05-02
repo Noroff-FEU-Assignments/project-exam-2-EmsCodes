@@ -17,6 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import AboutBergen from "../components/utils/index/AboutBergen";
+import searchFieldStyles from "../styles/components/utils/buttons/SearchField.module.css";
 
 export default function Home() {
   return (
@@ -36,7 +37,7 @@ export default function Home() {
             link="/accommodations"
             styles={cta.btn}
           />
-          <div className={styles.formContainer}>
+          <div className={searchFieldStyles.formContainer}>
             <SearchField />
           </div>
         </div>

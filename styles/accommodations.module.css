@@ -1,0 +1,22 @@
+.heroContainer span {
+  height: 55vh !important;
+}
+.heroContainer {
+  position: relative;
+}
+.heroContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.31);
+  z-index: 1;
+}
+.heroContainer p {
+  margin-bottom: 50px;
+}
+
+.heroContent {
+  position: static;
+  z-index: 5;
+  color: var(--secondary-white);
+}

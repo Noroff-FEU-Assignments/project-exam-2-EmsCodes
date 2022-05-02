@@ -6,3 +6,21 @@
   border-radius: 0 50px 50px 0;
   font-size: 1em;
 }
+
+/* search field  */
+
+.formContainer {
+  margin: 0 auto;
+  /* margin-top: 85px; */
+  text-align: center;
+}
+.formContainer input {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  font-size: 1em;
+  width: 50%;
+}
+.formContainer form {
+  margin: 0 auto;
+}

@@ -76,22 +76,6 @@ function Layout({ children }) {
                   </a>
                 </Link>
               </li>
-              {auth ? (
-                <>
-                  <li>
-                    <Link href="/admin">
-                      <a
-                        className={router.pathname == "/admin" ? "active" : ""}
-                      >
-                        Admin
-                      </a>
-                    </Link>
-                  </li>
-                  <button onClick={logOut}>Logout</button>
-                </>
-              ) : (
-                <div></div>
-              )}
             </ul>
           </nav>
           <div className={styles.menuSearchField}>
