@@ -40,7 +40,7 @@ function accommodations(props) {
       <MenuBtn onclickFunction={allHotels} name="Hotels" />
       <MenuBtn onclickFunction={allHotels} name="B&B" />
       <MenuBtn onclickFunction={allHotels} name="Guesthouse" />
-      <div>
+      <div className={styles.ul}>
         {/* <p>Result:{props.hotels.length}</p> */}
         <ul>
           {props.hotels.map((hotel) => {
