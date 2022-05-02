@@ -77,19 +77,20 @@ function Layout({ children }) {
                 </Link>
               </li>
               {auth ? (
-                <li>
-                  <Link href="/admin">
-                    <a className={router.pathname == "/admin" ? "active" : ""}>
-                      Admin
-                    </a>
-                  </Link>
-                </li>
+                <>
+                  <li>
+                    <Link href="/admin">
+                      <a
+                        className={router.pathname == "/admin" ? "active" : ""}
+                      >
+                        Admin
+                      </a>
+                    </Link>
+                  </li>
+                  <button onClick={logOut}>Logout</button>
+                </>
               ) : (
-                <li>
-                  <Link href="/login">
-                    <a></a>
-                  </Link>
-                </li>
+                <div></div>
               )}
             </ul>
           </nav>
