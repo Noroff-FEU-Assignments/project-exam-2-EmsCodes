@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Heading from "../global/heading/Heading";
 import propTypes from "prop-types";
+import styles from "../../../styles/components/accommodations/HotelCards.module.css";
 
 function HotelCards({ name, price, img }) {
   if (!name) {
@@ -10,7 +11,7 @@ function HotelCards({ name, price, img }) {
     price = "Price missing";
   }
   return (
-    <>
+    <div className={styles.cardContainer}>
       <Image
         src={img}
         alt={name}
@@ -18,7 +19,7 @@ function HotelCards({ name, price, img }) {
         width="250px"
         height="250px"
       />
-      <div>
+      <div className={styles.content}>
         <div>
           <Heading size="3" content={name} />
           <p>Place</p>
@@ -27,7 +28,7 @@ function HotelCards({ name, price, img }) {
           <span className="srOnly">Price</span>From {price}
         </p>
       </div>
-    </>
+    </div>
   );
 }
 

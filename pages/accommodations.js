@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import Head from "../components/utils/global/head/Head";
 import Layout from "../components/layout/Layout";
 import Heading from "../components/utils/global/heading/Heading";
@@ -13,6 +13,9 @@ import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
 import HotelCards from "../components/utils/accommodations/HotelCards";
 
 function accommodations(props) {
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
+
   console.log(props.hotels);
   function allHotels() {
     console.log("yo");
@@ -40,26 +43,24 @@ function accommodations(props) {
       <MenuBtn onclickFunction={allHotels} name="Hotels" />
       <MenuBtn onclickFunction={allHotels} name="B&B" />
       <MenuBtn onclickFunction={allHotels} name="Guesthouse" />
-      <div className={styles.ul}>
-        {/* <p>Result:{props.hotels.length}</p> */}
-        <ul>
-          {props.hotels.map((hotel) => {
-            return (
-              <li key={hotel.id}>
-                <Link href="/">
-                  <a>
-                    <HotelCards
-                      name={hotel.attributes.name}
-                      price={hotel.attributes.price_1}
-                      img={hotel.attributes.main_image.data.attributes.url}
-                    />
-                  </a>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      {/* <p>Result:{props.hotels.length}</p> */}
+      <ul className={styles.ul}>
+        {props.hotels.map((hotel) => {
+          return (
+            <li key={hotel.id}>
+              <Link href="/">
+                <a>
+                  <HotelCards
+                    name={hotel.attributes.name}
+                    price={hotel.attributes.price_1}
+                    img={hotel.attributes.main_image.data.attributes.url}
+                  />
+                </a>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </Layout>
   );
 }

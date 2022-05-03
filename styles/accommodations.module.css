@@ -1,5 +1,6 @@
 .heroContainer span {
   height: 55vh !important;
+  position: static !important;
 }
 .heroContainer {
   position: relative;
@@ -8,9 +9,16 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.31);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+/* .heroContainer::after {
+  content: "";
+  position: absolute;
+  background: var(--main-blue);
+  clip-path: polygon(100% 0, 0% 0%, 0% 100%);
+  inset: 0;
+} */
 .heroContainer p {
   margin-bottom: 50px;
 }
@@ -22,8 +30,22 @@
 }
 
 .ul {
-  width: 90vw;
+  width: 95vw;
   max-width: 1200px;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.ul li {
+  list-style-type: none;
+  width: 75vw;
+  margin-bottom: 25px;
+}
+
+.ul li a {
+  text-decoration: none;
 }
