@@ -38,14 +38,38 @@
   padding: 0;
   margin: 0 auto;
   margin-top: 50px;
+  gap: 25px;
 }
 
 .ul li {
   list-style-type: none;
   width: 75vw;
-  margin-bottom: 25px;
+  box-shadow: var(--box-shadow);
 }
 
 .ul li a {
   text-decoration: none;
+}
+
+@media screen and (min-width: 450px) {
+  .ul {
+    gap: 20px;
+  }
+  .ul li {
+    list-style-type: none;
+    width: 42vw;
+    box-shadow: var(--box-shadow);
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .ul {
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  .ul li {
+    list-style-type: none;
+    width: 29vw;
+    box-shadow: var(--box-shadow);
+  }
 }

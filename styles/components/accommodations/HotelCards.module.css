@@ -7,16 +7,38 @@
   align-items: center;
   right: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0 15px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 10px 15px;
+  color: #000;
 }
 .content h3 {
+  font-family: var(--body-text-font);
   margin-bottom: 0;
+  margin-top: 0;
+  font-size: 1em;
+  font-weight: 400;
+  white-space: nowrap;
 }
 .content p {
   margin-top: 0;
 }
-
+.content div p {
+  margin-bottom: 0;
+  font-size: 1em;
+}
+.price {
+  margin-bottom: 0;
+  font-size: 1em;
+}
+.price span:nth-last-of-type() {
+  font-weight: 500;
+}
 .cardContainer {
   position: relative;
+}
+
+@media screen and (min-width: 650px) {
+  .content {
+    padding-right: 0px;
+  }
 }

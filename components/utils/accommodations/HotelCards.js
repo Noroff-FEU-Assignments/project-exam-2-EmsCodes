@@ -17,15 +17,16 @@ function HotelCards({ name, price, img }) {
         alt={name}
         layout="responsive"
         width="250px"
-        height="250px"
+        height="300x"
       />
       <div className={styles.content}>
         <div>
           <Heading size="3" content={name} />
           <p>Place</p>
         </div>
-        <p>
-          <span className="srOnly">Price</span>From {price}
+        <p className={styles.price}>
+          <span className="srOnly">Price</span>
+          <span>From</span> {price}
         </p>
       </div>
     </div>

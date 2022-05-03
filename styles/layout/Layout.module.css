@@ -24,6 +24,7 @@
   display: block;
   position: absolute;
   inset: 0;
+  max-height: 600px;
   top: 7vh;
   background-color: var(--white);
   z-index: 10;
@@ -44,7 +45,7 @@
   margin: 0;
   text-align: center;
   margin-bottom: 50px;
-  transform: translateY(65%);
+  transform: translateY(30%);
   text-decoration: none;
 }
 .ul li {

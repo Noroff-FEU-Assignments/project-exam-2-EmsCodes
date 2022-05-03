@@ -48,7 +48,7 @@ function accommodations(props) {
         {props.hotels.map((hotel) => {
           return (
             <li key={hotel.id}>
-              <Link href="/">
+              <Link href={`detail/${hotel.id}`}>
                 <a>
                   <HotelCards
                     name={hotel.attributes.name}
