@@ -4,6 +4,8 @@ import Heading from "../../components/utils/global/heading/Heading";
 import Layout from "../../components/layout/Layout";
 import HeroSection from "../../components/utils/global/hero-section/HeroSection";
 import styles from "../../styles/detail/id.module.css";
+import Cta from "../../components/utils/buttons/Cta";
+import HotelCards from "../../components/utils/accommodations/HotelCards";
 
 function details({ hotel }) {
   console.log(hotel);
@@ -16,10 +18,38 @@ function details({ hotel }) {
         <HeroSection img={hotel.attributes.main_image.data.attributes.url}>
           {/* create breadcrumbs!!! */}
           <div>
-            <Heading content="Accommodations" />
-            <p>{hotel.short_description}</p>
+            <Heading content={hotel.attributes.name} />
+            <p>{hotel.attributes.short_description}</p>
           </div>
+          <button>Book now</button>
         </HeroSection>
+      </div>
+      <div className={styles.container}>
+        <div>
+          <Heading size="2" content={`Welcome to ${hotel.attributes.name}`} />
+          <Heading size="3" content="Rooms" />
+          <div className={styles.roomsContainer}>
+            <HotelCards
+              name="Room 1"
+              price={hotel.attributes.price_1}
+              img={hotel.attributes.images.data[0].attributes.url}
+            />
+            <HotelCards
+              name="Room 2"
+              price={hotel.attributes.price_1}
+              img={hotel.attributes.images.data[1].attributes.url}
+            />
+            <HotelCards
+              name="Room 3"
+              price={hotel.attributes.price_1}
+              img={hotel.attributes.images.data[2].attributes.url}
+            />
+          </div>
+        </div>
+        <div>
+          <Heading size="3" content="About us" />
+          <p>{hotel.attributes.description}</p>
+        </div>
       </div>
     </Layout>
   );

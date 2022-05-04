@@ -18,7 +18,7 @@ function HeroSection({ img, altText = "alt text missing", children }) {
 export default HeroSection;
 
 HeroSection.propTypes = {
-  img: propTypes.object.isRequired,
+  img: propTypes.any.isRequired,
   altText: propTypes.string,
   children: propTypes.any,
 };
