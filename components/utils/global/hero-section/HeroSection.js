@@ -10,7 +10,7 @@ function HeroSection({ img, altText = "alt text missing", children }) {
     //absolute positioning styling used for mobile only
     <div className={styles.container}>
       <div className={styles.absolutePositioning}>{children}</div>
-      <Image src={img} alt={altText} className={styles.heroImg} />
+      <Image src={img} alt={altText} className={styles.heroImg} layout="fill" />
     </div>
   );
 }

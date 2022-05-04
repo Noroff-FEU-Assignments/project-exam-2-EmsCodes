@@ -1,13 +1,18 @@
+.cardContainer {
+  position: relative;
+  height: 250px;
+}
+
 .content {
   position: absolute;
   bottom: 0;
   z-index: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   right: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.653);
   padding: 10px 15px;
   color: #000;
 }
@@ -30,15 +35,12 @@
   margin-bottom: 0;
   font-size: 1em;
 }
-.price span:nth-last-of-type() {
-  font-weight: 500;
-}
-.cardContainer {
-  position: relative;
+.price span {
+  font-weight: 400;
 }
 
 @media screen and (min-width: 650px) {
   .content {
-    padding-right: 0px;
+    padding: 10px 5px;
   }
 }

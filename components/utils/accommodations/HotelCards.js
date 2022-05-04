@@ -12,13 +12,7 @@ function HotelCards({ name, price, img }) {
   }
   return (
     <div className={styles.cardContainer}>
-      <Image
-        src={img}
-        alt={name}
-        layout="responsive"
-        width="250px"
-        height="300x"
-      />
+      <Image src={img} alt={name} layout="fill" />
       <div className={styles.content}>
         <div>
           <Heading size="3" content={name} />
