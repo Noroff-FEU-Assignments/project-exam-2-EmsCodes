@@ -11,6 +11,7 @@ const schema = yup.object().shape({
   short_description: yup
     .string()
     .required("Please add a short description, max 20 characters"),
+  description: yup.string().required("Please add description"),
 });
 
 function AddHotel() {
@@ -31,9 +32,14 @@ function AddHotel() {
     setError(null);
     console.log(data);
 
+    const formData = { data };
+
     try {
-      const response = await http.post(HOLIDAZE_BASE_URL + "api/hotels", data);
-      console.log(response);
+      const response = await http.post(
+        HOLIDAZE_BASE_URL + "api/hotels",
+        formData
+      );
+      console.log(response.data);
     } catch (error) {
       console.log(error);
       setError(error.toString());
@@ -62,6 +68,14 @@ function AddHotel() {
           />
           {errors.shortDescription && (
             <ValidationError>{error.short_description.message}</ValidationError>
+          )}
+          <textarea
+            name="description"
+            placeholder="Description"
+            {...register("description", { required: true })}
+          />
+          {errors.description && (
+            <ValidationError>{error.description.message}</ValidationError>
           )}
         </div>
         <button>{submitting ? "Submitting..." : "Submit"}</button>
