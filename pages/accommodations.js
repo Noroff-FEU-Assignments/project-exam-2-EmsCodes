@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "../components/utils/global/head/Head";
 import Layout from "../components/layout/Layout";
 import Heading from "../components/utils/global/heading/Heading";
@@ -12,18 +12,34 @@ import Link from "next/link";
 import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
 import HotelCards from "../components/utils/accommodations/HotelCards";
 
-function accommodations(props) {
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+function Accommodations(props) {
+  let hotelArray = props.hotels;
 
-  console.log(props.hotels);
+  function HotelNav() {
+    props.hotels.map((element) => {
+      if (element.attributes.hotel) {
+        console.log(element);
+        hotelArray = element;
+      }
+      if (element.attributes.hotel) {
+      }
+      if (element.attributes.hotel) {
+        return element;
+      }
+      if (element.attributes.hotel) {
+        return element;
+      }
+    });
+  }
   function allHotels() {
     console.log("yo");
   }
 
   return (
     <Layout>
-      <Head title="accommodations" />
+      <Head title="accommodations">
+        <link rel="stylesheet" href="https://use.typekit.net/ckg1pdt.css" />
+      </Head>
       <div className={styles.heroContainer}>
         <HeroSection
           img={hotelImg}
@@ -40,12 +56,12 @@ function accommodations(props) {
         </HeroSection>
       </div>
       <MenuBtn onclickFunction={allHotels} name="All" />
-      <MenuBtn onclickFunction={allHotels} name="Hotels" />
+      <MenuBtn onclickFunction={HotelNav} name="Hotels" />
       <MenuBtn onclickFunction={allHotels} name="B&B" />
       <MenuBtn onclickFunction={allHotels} name="Guesthouse" />
       {/* <p>Result:{props.hotels.length}</p> */}
       <ul className={styles.ul}>
-        {props.hotels.map((hotel) => {
+        {hotelArray.map((hotel) => {
           return (
             <li key={hotel.id}>
               <Link href={`detail/${hotel.id}`}>
@@ -65,7 +81,7 @@ function accommodations(props) {
   );
 }
 
-export default accommodations;
+export default Accommodations;
 
 export async function getStaticProps() {
   const url = HOLIDAZE_BASE_URL + HOTELS;
@@ -79,7 +95,6 @@ export async function getStaticProps() {
   } catch (error) {
     console.log(error);
   }
-
   return {
     props: {
       hotels: hotels,

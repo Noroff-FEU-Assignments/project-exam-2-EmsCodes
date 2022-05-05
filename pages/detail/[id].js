@@ -9,6 +9,7 @@ import HotelCards from "../../components/utils/accommodations/HotelCards";
 
 function details({ hotel }) {
   console.log(hotel);
+
   return (
     <Layout>
       <Head title="Accommodation details page">
@@ -30,18 +31,15 @@ function details({ hotel }) {
           <Heading size="3" content="Rooms" />
           <div className={styles.roomsContainer}>
             <HotelCards
-              name="Room 1"
-              price={hotel.attributes.price_1}
+              name="Room type"
               img={hotel.attributes.images.data[0].attributes.url}
             />
             <HotelCards
-              name="Room 2"
-              price={hotel.attributes.price_1}
+              name="Room type"
               img={hotel.attributes.images.data[1].attributes.url}
             />
             <HotelCards
-              name="Room 3"
-              price={hotel.attributes.price_1}
+              name="Room type"
               img={hotel.attributes.images.data[2].attributes.url}
             />
           </div>
