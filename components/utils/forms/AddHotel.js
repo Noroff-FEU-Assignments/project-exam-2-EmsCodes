@@ -5,8 +5,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import useAxios from "../../hooks/UseAxios";
 import ValidationError from "./FormError";
 import { HOLIDAZE_BASE_URL } from "../../data/api";
-// import axios from "axios";
-// import { AuthContext } from "../../context/AuthContext";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
@@ -19,8 +17,7 @@ function AddHotel() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const http = useAxios();
-  //   const auth = useContext(AuthContext);
-  //   console.log(auth);
+
   const {
     register,
     handleSubmit,
