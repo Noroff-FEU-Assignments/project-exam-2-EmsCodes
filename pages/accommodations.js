@@ -13,26 +13,31 @@ import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
 import HotelCards from "../components/utils/accommodations/HotelCards";
 
 function Accommodations(props) {
-  let hotelArray = props.hotels;
+  const [hotelTest, setHotel] = useState(props.hotels);
 
-  function HotelNav() {
-    props.hotels.map((element) => {
-      if (element.attributes.hotel) {
-        console.log(element);
-        hotelArray = element;
-      }
-      if (element.attributes.hotel) {
-      }
-      if (element.attributes.hotel) {
-        return element;
-      }
-      if (element.attributes.hotel) {
-        return element;
+  useEffect(() => {
+    function onlyHotels() {
+      hotelTest.map((element) => {
+        if (element.attributes.hotel) {
+          // console.log(element);
+          setHotel(element);
+          console.log(hotelTest);
+        }
+      });
+    }
+  });
+  function allHotels() {
+    hotelTest.map((element) => {
+      if (
+        element.attributes.hotel ||
+        element.attributes.b_and_b ||
+        element.attributes.guesthouse
+      ) {
+        // console.log(element);
+        setHotel(element);
+        console.log(hotelTest);
       }
     });
-  }
-  function allHotels() {
-    console.log("yo");
   }
 
   return (
@@ -56,12 +61,12 @@ function Accommodations(props) {
         </HeroSection>
       </div>
       <MenuBtn onclickFunction={allHotels} name="All" />
-      <MenuBtn onclickFunction={HotelNav} name="Hotels" />
+      <MenuBtn onclickFunction={onlyHotels} name="Hotels" />
       <MenuBtn onclickFunction={allHotels} name="B&B" />
       <MenuBtn onclickFunction={allHotels} name="Guesthouse" />
       {/* <p>Result:{props.hotels.length}</p> */}
       <ul className={styles.ul}>
-        {hotelArray.map((hotel) => {
+        {hotelTest.map((hotel) => {
           return (
             <li key={hotel.id}>
               <Link href={`detail/${hotel.id}`}>
