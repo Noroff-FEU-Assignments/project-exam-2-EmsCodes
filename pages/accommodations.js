@@ -14,30 +14,21 @@ import HotelCards from "../components/utils/accommodations/HotelCards";
 
 function Accommodations(props) {
   const [hotelTest, setHotel] = useState(props.hotels);
-
-  useEffect(() => {
-    function onlyHotels() {
-      hotelTest.map((element) => {
-        if (element.attributes.hotel) {
-          // console.log(element);
-          setHotel(element);
-          console.log(hotelTest);
-        }
-      });
-    }
-  });
+  // const [loading, setLoading] = useState(true);
+  console.log(props.hotels);
+  // useEffect(() => {
+  //   function onlyHotels() {
+  //     hotelTest.map((element) => {
+  //       if (element.attributes.hotel) {
+  //         // console.log(element);
+  //         setHotel(element);
+  //         console.log(hotelTest);
+  //       }
+  //     });
+  //   }
+  // });
   function allHotels() {
-    hotelTest.map((element) => {
-      if (
-        element.attributes.hotel ||
-        element.attributes.b_and_b ||
-        element.attributes.guesthouse
-      ) {
-        // console.log(element);
-        setHotel(element);
-        console.log(hotelTest);
-      }
-    });
+    console.log("yo");
   }
 
   return (
@@ -61,7 +52,7 @@ function Accommodations(props) {
         </HeroSection>
       </div>
       <MenuBtn onclickFunction={allHotels} name="All" />
-      <MenuBtn onclickFunction={onlyHotels} name="Hotels" />
+      <MenuBtn onclickFunction={allHotels} name="Hotels" />
       <MenuBtn onclickFunction={allHotels} name="B&B" />
       <MenuBtn onclickFunction={allHotels} name="Guesthouse" />
       {/* <p>Result:{props.hotels.length}</p> */}

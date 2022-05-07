@@ -12,13 +12,13 @@ const schema = yup.object().shape({
     .string()
     .required("Please add a short description, max 20 characters"),
   description: yup.string().required("Please add description"),
+  main_image: yup.object().required("Please add main image"),
 });
 
 function AddHotel() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const http = useAxios();
-  const [hotelChecked, setHotelChecked] = useState(false);
 
   const {
     register,
@@ -113,7 +113,50 @@ function AddHotel() {
             />
           </div>
           <div>
-            <inp
+            <div>
+              <label htmlFor="price_1">Price for room one</label>
+              <input
+                type="number"
+                id="price_1"
+                name="price_1"
+                placeholder="Add price"
+                {...register("price_1", { required: false })}
+              />
+            </div>
+            <div>
+              <label htmlFor="price_2">Price for room two</label>
+              <input
+                type="number"
+                id="price_2"
+                name="price_2"
+                placeholder="Add price"
+                {...register("price_2", { required: false })}
+              />
+            </div>
+            <div>
+              <label htmlFor="price_3">Price for room three</label>
+              <input
+                type="number"
+                id="price_3"
+                name="price_3"
+                placeholder="Add price"
+                {...register("price_3", { required: false })}
+              />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label htmlFor="main_image">Main image</label>
+              <input
+                type="file"
+                id="main_image"
+                name="main_image"
+                {...register("main_image", { required: true })}
+              />
+              {errors.main_image && (
+                <ValidationError>{errors.main_image.message}</ValidationError>
+              )}
+            </div>
           </div>
         </div>
         <button>{submitting ? "Submitting..." : "Submit"}</button>
