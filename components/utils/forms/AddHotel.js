@@ -18,6 +18,7 @@ function AddHotel() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const http = useAxios();
+  const [hotelChecked, setHotelChecked] = useState(false);
 
   const {
     register,
@@ -61,6 +62,8 @@ function AddHotel() {
           {errors.name && (
             <ValidationError>{errors.name.message}</ValidationError>
           )}
+        </div>
+        <div>
           <input
             name="short_description"
             placeholder="Short description"
@@ -69,6 +72,8 @@ function AddHotel() {
           {errors.shortDescription && (
             <ValidationError>{error.short_description.message}</ValidationError>
           )}
+        </div>
+        <div>
           <textarea
             name="description"
             placeholder="Description"
@@ -77,6 +82,39 @@ function AddHotel() {
           {errors.description && (
             <ValidationError>{error.description.message}</ValidationError>
           )}
+        </div>
+        <div>
+          <div>
+            <label htmlFor="hotel">Hotel</label>
+            <input
+              type="checkbox"
+              id="hotel"
+              name="hotel"
+              {...register("hotel", { required: false })}
+            />
+            {}
+          </div>
+          <div>
+            <label htmlFor="B&B">B&B</label>
+            <input
+              type="checkbox"
+              id="B&B"
+              name="b&b"
+              {...register("B&B", { required: false })}
+            />
+          </div>
+          <div>
+            <label htmlFor="guesthouse">Guesthouse</label>
+            <input
+              type="checkbox"
+              id="guesthouse"
+              name="guesthouse"
+              {...register("guesthouse", { required: false })}
+            />
+          </div>
+          <div>
+            <inp
+          </div>
         </div>
         <button>{submitting ? "Submitting..." : "Submit"}</button>
       </fieldset>
