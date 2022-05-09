@@ -8,6 +8,7 @@ import Cta from "../../components/utils/buttons/Cta";
 import HotelCards from "../../components/utils/accommodations/HotelCards";
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
+import BookingEnquiry from "../../components/utils/forms/BookingForm";
 
 function Details({ hotel }) {
   const [show, setShow] = useState(false);
@@ -39,14 +40,11 @@ function Details({ hotel }) {
               <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              Woohoo, you're reading this text in a modal!
+              <BookingEnquiry />
             </Modal.Body>
             <Modal.Footer>
               <button variant="secondary" onClick={handleClose}>
                 Close
-              </button>
-              <button variant="primary" onClick={handleClose}>
-                Save Changes
               </button>
             </Modal.Footer>
           </Modal>

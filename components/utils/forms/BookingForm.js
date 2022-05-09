@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import ValidationError from "./FormError";
 import { HOLIDAZE_BASE_URL } from "../../data/api";
 import axios from "axios";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
@@ -12,10 +14,12 @@ const schema = yup.object().shape({
   message: yup.string().required("Please add a message"),
 });
 
-export default function CreateMessage() {
+export default function BookingEnquiry() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
+  const [value, setValue] = useState(new Date());
 
+  console.log(value);
   const {
     register,
     handleSubmit,
@@ -71,14 +75,13 @@ export default function CreateMessage() {
           )}
         </div>
         <div>
-          <textarea
-            name="message"
-            placeholder="Message"
-            {...register("message", { required: true })}
+          <label htmlFor="date-from">From</label>
+          <Calendar
+            id="date-from"
+            onChange={setValue}
+            value={value}
+            {...register("date", { required: true })}
           />
-          {errors.message && (
-            <ValidationError>{error.message.message}</ValidationError>
-          )}
         </div>
         <button>{submitting ? "Submitting..." : "Send message"}</button>
       </fieldset>

@@ -12,12 +12,14 @@ const schema = yup.object().shape({
     .string()
     .required("Please add a short description, max 20 characters"),
   description: yup.string().required("Please add description"),
+  main_image: yup.mixed().required("Please add a main image"),
 });
 
 function AddHotel() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const http = useAxios();
+  const [file, setFile] = useState(false);
 
   const {
     register,
@@ -27,13 +29,21 @@ function AddHotel() {
     resolver: yupResolver(schema),
   });
 
+  const handleFileInput = (event) => {
+    setFile(event.target.files[0]);
+  };
+
   async function onSubmit(data, event) {
     event.preventDefault();
     setSubmitting(true);
     setError(null);
-    console.log(data);
+    let formData = new FormData();
 
-    const formData = { data };
+    const testData = { data };
+    formData.append("files.main_image", file);
+    formData.append("data", JSON.stringify(testData));
+
+    console.log(formData);
 
     try {
       const response = await http.post(
@@ -48,16 +58,6 @@ function AddHotel() {
       setSubmitting(false);
     }
   }
-  const [state, setState] = useState({ file: null });
-
-  const handleChange = (event) => {
-    console.log(
-      "FileUploadevent.handleChange event.target.files",
-      event.target.files[0]
-    );
-
-    setState({ file: event.target.files[0] });
-  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="FileUpload">
@@ -161,7 +161,7 @@ function AddHotel() {
                 type="file"
                 id="main_image"
                 name="main_image"
-                onChange={handleChange}
+                onChange={handleFileInput}
                 {...register("main_image", { required: true })}
               />
               {errors.main_image && (
