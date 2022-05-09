@@ -12,7 +12,6 @@ const schema = yup.object().shape({
     .string()
     .required("Please add a short description, max 20 characters"),
   description: yup.string().required("Please add description"),
-  main_image: yup.object().required("Please add main image"),
 });
 
 function AddHotel() {
@@ -28,7 +27,8 @@ function AddHotel() {
     resolver: yupResolver(schema),
   });
 
-  async function onSubmit(data) {
+  async function onSubmit(data, event) {
+    event.preventDefault();
     setSubmitting(true);
     setError(null);
     console.log(data);
@@ -48,9 +48,19 @@ function AddHotel() {
       setSubmitting(false);
     }
   }
+  const [state, setState] = useState({ file: null });
+
+  const handleChange = (event) => {
+    console.log(
+      "FileUploadevent.handleChange event.target.files",
+      event.target.files[0]
+    );
+
+    setState({ file: event.target.files[0] });
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="FileUpload">
       {error && <ValidationError>{error}</ValidationError>}
       <fieldset disabled={submitting}>
         <div>
@@ -151,6 +161,7 @@ function AddHotel() {
                 type="file"
                 id="main_image"
                 name="main_image"
+                onChange={handleChange}
                 {...register("main_image", { required: true })}
               />
               {errors.main_image && (

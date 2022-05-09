@@ -51,6 +51,10 @@
   text-decoration: none;
 }
 
+.active {
+  background: var(--orange);
+}
+
 @media screen and (min-width: 450px) {
   .ul {
     gap: 20px;

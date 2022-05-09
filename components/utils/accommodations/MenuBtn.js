@@ -1,9 +1,12 @@
 import propTypes from "prop-types";
 import styles from "../../../styles/components/utils/buttons/categoryBtn.module.css";
-
-function MenuBtn({ onclickFunction, name }) {
+function MenuBtn({ onclickFunction, name, style }) {
   return (
-    <button className={styles.nav} onClick={onclickFunction}>
+    <button
+      id="btn"
+      className={`${styles.nav}, ${style}`}
+      onClick={onclickFunction}
+    >
       {name}
     </button>
   );

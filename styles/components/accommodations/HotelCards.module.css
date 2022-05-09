@@ -16,6 +16,10 @@
   padding: 10px 15px;
   color: #000;
 }
+.content:hover {
+  z-index: 0;
+}
+
 .content h3 {
   font-family: var(--body-text-font);
   margin-bottom: 0;

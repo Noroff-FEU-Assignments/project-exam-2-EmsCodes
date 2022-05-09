@@ -6,14 +6,25 @@ import HeroSection from "../../components/utils/global/hero-section/HeroSection"
 import styles from "../../styles/detail/id.module.css";
 import Cta from "../../components/utils/buttons/Cta";
 import HotelCards from "../../components/utils/accommodations/HotelCards";
+import { useState } from "react";
+import { Modal } from "react-bootstrap";
 
-function details({ hotel }) {
-  console.log(hotel);
+function Details({ hotel }) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <Layout>
       <Head title="Accommodation details page">
         <link rel="stylesheet" href="https://use.typekit.net/ckg1pdt.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossOrigin="anonymous"
+        />
       </Head>
       <div className={styles.heroContainer}>
         <HeroSection img={hotel.attributes.main_image.data.attributes.url}>
@@ -22,7 +33,23 @@ function details({ hotel }) {
             <Heading content={hotel.attributes.name} />
             <p>{hotel.attributes.short_description}</p>
           </div>
-          <button>Book now</button>
+          <button onClick={handleShow}>Book now</button>
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Modal heading</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              Woohoo, you're reading this text in a modal!
+            </Modal.Body>
+            <Modal.Footer>
+              <button variant="secondary" onClick={handleClose}>
+                Close
+              </button>
+              <button variant="primary" onClick={handleClose}>
+                Save Changes
+              </button>
+            </Modal.Footer>
+          </Modal>
         </HeroSection>
       </div>
       <div className={styles.container}>
@@ -53,7 +80,7 @@ function details({ hotel }) {
   );
 }
 
-export default details;
+export default Details;
 
 export async function getStaticPaths() {
   try {
@@ -82,7 +109,6 @@ export async function getStaticProps({ params }) {
     const response = await fetch(url);
     const result = await response.json();
     hotel = result.data;
-    console.log(hotel);
   } catch (error) {
     console.log(error);
   }
