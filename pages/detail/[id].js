@@ -11,10 +11,10 @@ import { Modal } from "react-bootstrap";
 import BookingEnquiry from "../../components/utils/forms/BookingForm";
 
 function Details({ hotel }) {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   return (
     <Layout>
@@ -34,7 +34,7 @@ function Details({ hotel }) {
             <Heading content={hotel.attributes.name} />
             <p>{hotel.attributes.short_description}</p>
           </div>
-          <button onClick={handleShow}>Book now</button>
+          {/* <button onClick={handleShow}>Book now</button>
           <Modal show={show} onHide={handleClose}>
             <Modal.Body>
               <BookingEnquiry />
@@ -44,8 +44,11 @@ function Details({ hotel }) {
                 Close
               </button>
             </Modal.Footer>
-          </Modal>
+          </Modal> */}
         </HeroSection>
+        <div>
+          <BookingEnquiry />
+        </div>
       </div>
       <div className={styles.container}>
         <div>

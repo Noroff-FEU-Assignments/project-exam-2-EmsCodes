@@ -11,14 +11,21 @@ import "react-datepicker/dist/react-datepicker.css";
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
   email: yup.string().email().required("Please add an email"),
-  message: yup.string().required("Please add a message"),
+  startDate: yup.date().required("Please choose start date"),
+  endDate: yup.date().required("Please choose end date"),
 });
 
 export default function BookingEnquiry() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
 
-  const [startDate, setStartDate] = useState(new Date());
+  //   const [startDate, setStartDate] = useState(new Date());
+  //   const [endDate, setEndDate] = useState(new Date());
+
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
+
+  console.log(startDate);
 
   const {
     register,
@@ -38,7 +45,7 @@ export default function BookingEnquiry() {
 
     try {
       const response = await axios.post(
-        HOLIDAZE_BASE_URL + "api/messages",
+        HOLIDAZE_BASE_URL + "/api/enquiries",
         formData
       );
       console.log(response.data);
@@ -76,20 +83,43 @@ export default function BookingEnquiry() {
         </div>
         <div>
           <DatePicker
+            name="bookingDate"
+            selectsRange={true}
+            startDate={startDate}
+            endDate={endDate}
+            onChange={(update) => {
+              setDateRange(update);
+            }}
+            isClearable={true}
+          />
+
+          {/* <DatePicker
             selected={startDate}
             onChange={(date) => setStartDate(date)}
           />
-          );
+          <input
+            name="startDate"
+            value={startDate}
+            {...register("startDate", { required: true })}
+          /> */}
+          {/* {errors.startDate && (
+            <ValidationError>{errors.startDate.message}</ValidationError>
+          )} */}
         </div>
-        {/* <div>
-          <DatePicker
-            selected={endDate}
-            onChange={(date) => setEndDate(date)}
-          />
-          );
-        </div> */}
-        <div></div>
-        <button>{submitting ? "Submitting..." : "Send message"}</button>
+
+        {/* <div> */}
+        {/* <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
+        <input
+          name="endDate"
+          value={endDate}
+          {...register("endDate", { required: true })}
+        /> */}
+        {/* {errors.endDate && (
+            <ValidationError>{errors.endDate.message}</ValidationError>
+          )} */}
+        {/* </div> */}
+
+        <button>{submitting ? "Submitting..." : "Book"}</button>
       </fieldset>
     </form>
   );
