@@ -3,7 +3,7 @@ import Heading from "../global/heading/Heading";
 import propTypes from "prop-types";
 import styles from "../../../styles/components/accommodations/HotelCards.module.css";
 
-function HotelCards({ name, price, img }) {
+function HotelCards({ name, price, img, priceText }) {
   if (!name) {
     name = "Name missing";
   }
@@ -20,7 +20,7 @@ function HotelCards({ name, price, img }) {
         </div>
         <p className={styles.price}>
           <span className="srOnly">Price</span>
-          <span>From</span> {price}
+          <span>{priceText}</span> {price}
         </p>
       </div>
     </div>

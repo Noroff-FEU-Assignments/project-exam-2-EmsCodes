@@ -77,7 +77,7 @@ export default function CreateMessage() {
             {...register("message", { required: true })}
           />
           {errors.message && (
-            <ValidationError>{error.message.message}</ValidationError>
+            <ValidationError>{errors.message.message}</ValidationError>
           )}
         </div>
         <button>{submitting ? "Submitting..." : "Send message"}</button>

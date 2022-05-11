@@ -12,39 +12,38 @@ const schema = yup.object().shape({
     .string()
     .required("Please add a short description, max 20 characters"),
   description: yup.string().required("Please add description"),
-  main_image: yup.mixed().required("Please add a main image"),
 });
 
 function AddHotel() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const http = useAxios();
-  const [file, setFile] = useState(false);
+  // const [file, setFile] = useState();
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const handleFileInput = (event) => {
-    setFile(event.target.files[0]);
-  };
-
-  async function onSubmit(data, event) {
-    event.preventDefault();
+  async function onSubmit(data) {
+    this.preventDefault();
     setSubmitting(true);
     setError(null);
-    let formData = new FormData();
+    console.log(data);
+    reset();
 
-    const testData = { data };
-    formData.append("files.main_image", file);
-    formData.append("data", JSON.stringify(testData));
+    const formData = new FormData();
 
-    console.log(formData);
+    const hotelData = { data };
 
+    formData.append("main_image");
+    formData.append("data", JSON.stringify(hotelData));
+
+    console.log(Object.fromEntries(formData));
     try {
       const response = await http.post(
         HOLIDAZE_BASE_URL + "api/hotels",
@@ -80,7 +79,9 @@ function AddHotel() {
             {...register("short_description", { required: true })}
           />
           {errors.shortDescription && (
-            <ValidationError>{error.short_description.message}</ValidationError>
+            <ValidationError>
+              {errors.short_description.message}
+            </ValidationError>
           )}
         </div>
         <div>
@@ -90,7 +91,7 @@ function AddHotel() {
             {...register("description", { required: true })}
           />
           {errors.description && (
-            <ValidationError>{error.description.message}</ValidationError>
+            <ValidationError>{errors.description.message}</ValidationError>
           )}
         </div>
         <div>
@@ -161,7 +162,6 @@ function AddHotel() {
                 type="file"
                 id="main_image"
                 name="main_image"
-                onChange={handleFileInput}
                 {...register("main_image", { required: true })}
               />
               {errors.main_image && (

@@ -7,7 +7,7 @@ import hotelImg from "../public/images/hotel-images/hotel-image.jpg";
 import SearchField from "../components/utils/buttons/SearchField";
 import MenuBtn from "../components/utils/accommodations/MenuBtn";
 import searchFieldStyles from "../styles/components/utils/buttons/SearchField.module.css";
-import styles from "../styles/accommodations.module.css";
+import styles from "./accommodations.module.css";
 import Link from "next/link";
 import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
 import HotelCards from "../components/utils/accommodations/HotelCards";
@@ -71,6 +71,7 @@ function Accommodations(props) {
                     name={hotel.attributes.name}
                     price={hotel.attributes.price_1}
                     img={hotel.attributes.main_image.data.attributes.url}
+                    priceText="From"
                   />
                 </a>
               </Link>

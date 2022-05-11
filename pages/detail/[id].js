@@ -3,7 +3,7 @@ import Head from "../../components/utils/global/head/Head";
 import Heading from "../../components/utils/global/heading/Heading";
 import Layout from "../../components/layout/Layout";
 import HeroSection from "../../components/utils/global/hero-section/HeroSection";
-import styles from "../../styles/detail/id.module.css";
+import styles from "./id.module.css";
 import Cta from "../../components/utils/buttons/Cta";
 import HotelCards from "../../components/utils/accommodations/HotelCards";
 import { useState } from "react";
@@ -36,9 +36,6 @@ function Details({ hotel }) {
           </div>
           <button onClick={handleShow}>Book now</button>
           <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
             <Modal.Body>
               <BookingEnquiry />
             </Modal.Body>
@@ -58,14 +55,17 @@ function Details({ hotel }) {
             <HotelCards
               name="Room type"
               img={hotel.attributes.images.data[0].attributes.url}
+              price={hotel.attributes.price_1}
             />
             <HotelCards
               name="Room type"
               img={hotel.attributes.images.data[1].attributes.url}
+              price={hotel.attributes.price_2}
             />
             <HotelCards
               name="Room type"
               img={hotel.attributes.images.data[2].attributes.url}
+              price={hotel.attributes.price_3}
             />
           </div>
         </div>

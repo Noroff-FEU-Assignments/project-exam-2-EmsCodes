@@ -81,13 +81,13 @@ export default function BookingEnquiry() {
           />
           );
         </div>
-        <div>
+        {/* <div>
           <DatePicker
             selected={endDate}
             onChange={(date) => setEndDate(date)}
           />
           );
-        </div>
+        </div> */}
         <div></div>
         <button>{submitting ? "Submitting..." : "Send message"}</button>
       </fieldset>
