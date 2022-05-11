@@ -5,8 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import ValidationError from "./FormError";
 import { HOLIDAZE_BASE_URL } from "../../data/api";
 import axios from "axios";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
@@ -17,9 +17,9 @@ const schema = yup.object().shape({
 export default function BookingEnquiry() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
-  const [value, setValue] = useState(new Date());
 
-  console.log(value);
+  const [startDate, setStartDate] = useState(new Date());
+
   const {
     register,
     handleSubmit,
@@ -75,14 +75,20 @@ export default function BookingEnquiry() {
           )}
         </div>
         <div>
-          <label htmlFor="date-from">From</label>
-          <Calendar
-            id="date-from"
-            onChange={setValue}
-            value={value}
-            {...register("date", { required: true })}
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
           />
+          );
         </div>
+        <div>
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+          />
+          );
+        </div>
+        <div></div>
         <button>{submitting ? "Submitting..." : "Send message"}</button>
       </fieldset>
     </form>
