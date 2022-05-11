@@ -29,21 +29,28 @@ function AddHotel() {
     resolver: yupResolver(schema),
   });
 
-  async function onSubmit(data) {
-    this.preventDefault();
+  async function onSubmit(data, e) {
+    e.preventDefault();
     setSubmitting(true);
     setError(null);
-    console.log(data);
-    reset();
 
     const formData = new FormData();
 
-    const hotelData = { data };
+    const hotelData = {
+      "B&B": data["B&B"],
+      description: data.description,
+      guesthouse: data.guesthouse,
+      hotel: data.hotel,
+      name: data.name,
+      price_1: data.price_1,
+      price_2: data.price_2,
+      price_3: data.price_3,
+      short_description: data.short_description,
+    };
 
-    formData.append("main_image");
+    formData.append("files.main_image", data.main_image[0]);
     formData.append("data", JSON.stringify(hotelData));
 
-    console.log(Object.fromEntries(formData));
     try {
       const response = await http.post(
         HOLIDAZE_BASE_URL + "api/hotels",
@@ -166,6 +173,18 @@ function AddHotel() {
               />
               {errors.main_image && (
                 <ValidationError>{errors.main_image.message}</ValidationError>
+              )}
+            </div>
+            <div>
+              <label htmlFor="images">Room 1</label>
+              <input
+                type="file"
+                id="images"
+                name="images"
+                {...register("images", { required: true })}
+              />
+              {errors.images && (
+                <ValidationError>{errors.images.message}</ValidationError>
               )}
             </div>
           </div>
