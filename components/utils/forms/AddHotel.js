@@ -35,7 +35,7 @@ function AddHotel() {
     setError(null);
 
     const formData = new FormData();
-
+    console.log(data);
     const hotelData = {
       "B&B": data["B&B"],
       description: data.description,
@@ -49,6 +49,9 @@ function AddHotel() {
     };
 
     formData.append("files.main_image", data.main_image[0]);
+    formData.append("files.images", data.images[0]);
+    formData.append("files.images", data.images[1]);
+    formData.append("files.images", data.images[2]);
     formData.append("data", JSON.stringify(hotelData));
 
     try {
