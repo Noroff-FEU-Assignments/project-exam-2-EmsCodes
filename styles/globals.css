@@ -6,7 +6,11 @@
   --secondary-white: #f4f4f4;
   --heading-font: "objektiv-mk1", sans-serif;
   --body-text-font: "roboto", verdana, sans-serif;
-
+  --blue-gradient: linear-gradient(
+    180deg,
+    rgba(26, 49, 126, 1) 0%,
+    rgba(11, 26, 74, 1) 100%
+  );
   --box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 /* 
@@ -33,7 +37,7 @@ html {
 .wrapper {
   flex: 1 0 auto;
 }
-footer {
+.footer {
   flex-shrink: 0;
   display: flex;
 }

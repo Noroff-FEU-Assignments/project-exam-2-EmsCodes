@@ -1,14 +1,20 @@
 import Link from "next/link";
-import styles from "../../styles/layout/Footer.module.css";
+import styles from "./Footer.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
+import logo from "../../public/holidaze-logo.png";
 
 function Footer() {
   return (
-    <div>
+    <footer className={`${styles.footer} footer`}>
       <div>
         <div>
-          <h6>Holidaze</h6>
+          <Link href="/">
+            <a className={styles.footerLogo}>
+              <Image src={logo} alt="Holidaze logo, white on blue background" />
+            </a>
+          </Link>
           <p>
             A booking website with offices in Bergen, Norway. Our main goal is
             to make booking a home away from home the easiest part of your
@@ -17,7 +23,7 @@ function Footer() {
             help if needed.
           </p>
         </div>
-        <nav aria-label="social media links">
+        <nav aria-label="social media links" className={styles.socialLinks}>
           <ul>
             <li>
               <Link href="https://www.facebook.com/">
@@ -37,8 +43,8 @@ function Footer() {
         </nav>
       </div>
       <div>
-        <p>Menu</p>
-        <nav aria-label="footer navigation">
+        <nav aria-label="footer navigation" className={styles.footerNav}>
+          <p>Menu</p>
           <ul>
             <li>
               <Link href="/">
@@ -90,7 +96,7 @@ function Footer() {
         </ul>
       </nav>
       <p>&copy;2022 Holidaze</p>
-    </div>
+    </footer>
   );
 }
 

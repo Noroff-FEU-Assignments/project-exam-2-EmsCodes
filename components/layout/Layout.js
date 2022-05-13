@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import styles from "../../styles/layout/Layout.module.css";
+import styles from "./Layout.module.css";
 import logo from "../../public/holidaze-logo.png";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";

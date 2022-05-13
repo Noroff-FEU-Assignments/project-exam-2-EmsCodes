@@ -60,6 +60,10 @@
   font-weight: 300;
   padding: 10px 0;
 }
+.ul a:hover {
+  background: var(--white);
+  color: var(--main-blue);
+}
 .logo a span {
   flex: 1;
   width: 75px !important;
@@ -99,7 +103,6 @@
   .ul li {
     list-style-type: none;
     margin-bottom: 0;
-    margin-right: 5px;
   }
   .ul a {
     text-decoration: none;

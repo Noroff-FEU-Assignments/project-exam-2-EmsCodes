@@ -6,7 +6,7 @@ import HeroSection from "../components/utils/global/hero-section/HeroSection";
 import hotelImg from "../public/images/hotel-images/hotel-image.jpg";
 import SearchField from "../components/utils/buttons/SearchField";
 import MenuBtn from "../components/utils/accommodations/MenuBtn";
-import searchFieldStyles from "../styles/components/utils/buttons/SearchField.module.css";
+import searchFieldStyles from "../components/utils/buttons/SearchField.module.css";
 import styles from "../styles/accommodations.module.css";
 import Link from "next/link";
 import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";

@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import styles from "../../../styles/components/utils/buttons/SearchField.module.css";
+import styles from "./SearchField.module.css";
 
 function SearchField() {
   return (

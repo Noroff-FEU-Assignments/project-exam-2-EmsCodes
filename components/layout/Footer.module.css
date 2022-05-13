@@ -1,0 +1,45 @@
+.footer {
+  flex-direction: column;
+  background: var(--blue-gradient);
+  color: var(--secondary-white);
+  margin-top: 75px;
+}
+.footer div {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.footer ul {
+  padding: 0;
+  list-style-type: none;
+}
+.footer a {
+  text-decoration: none;
+  color: var(--secondary-white);
+}
+.footerLogo span {
+  margin-top: 25px !important;
+  width: 75px !important;
+  height: auto;
+}
+
+/* social navigation */
+.socialLinks ul {
+  display: flex;
+  width: 25vw;
+  margin: 0 auto;
+  margin-top: 35px;
+}
+.socialLinks ul li a {
+  font-size: 2em;
+  padding: 10px;
+}
+.socialLinks a:hover {
+  background: var(--secondary-white);
+  color: var(--main-blue);
+}
+
+/* menu */
+.footerNav p {
+  font-size: 1.5em;
+}

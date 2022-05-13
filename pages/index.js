@@ -17,7 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import AboutBergen from "../components/utils/index/AboutBergen";
-import searchFieldStyles from "../styles/components/utils/buttons/SearchField.module.css";
+import searchFieldStyles from "../components/utils/buttons/SearchField.module.css";
 
 export default function Home() {
   return (
