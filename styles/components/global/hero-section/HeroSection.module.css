@@ -4,7 +4,6 @@
 .absolutePositioning {
   position: absolute;
   z-index: 1;
-  width: 80%;
   margin: 0 auto;
   left: 0;
   right: 0;

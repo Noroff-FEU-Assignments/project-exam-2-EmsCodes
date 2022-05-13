@@ -4,7 +4,7 @@ import Layout from "../components/layout/Layout";
 import Cta from "../components/utils/buttons/Cta";
 import SearchField from "../components/utils/buttons/SearchField";
 import HotelNavCards from "../components/utils/index/HotelNavCards";
-import styles from "./index.module.css";
+import styles from "../styles/index.module.css";
 import cta from "../styles/components/utils/buttons/Cta.module.css";
 import Icons from "../components/utils/index/Icons";
 import img from "../public/images/styling/customerImg.jpg";

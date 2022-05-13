@@ -3,18 +3,19 @@ import Head from "../../components/utils/global/head/Head";
 import Heading from "../../components/utils/global/heading/Heading";
 import Layout from "../../components/layout/Layout";
 import HeroSection from "../../components/utils/global/hero-section/HeroSection";
-import styles from "./id.module.css";
+import styles from "../../styles/detail/id.module.css";
 import Cta from "../../components/utils/buttons/Cta";
 import HotelCards from "../../components/utils/accommodations/HotelCards";
 import { useState } from "react";
-import { Modal } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import BookingEnquiry from "../../components/utils/forms/BookingForm";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Details({ hotel }) {
-  // const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <Layout>
@@ -34,21 +35,23 @@ function Details({ hotel }) {
             <Heading content={hotel.attributes.name} />
             <p>{hotel.attributes.short_description}</p>
           </div>
-          {/* <button onClick={handleShow}>Book now</button>
-          <Modal show={show} onHide={handleClose}>
+          <button variant="primary" onClick={handleShow}>
+            Launch demo modal
+          </button>
+
+          <Modal show={show} onHide={handleClose} className={styles.modal}>
+            <Modal.Header closeButton>
+              <Modal.Title>Modal heading</Modal.Title>
+            </Modal.Header>
             <Modal.Body>
               <BookingEnquiry />
             </Modal.Body>
             <Modal.Footer>
-              <button variant="secondary" onClick={handleClose}>
-                Close
-              </button>
+              <button onClick={handleClose}>Close</button>
+              <button onClick={handleClose}>Save Changes</button>
             </Modal.Footer>
-          </Modal> */}
+          </Modal>
         </HeroSection>
-        <div>
-          <BookingEnquiry />
-        </div>
       </div>
       <div className={styles.container}>
         <div>

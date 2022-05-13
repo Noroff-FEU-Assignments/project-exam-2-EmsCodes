@@ -4,7 +4,7 @@ import Layout from "../components/layout/Layout";
 import HeroSection from "../components/utils/global/hero-section/HeroSection";
 import mainImg from "../public/images/main-images/home-main-img.jpg";
 import LoginForm from "../components/utils/forms/LoginForm";
-import styles from "./Login.module.css";
+import styles from "../styles/Login.module.css";
 
 function Login() {
   return (

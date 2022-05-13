@@ -69,7 +69,11 @@ function AddHotel() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="FileUpload">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="FileUpload"
+      encType="multipart/form-data"
+    >
       {error && <ValidationError>{error}</ValidationError>}
       <fieldset disabled={submitting}>
         <div>
@@ -181,6 +185,7 @@ function AddHotel() {
             <div>
               <label htmlFor="images">Room 1</label>
               <input
+                multiple
                 type="file"
                 id="images"
                 name="images"

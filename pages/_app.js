@@ -7,8 +7,12 @@ import ReactScrollProgress from "@bogachenkov/react-scrolling-progress";
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
-      <NextNProgress color="#d96c00" height={5} />
-      <ReactScrollProgress />
+      <NextNProgress color="#d96c00" height={3} />
+      <ReactScrollProgress
+        styles={{
+          height: "3px",
+        }}
+      />
       <Component {...pageProps} />
     </AuthProvider>
   );
