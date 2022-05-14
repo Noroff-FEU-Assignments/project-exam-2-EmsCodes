@@ -51,3 +51,7 @@ html {
   height: 1px;
   overflow: hidden;
 }
+
+.scroll-progress :first-child {
+  z-index: 100;
+}

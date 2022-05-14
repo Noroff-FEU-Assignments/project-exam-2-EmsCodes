@@ -46,12 +46,8 @@ export default function Home() {
         <Heading size="2" content=" accommodation categories" style="srOnly" />
         <HotelNavCards />
       </div>
+      <Heading size="3" content="Why choose us?" style={styles.headingThree} />
       <div className={styles.whyUsSection}>
-        <Heading
-          size="3"
-          content="Why choose us?"
-          style={styles.headingThree}
-        />
         <Image
           src={img}
           alt="a woman and a man smiling while looking at an iphone"
@@ -93,9 +89,9 @@ export default function Home() {
             iconContainer={styles.iconContainer}
           />
         </div>
-        <div>
-          <AboutBergen />
-        </div>
+      </div>
+      <div>
+        <AboutBergen />
       </div>
     </Layout>
   );

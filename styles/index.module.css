@@ -48,15 +48,16 @@
 
 /* why choose us section  */
 
-/* .whyUsSection {
-} */
+.whyUsSection span {
+  max-height: 400px;
+}
 .iconsContainer {
-  width: 90vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 20px;
+  padding-top: 20px;
+  background: var(--secondary-white);
 }
 
 .text {
@@ -73,6 +74,10 @@
   text-align: center;
   padding: 10px;
 }
-/* 
-@media screen and (min-width: ) {
-} */
+
+@media screen and (min-width: 750px) {
+  .whyUsSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

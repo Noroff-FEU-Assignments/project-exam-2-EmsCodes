@@ -8,6 +8,11 @@
   width: 100%;
   align-items: center;
 }
+.logOutBtn {
+  background: var(--white);
+  border: 1px solid var(--main-blue);
+  padding: 15px 20px;
+}
 .hidden {
   display: none;
 }

@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../../styles/components/index/HotelNavCards.module.css";
-import img from "../../../public/images/hotel-images/hotel-image.jpg";
+import hotelImg from "../../../public/images/hotel-images/hotel-image.jpg";
+import b_and_bImg from "../../../public/images/hotel-images/b&b.jpg";
+import guesthouse from "../../../public/images/hotel-images/guesthouse.jpg";
 function HotelNavCards() {
   return (
     <nav aria-label="accommodation navigation" className={styles.cardContainer}>
@@ -11,7 +13,7 @@ function HotelNavCards() {
             <a className={styles.listLink}>
               <div>
                 <Image
-                  src={img}
+                  src={hotelImg}
                   alt="alt text"
                   className={styles.cardImage}
                   layou="fill"
@@ -27,14 +29,14 @@ function HotelNavCards() {
             <a className={styles.listLink}>
               <div>
                 <Image
-                  src={img}
+                  src={b_and_bImg}
                   alt="alt text"
                   className={styles.cardImage}
                   layou="fill"
                   objectFit="cover"
                 />
               </div>
-              <p className={styles.linkText}>Hotels</p>
+              <p className={styles.linkText}>B&B</p>
             </a>
           </Link>
         </li>
@@ -43,14 +45,14 @@ function HotelNavCards() {
             <a className={styles.listLink}>
               <div>
                 <Image
-                  src={img}
+                  src={guesthouse}
                   alt="alt text"
                   className={styles.cardImage}
                   layou="fill"
                   objectFit="cover"
                 />
               </div>
-              <p className={styles.linkText}>Hotels</p>
+              <p className={styles.linkText}>Guesthouses</p>
             </a>
           </Link>
         </li>

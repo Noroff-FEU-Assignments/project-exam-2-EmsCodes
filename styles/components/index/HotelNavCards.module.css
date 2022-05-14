@@ -1,8 +1,8 @@
 .cardContainer {
-  width: 85vw;
+  width: 90vw;
   margin: 0 auto;
   max-width: 1000px;
-  margin-top: 50px;
+  margin-top: -50px;
 }
 .ul {
   display: grid;
@@ -19,7 +19,6 @@
   position: relative;
   box-shadow: var(--box-shadow);
   width: 90%;
-  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -39,5 +38,20 @@
 
 .listItem span {
   height: 35vh !important;
-  max-height: 250px;
+  max-height: 300px;
+}
+
+@media screen and (min-width: 700px) {
+  .ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+  }
+  .listItem {
+    width: 100%;
+  }
+  .listItem span {
+    height: 20vh !important;
+    max-height: 250px;
+  }
 }

@@ -11,16 +11,22 @@ import styles from "../styles/accommodations.module.css";
 import Link from "next/link";
 import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
 import HotelCards from "../components/utils/accommodations/HotelCards";
+import { Spinner } from "react-bootstrap";
 
 function Accommodations(props) {
   const [hotelTest, setHotel] = useState(props.hotels);
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [isActive, setActive] = useState(false);
 
   console.log(props.hotels);
 
   function allHotels() {
     console.log("yo");
+    console.log(props.hotels);
+    if (props.hotels.hotel) {
+      setHotel(props.hotels.hotel);
+      console.log(hotelTest);
+    }
   }
   function onlyHotels() {
     setActive(true);
@@ -62,6 +68,7 @@ function Accommodations(props) {
       <MenuBtn onclickFunction={allHotels} name="Guesthouse" />
       {/* <p>Result:{props.hotels.length}</p> */}
       <ul className={styles.ul}>
+        {loading}
         {hotelTest.map((hotel) => {
           return (
             <li key={hotel.id}>

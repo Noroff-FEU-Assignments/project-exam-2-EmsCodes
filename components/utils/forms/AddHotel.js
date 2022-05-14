@@ -12,6 +12,9 @@ const schema = yup.object().shape({
     .string()
     .required("Please add a short description, max 20 characters"),
   description: yup.string().required("Please add description"),
+  price_1: yup.number().min(1).required("Please add price"),
+  price_2: yup.number().min(1).required("Please add price"),
+  price_3: yup.number().min(1).required("Please add price"),
 });
 
 function AddHotel() {
@@ -143,10 +146,13 @@ function AddHotel() {
               <input
                 type="number"
                 id="price_1"
+                defaultValue={0}
                 name="price_1"
-                placeholder="Add price"
-                {...register("price_1", { required: false })}
+                {...register("price_1", { required: true })}
               />
+              {errors.price_1 && (
+                <ValidationError>{errors.price_1.message}</ValidationError>
+              )}
             </div>
             <div>
               <label htmlFor="price_2">Price for room two</label>
@@ -154,19 +160,25 @@ function AddHotel() {
                 type="number"
                 id="price_2"
                 name="price_2"
-                placeholder="Add price"
-                {...register("price_2", { required: false })}
+                defaultValue={0}
+                {...register("price_2", { required: true })}
               />
+              {errors.price_2 && (
+                <ValidationError>{errors.price_2.message}</ValidationError>
+              )}
             </div>
             <div>
               <label htmlFor="price_3">Price for room three</label>
               <input
                 type="number"
+                defaultValue={0}
                 id="price_3"
                 name="price_3"
-                placeholder="Add price"
-                {...register("price_3", { required: false })}
+                {...register("price_3", { required: true })}
               />
+              {errors.price_3 && (
+                <ValidationError>{errors.price_3.message}</ValidationError>
+              )}
             </div>
           </div>
           <div>

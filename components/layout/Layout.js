@@ -87,7 +87,9 @@ function Layout({ children }) {
                       </a>
                     </Link>
                   </li>
-                  <button onClick={logOut}>Logout</button>
+                  <button className={styles.logOutBtn} onClick={logOut}>
+                    Logout
+                  </button>
                 </>
               ) : (
                 <div></div>
