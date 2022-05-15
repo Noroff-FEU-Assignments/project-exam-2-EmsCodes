@@ -1,5 +1,5 @@
 .nav {
-  background: var(--main-blue);
+  background: rgb(41, 82, 229);
   color: var(--secondary-white);
   border: 1px solid var(--secondary-white);
   padding: 10px;

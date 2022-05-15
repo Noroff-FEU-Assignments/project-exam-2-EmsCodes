@@ -82,6 +82,14 @@
   display: none;
 }
 
+@media screen and (min-width: 700px) {
+  .displayed {
+    inset: 0 0 0 50vw;
+    top: 7vh;
+    max-height: 50vh;
+  }
+}
+
 @media (min-width: 1000px) {
   .hidden {
     display: block;

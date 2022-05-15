@@ -18,8 +18,10 @@ import {
 import Image from "next/image";
 import AboutBergen from "../components/utils/index/AboutBergen";
 import searchFieldStyles from "../components/utils/buttons/SearchField.module.css";
+import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
 
-export default function Home() {
+export default function Home({ hotels }) {
+  // console.log(hotels);
   return (
     <Layout>
       <Head title="Home">
@@ -38,7 +40,7 @@ export default function Home() {
             styles={cta.btn}
           />
           <div className={searchFieldStyles.formContainer}>
-            <SearchField />
+            <SearchField hotel={hotels} />
           </div>
         </div>
       </div>
@@ -95,4 +97,23 @@ export default function Home() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const url = HOLIDAZE_BASE_URL + HOTELS;
+  let hotels = [];
+
+  try {
+    const response = await fetch(url);
+    const result = await response.json();
+    // console.log(result.data);
+    hotels = result.data;
+  } catch (error) {
+    console.log(error);
+  }
+  return {
+    props: {
+      hotels: hotels,
+    },
+  };
 }

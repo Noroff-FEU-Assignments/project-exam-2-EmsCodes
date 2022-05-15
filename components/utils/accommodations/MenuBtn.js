@@ -4,7 +4,7 @@ function MenuBtn({ onclickFunction, name, style }) {
   return (
     <button
       id="btn"
-      className={`${styles.nav}, ${style}`}
+      className={`${styles.nav} ${style}`}
       onClick={onclickFunction}
     >
       {name}

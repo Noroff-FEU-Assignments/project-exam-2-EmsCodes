@@ -16,3 +16,24 @@
   height: 55vh !important;
   position: static !important;
 } */
+
+@media screen and (min-width: 700px) {
+  .absolutePositioning {
+    position: initial;
+    text-align: center;
+    background: var(--blue-gradient);
+    padding-top: 10vh;
+    width: 100%;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container div :first-child {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+}

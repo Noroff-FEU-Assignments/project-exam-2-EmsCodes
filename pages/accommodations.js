@@ -20,17 +20,10 @@ function Accommodations(props) {
 
   console.log(props.hotels);
 
-  function allHotels() {
-    console.log("yo");
-    console.log(props.hotels);
-    if (props.hotels.hotel) {
-      setHotel(props.hotels.hotel);
-      console.log(hotelTest);
-    }
-  }
-  function onlyHotels() {
-    setActive(true);
-  }
+  function allHotels(event) {}
+  function onlyHotels(event) {}
+  function onlyBandB(event) {}
+  function onlyGuesthouse(event) {}
 
   return (
     <Layout>
@@ -58,17 +51,12 @@ function Accommodations(props) {
           </div>
         </HeroSection>
       </div>
-      <MenuBtn onclickFunction={allHotels} name="All" />
-      <MenuBtn
-        onclickFunction={onlyHotels}
-        name="Hotels"
-        style={isActive ? "active" : "nav"}
-      />
-      <MenuBtn onclickFunction={allHotels} name="B&B" />
-      <MenuBtn onclickFunction={allHotels} name="Guesthouse" />
-      {/* <p>Result:{props.hotels.length}</p> */}
+      <MenuBtn id="allHotels" onclickFunction={allHotels} name="All" />
+      <MenuBtn onclickFunction={onlyHotels} name="Hotels" />
+      <MenuBtn onclickFunction={onlyBandB} name="B&B" />
+      <MenuBtn onclickFunction={onlyGuesthouse} name="Guesthouse" />
+      <p>Results:{props.hotels.length}</p>
       <ul className={styles.ul}>
-        {loading}
         {hotelTest.map((hotel) => {
           return (
             <li key={hotel.id}>
@@ -94,7 +82,7 @@ export default Accommodations;
 
 export async function getStaticProps() {
   const url = HOLIDAZE_BASE_URL + HOTELS;
-  let hotels = [];
+  let hotels = <Spinner animation="border" />;
 
   try {
     const response = await fetch(url);
