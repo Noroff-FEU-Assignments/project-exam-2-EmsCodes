@@ -14,20 +14,17 @@ function SearchField({ hotel }) {
     if (e.target.value.length === 0) {
       setSearchValue(null);
     }
-    const filteredHotels = hotel.filter((item) =>
-      item.attributes.name.toLowerCase().includes(searcvalue)
+    const filteredHotels = hotel.filter(
+      (item) =>
+        item.attributes.name.toLowerCase().includes(searcvalue) ||
+        item.attributes.short_description.toLowerCase().includes(searcvalue)
     );
-    console.log(filteredHotels);
-    if (!filteredHotels) {
-      return <p>No hotels found</p>;
-    }
+    setResult(filteredHotels);
 
-    return filteredHotels.map((element) => {
-      return console.log(element.attributes.name);
-    });
+    // if (filteredHotels.length === 0) {
+    //   setResult();
+    // }
   };
-
-  console.log(searcvalue);
 
   return (
     <div>
@@ -46,10 +43,18 @@ function SearchField({ hotel }) {
           <FontAwesomeIcon icon={faSearch} className={styles.icon} />
         </button>
       </form>
-      <div>
-        {/* {hotel.map((test) => {
-          return <div key={test.id}>{test.attributes.name}</div>;
-        })} */}
+      <div className={styles.searchResult}>
+        <ul>
+          {result.map((test) => {
+            return (
+              <li key={test.id}>
+                <Link href={`detail/${test.id}`}>
+                  <a>{test.attributes.name}</a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
