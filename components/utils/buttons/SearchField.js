@@ -1,29 +1,28 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "./SearchField.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 function SearchField({ hotel }) {
-  const [searcvalue, setSearchValue] = useState(null);
+  const [searchValue, setSearchValue] = useState();
   const [result, setResult] = useState([]);
-  const [hotels, filteredHotels] = useState([]);
 
   const handleChange = (e) => {
-    setSearchValue(e.target.value);
-    if (e.target.value.length === 0) {
-      setSearchValue(null);
+    setSearchValue(e.target.value.trim().toLowerCase());
+    if (e.target.value.trim().length === 0) {
+      setSearchValue();
+      setResult([]);
     }
-    const filteredHotels = hotel.filter(
-      (item) =>
-        item.attributes.name.toLowerCase().includes(searcvalue) ||
-        item.attributes.short_description.toLowerCase().includes(searcvalue)
-    );
-    setResult(filteredHotels);
 
-    // if (filteredHotels.length === 0) {
-    //   setResult();
-    // }
+    const filteredHotels = hotel.filter((item) => {
+      return (
+        item.attributes.name.toLowerCase().includes(searchValue) ||
+        item.attributes.short_description.toLowerCase().includes(searchValue)
+      );
+    });
+
+    setResult(filteredHotels);
   };
 
   return (
@@ -43,15 +42,17 @@ function SearchField({ hotel }) {
           <FontAwesomeIcon icon={faSearch} className={styles.icon} />
         </button>
       </form>
-      <div className={styles.searchResult}>
+      <div className={searchValue ? styles.searchResult : ""}>
         <ul>
-          {result.map((test) => {
-            return (
-              <li key={test.id}>
-                <Link href={`detail/${test.id}`}>
-                  <a>{test.attributes.name}</a>
+          {result.map((hotelResult) => {
+            return result ? (
+              <li key={hotelResult.id}>
+                <Link href={`detail/${hotelResult.id}`}>
+                  <a>{hotelResult.attributes.name}</a>
                 </Link>
               </li>
+            ) : (
+              result(<div>No result</div>)
             );
           })}
         </ul>

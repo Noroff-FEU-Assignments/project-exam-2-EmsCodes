@@ -17,6 +17,7 @@ function Accommodations(props) {
   const [hotelTest, setHotel] = useState(props.hotels);
   const [loading, setLoading] = useState(false);
   const [isActive, setActive] = useState(false);
+  const [rating, setRating] = useState(1);
 
   console.log(props.hotels);
 
@@ -47,7 +48,7 @@ function Accommodations(props) {
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</p>
           </div>
           <div className={searchFieldStyles.formContainer}>
-            <SearchField hotel={props.hotel} />
+            <SearchField hotel={props.hotels} />
           </div>
         </HeroSection>
       </div>
@@ -63,6 +64,7 @@ function Accommodations(props) {
               <Link href={`detail/${hotel.id}`}>
                 <a>
                   <HotelCards
+                    rating={8.5}
                     name={hotel.attributes.name}
                     price={hotel.attributes.price_1}
                     img={hotel.attributes.main_image.data.attributes.url}

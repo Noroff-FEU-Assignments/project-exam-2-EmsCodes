@@ -50,7 +50,7 @@
   margin: 0;
   text-align: center;
   margin-bottom: 50px;
-  transform: translateY(30%);
+  transform: translateY(20%);
   text-decoration: none;
 }
 .ul li {
@@ -64,10 +64,11 @@
   font-size: 1.5em;
   font-weight: 300;
   padding: 10px 0;
+  display: block;
 }
 .ul a:hover {
-  background: var(--white);
-  color: var(--main-blue);
+  background: var(--main-blue);
+  color: var(--white);
 }
 .logo a span {
   flex: 1;

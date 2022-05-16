@@ -20,7 +20,29 @@
   border-radius: 50px 0 0 50px;
   font-size: 1em;
   width: 50%;
+  position: relative;
 }
 .formContainer form {
   margin: 0 auto;
+}
+.searchResult {
+  background: var(--white);
+  position: absolute;
+  width: 50vw;
+  max-width: 500px;
+  left: 22%;
+  border-top: 1px solid var(--text-color);
+}
+.searchResult ul {
+  list-style-type: none;
+  text-align: start;
+  width: 85%;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.searchResult li {
+  margin-top: 10px;
+}
+.searchResult a {
+  text-decoration: none;
 }

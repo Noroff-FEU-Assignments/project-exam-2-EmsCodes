@@ -34,14 +34,13 @@ export default function Home({ hotels }) {
           <p className={styles.p}>
             Our goal is to make booking the easiest part of your journey!
           </p>
-
           <Cta
             content="Find your hotel"
             link="/accommodations"
             styles={cta.btn}
           />
           <div className={searchFieldStyles.formContainer}>
-            <SearchField hotel={hotels} />;
+            <SearchField hotel={hotels} />
           </div>
         </div>
       </div>
