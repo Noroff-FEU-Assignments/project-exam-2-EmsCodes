@@ -21,6 +21,9 @@
   width: 90%;
   margin: 0 auto;
 }
+.listItem:hover :last-child {
+  background: var(--orange);
+}
 
 .linkText {
   text-decoration: none;
