@@ -5,26 +5,29 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 function SearchField({ hotel }) {
-  // useEffect(() => {
-  //   hotels.forEach((element) => {
-  //     console.log(element.attributes.name);
-  //   });
-  // });
-
-  console.log(hotel);
-
   const [searcvalue, setSearchValue] = useState(null);
+  const [result, setResult] = useState([]);
+  const [hotels, filteredHotels] = useState([]);
+
   const handleChange = (e) => {
     setSearchValue(e.target.value);
+    if (e.target.value.length === 0) {
+      setSearchValue(null);
+    }
+    const filteredHotels = hotel.filter((item) =>
+      item.attributes.name.toLowerCase().includes(searcvalue)
+    );
+    console.log(filteredHotels);
+    if (!filteredHotels) {
+      return <p>No hotels found</p>;
+    }
+
+    return filteredHotels.map((element) => {
+      return console.log(element.attributes.name);
+    });
   };
 
   console.log(searcvalue);
-
-  // const filteredHotels = hotels.filter((hotel) => {
-  //   return hotel.attributes.name
-  //     .toLowerCase()
-  //     .includes(searcvalue.toLowerCase());
-  // });
 
   return (
     <div>

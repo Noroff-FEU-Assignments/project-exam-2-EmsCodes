@@ -47,7 +47,7 @@ function Accommodations(props) {
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</p>
           </div>
           <div className={searchFieldStyles.formContainer}>
-            <SearchField />
+            <SearchField hotel={props.hotel} />
           </div>
         </HeroSection>
       </div>
