@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ValidationError from "./FormError";
-import { HOLIDAZE_BASE_URL } from "../../data/api";
+import { HOLIDAZE_BASE_URL, MESSAGES } from "../../data/api";
 import axios from "axios";
 
 const schema = yup.object().shape({
@@ -33,10 +33,7 @@ export default function CreateMessage() {
     const formData = { data };
 
     try {
-      const response = await axios.post(
-        HOLIDAZE_BASE_URL + "api/messages",
-        formData
-      );
+      const response = await axios.post(HOLIDAZE_BASE_URL + MESSAGES, formData);
       console.log(response.data);
     } catch (error) {
       console.log(error);
