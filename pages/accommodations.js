@@ -11,7 +11,6 @@ import styles from "../styles/accommodations.module.css";
 import Link from "next/link";
 import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
 import HotelCards from "../components/utils/accommodations/HotelCards";
-import { Spinner } from "react-bootstrap";
 
 function Accommodations(props) {
   const [hotelTest, setHotel] = useState(props.hotels);
@@ -84,7 +83,7 @@ export default Accommodations;
 
 export async function getStaticProps() {
   const url = HOLIDAZE_BASE_URL + HOTELS;
-  let hotels = <Spinner animation="border" />;
+  let hotels = [];
 
   try {
     const response = await fetch(url);
