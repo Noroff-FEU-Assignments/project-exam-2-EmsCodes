@@ -12,6 +12,7 @@ const schema = yup.object().shape({
     .string()
     .required("Please add a short description, max 20 characters"),
   description: yup.string().required("Please add description"),
+  main_image: yup.object().required("Please add main image"),
   price_1: yup.number().min(1).required("Please add price"),
   price_2: yup.number().min(1).required("Please add price"),
   price_3: yup.number().min(1).required("Please add price"),

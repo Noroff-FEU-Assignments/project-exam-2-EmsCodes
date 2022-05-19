@@ -1,40 +1,37 @@
+import { MESSAGES } from "../../data/api";
 import { useEffect, useState } from "react";
-import styles from "./Messages.module.css";
 import useAxios from "../../hooks/UseAxios";
-import { HOLIDAZE_BASE_URL, MESSAGES } from "../../data/api";
+import styles from "./Enquiries.module.css";
 
-function Messages() {
+function Enquiries() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [messages, setMessages] = useState([]);
+  const [enquiry, setEnquiry] = useState([]);
   const http = useAxios();
-
-  const url = HOLIDAZE_BASE_URL + MESSAGES;
-
-  //   if (messages) {
-  //     setLoading(false);
-  //   }
   useEffect(() => {
-    async function getMessages() {
-      try {
-        const res = await http.get(url);
-        console.log(res.data.data);
-        setMessages(res.data.data);
-      } catch (error) {
-        console.log(error);
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    getMessages();
+    getEnquiries();
   }, []);
+
+  async function getEnquiries() {
+    try {
+      const response = await http.get("api/enquiries");
+      setEnquiry(response.data.data);
+    } catch (error) {
+      setError(error.toString());
+    } finally {
+      setLoading(false);
+    }
+  }
+  // console.log(enquiry);
+
+  if (loading) {
+    return <div>Loading messages</div>;
+  }
 
   return (
     <div className={styles.container}>
       <ul>
-        {messages.map((message) => {
-          //   console.log(message);
+        {enquiry.map((message) => {
           return (
             <li key={message.id} className={styles}>
               <div>
@@ -57,4 +54,4 @@ function Messages() {
   );
 }
 
-export default Messages;
+export default Enquiries;
