@@ -123,6 +123,5 @@
     color: var(--secondary-white);
     font-family: var(--body-text-font);
     font-size: 1em;
-    padding: 100% 10px;
   }
 }

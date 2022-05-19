@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { HOLIDAZE_BASE_URL, AUTH_URL } from "../../data/Api";
+import { HOLIDAZE_BASE_URL, AUTH_URL } from "../../data/api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";

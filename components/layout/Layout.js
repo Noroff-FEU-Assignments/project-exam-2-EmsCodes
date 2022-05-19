@@ -10,6 +10,9 @@ import Footer from "./Footer";
 import SearchField from "../utils/buttons/SearchField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import dynamic from "next/dynamic";
+
+const AdminSection = dynamic(() => import("./AdminSection"), { ssr: false });
 
 function Layout({ children }) {
   const [menuBtn, setMenuBtn] = useState(faBars);
@@ -29,10 +32,6 @@ function Layout({ children }) {
     }
   }
 
-  function logOut() {
-    setAuth(null);
-    router.push("/");
-  }
   return (
     <>
       <div className={styles.header}>
@@ -76,24 +75,7 @@ function Layout({ children }) {
                   </a>
                 </Link>
               </li>
-              {auth ? (
-                <>
-                  <li>
-                    <Link href="/admin">
-                      <a
-                        className={router.pathname == "/admin" ? "active" : ""}
-                      >
-                        Admin
-                      </a>
-                    </Link>
-                  </li>
-                  <button className={styles.logOutBtn} onClick={logOut}>
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <div></div>
-              )}
+              <AdminSection />
             </ul>
           </nav>
           <div className={styles.menuSearchField}>
