@@ -6,11 +6,11 @@
   text-decoration: none;
   display: block;
   width: 35vw;
-  max-width: 150px;
+  max-width: 175px;
   color: white;
   text-align: center;
   font-family: var(--heading-font);
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .btn:hover {

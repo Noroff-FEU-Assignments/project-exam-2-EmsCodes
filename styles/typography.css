@@ -25,7 +25,6 @@ p {
 @media (min-width: 1000px) {
   .active {
     background: var(--white);
-    display: inline;
     color: var(--main-blue) !important;
   }
 }

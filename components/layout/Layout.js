@@ -1,10 +1,8 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
 import styles from "./Layout.module.css";
 import logo from "../../public/holidaze-logo.png";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Footer from "./Footer";
 import SearchField from "../utils/buttons/SearchField";
@@ -17,8 +15,6 @@ const AdminSection = dynamic(() => import("./AdminSection"), { ssr: false });
 function Layout({ children }) {
   const [menuBtn, setMenuBtn] = useState(faBars);
   const [menuState, setMenuState] = useState(styles.hidden);
-
-  const [auth, setAuth] = useContext(AuthContext);
 
   const router = useRouter();
 

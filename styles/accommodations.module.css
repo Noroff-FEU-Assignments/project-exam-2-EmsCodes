@@ -68,12 +68,15 @@
 
 @media screen and (min-width: 650px) {
   .ul {
-    gap: 20px;
-    justify-content: flex-start;
+    gap: 35px;
+    justify-content: center;
   }
   .ul li {
     list-style-type: none;
-    width: 29vw;
+    width: 28vw;
     box-shadow: var(--box-shadow);
+  }
+  .heroContainer::before {
+    background: none;
   }
 }

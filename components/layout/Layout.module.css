@@ -12,6 +12,7 @@
   background: var(--white);
   border: 1px solid var(--main-blue);
   padding: 15px 20px;
+  cursor: pointer;
 }
 .hidden {
   display: none;
@@ -86,36 +87,38 @@
 @media screen and (min-width: 700px) {
   .displayed {
     inset: 0 0 0 50vw;
-    top: 7vh;
-    max-height: 50vh;
+    top: 8vh;
+    max-height: 55vh;
   }
 }
 
 @media (min-width: 1000px) {
   .hidden {
-    display: block;
+    display: flex;
+    background-color: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .logOutBtn {
+    background: var(--white);
+    border: 1px solid var(--main-blue);
+    padding: 5px 10px;
   }
   .burgerBtn {
     display: none;
   }
-  .displayed {
-    display: block;
-    position: static;
-    top: 0;
-    background-color: none;
-    z-index: 10;
-    box-shadow: none;
-  }
   .ul {
-    padding: 0;
-    margin: 0;
     margin-bottom: 0;
     transform: translateY(0%);
     display: flex;
-    align-content: center;
+  }
+  .ul a:hover {
+    background: var(--white);
+    color: var(--main-blue);
   }
   .ul li {
-    list-style-type: none;
     margin-bottom: 0;
   }
   .ul a {
@@ -123,5 +126,9 @@
     color: var(--secondary-white);
     font-family: var(--body-text-font);
     font-size: 1em;
+    padding: 25px 10px;
+  }
+  .ul button {
+    margin: 15px 0 15px 15px;
   }
 }

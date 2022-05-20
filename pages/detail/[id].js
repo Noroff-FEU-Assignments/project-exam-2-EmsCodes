@@ -48,7 +48,7 @@ function Details({ hotel }) {
             </Modal.Body>
             <Modal.Footer>
               <button onClick={handleClose}>Close</button>
-              <button onClick={handleClose}>Save Changes</button>
+              <button onClick={handleClose}>Send request</button>
             </Modal.Footer>
           </Modal>
         </HeroSection>
