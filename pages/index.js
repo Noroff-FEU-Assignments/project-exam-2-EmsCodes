@@ -14,6 +14,7 @@ import {
   faHeadset,
   faSignsPost,
   faPeopleGroup,
+  faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import AboutBergen from "../components/utils/index/AboutBergen";
@@ -42,54 +43,61 @@ export default function Home({ hotels }) {
           <div className={searchFieldStyles.formContainer}>
             <SearchField hotel={hotels} />
           </div>
+          <Image 
         </div>
       </div>
       <div>
         <Heading size="2" content=" accommodation categories" style="srOnly" />
         <HotelNavCards />
       </div>
-      <Heading size="3" content="Why choose us?" style={styles.headingThree} />
       <div className={styles.whyUsSection}>
         <Image
           src={img}
           alt="a woman and a man smiling while looking at an iphone"
         />
-        <div className={styles.iconsContainer}>
-          <Icons
-            icon={faHotel}
-            text="Easy booking"
-            iconStyle={styles.icon}
-            textStyle={styles.text}
-            iconContainer={styles.iconContainer}
+        <div>
+          <Heading
+            size="3"
+            content="Why choose us?"
+            style={styles.headingThree}
           />
-          <Icons
-            icon={faMoneyCheckDollar}
-            text="Secure payment options"
-            iconStyle={styles.icon}
-            textStyle={styles.text}
-            iconContainer={styles.iconContainer}
-          />
-          <Icons
-            icon={faHeadset}
-            text="24/hour support"
-            iconStyle={styles.icon}
-            textStyle={styles.text}
-            iconContainer={styles.iconContainer}
-          />
-          <Icons
-            icon={faSignsPost}
-            text="Local knowledge"
-            iconStyle={styles.icon}
-            textStyle={styles.text}
-            iconContainer={styles.iconContainer}
-          />
-          <Icons
-            icon={faPeopleGroup}
-            text="5000+ satisfied customers"
-            iconStyle={styles.icon}
-            textStyle={styles.text}
-            iconContainer={styles.iconContainer}
-          />
+          <div className={styles.iconsContainer}>
+            <Icons
+              icon={faHotel}
+              text="Easy booking"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
+            <Icons
+              icon={faMoneyCheckDollar}
+              text="Secure payment options"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
+            <Icons
+              icon={faHeadset}
+              text="24/hour support"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
+            <Icons
+              icon={faSignsPost}
+              text="Local knowledge"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
+            <Icons
+              icon={faPeopleGroup}
+              text="5000+ satisfied customers"
+              iconStyle={styles.icon}
+              textStyle={styles.text}
+              iconContainer={styles.iconContainer}
+            />
+          </div>
         </div>
       </div>
       <div>
