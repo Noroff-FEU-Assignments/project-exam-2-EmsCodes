@@ -5,7 +5,7 @@ import Cta from "../components/utils/buttons/Cta";
 import SearchField from "../components/utils/buttons/SearchField";
 import HotelNavCards from "../components/utils/index/HotelNavCards";
 import styles from "../styles/index.module.css";
-import cta from "../styles/components/utils/buttons/Cta.module.css";
+import cta from "../components/utils/buttons/Cta.module.css";
 import Icons from "../components/utils/index/Icons";
 import img from "../public/images/styling/customerImg.jpg";
 import {
@@ -14,13 +14,12 @@ import {
   faHeadset,
   faSignsPost,
   faPeopleGroup,
-  faArrowDown
+  faArrowDown,
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import AboutBergen from "../components/utils/index/AboutBergen";
 import searchFieldStyles from "../components/utils/buttons/SearchField.module.css";
 import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
-import { useEffect } from "react";
 
 export default function Home({ hotels }) {
   // console.log(hotels);
@@ -43,7 +42,6 @@ export default function Home({ hotels }) {
           <div className={searchFieldStyles.formContainer}>
             <SearchField hotel={hotels} />
           </div>
-          <Image 
         </div>
       </div>
       <div>

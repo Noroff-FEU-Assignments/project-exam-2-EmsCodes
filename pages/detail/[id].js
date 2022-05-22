@@ -29,7 +29,11 @@ function Details({ hotel }) {
         />
       </Head>
       <div className={styles.heroContainer}>
-        <HeroSection img={hotel.attributes.main_image.data.attributes.url}>
+        <HeroSection
+          img={hotel.attributes.main_image.data.attributes.url}
+          alt="Showing a part of the place"
+          style={styles.absolutePositioning}
+        >
           {/* create breadcrumbs!!! */}
           <div>
             <Heading content={hotel.attributes.name} />

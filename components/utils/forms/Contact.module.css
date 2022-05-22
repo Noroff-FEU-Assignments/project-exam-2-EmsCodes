@@ -1,0 +1,42 @@
+.form fieldset {
+  border: none;
+}
+.form {
+  padding: 20px 35px;
+}
+
+.heading {
+  padding-top: 20px;
+}
+.form input,
+.form textarea {
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+  margin-top: 20px;
+  width: 100%;
+  background: none;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: 1px solid var(--orange);
+}
+.form textarea {
+  margin-bottom: 45px;
+}
+.form input {
+  padding-top: 7.5px;
+}
+@media screen and (min-width: 700px) {
+  .form fieldset {
+    border: none;
+  }
+
+  .form input,
+  .form textarea {
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+    margin-top: 20px;
+    width: 85%;
+  }
+}

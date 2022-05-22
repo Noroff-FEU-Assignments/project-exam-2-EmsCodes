@@ -5,6 +5,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import ValidationError from "./FormError";
 import { HOLIDAZE_BASE_URL, MESSAGES } from "../../data/api";
 import axios from "axios";
+import styles from "./Contact.module.css";
+import Heading from "../global/heading/Heading";
+import cta from "../buttons/Cta.module.css";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
@@ -34,7 +37,10 @@ export default function CreateMessage() {
 
     try {
       const response = await axios.post(HOLIDAZE_BASE_URL + MESSAGES, formData);
-      console.log(response.data);
+      console.log(response.data.data);
+      if (response.data.data.attributes.createdAt) {
+        console.log("Message sent");
+      }
     } catch (error) {
       console.log(error);
       setError(error.toString());
@@ -42,13 +48,19 @@ export default function CreateMessage() {
       setSubmitting(false);
     }
   }
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="FileUpload">
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       {error && <ValidationError>{error}</ValidationError>}
       <fieldset disabled={submitting}>
+        <legend>
+          <Heading content="Contact" style={styles.heading} />
+        </legend>
         <div>
+          <label htmlFor="name" className="srOnly">
+            Name
+          </label>
           <input
+            id="name"
             name="name"
             placeholder="Name"
             {...register("name", { required: true })}
@@ -58,7 +70,11 @@ export default function CreateMessage() {
           )}
         </div>
         <div>
+          <label htmlFor="email" className="srOnly">
+            Email
+          </label>
           <input
+            id="email"
             name="email"
             placeholder="email"
             {...register("email", { required: true })}
@@ -68,7 +84,11 @@ export default function CreateMessage() {
           )}
         </div>
         <div>
+          <label htmlFor="message" className="srOnly">
+            Message
+          </label>
           <textarea
+            id="message"
             name="message"
             placeholder="Message"
             {...register("message", { required: true })}
@@ -77,7 +97,9 @@ export default function CreateMessage() {
             <ValidationError>{errors.message.message}</ValidationError>
           )}
         </div>
-        <button>{submitting ? "Submitting..." : "Send message"}</button>
+        <button className={cta.btn}>
+          {submitting ? "Submitting..." : "Send message"}
+        </button>
       </fieldset>
     </form>
   );

@@ -2,7 +2,13 @@
   height: 55vh !important;
   position: static !important;
 }
-
+.container {
+  margin: 0 auto;
+  padding-left: 0 !important;
+}
+.heroContainer {
+  width: 100vw;
+}
 .roomsContainer {
   width: 90vw;
   display: grid;
@@ -10,10 +16,15 @@
   margin: 0 auto;
   row-gap: 25px;
 }
-
-.container {
-  width: 90vw;
+.absolutePositioning {
+  position: absolute;
+  z-index: 1;
   margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 20%;
+  text-align: center;
+  /* transform: translateY(-50%); */
 }
 
 .modal {

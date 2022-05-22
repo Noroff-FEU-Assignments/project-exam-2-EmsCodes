@@ -11,4 +11,6 @@ export default Heading;
 
 Heading.propTypes = {
   content: propTypes.string.isRequired,
+  size: propTypes.number,
+  style: propTypes.string,
 };

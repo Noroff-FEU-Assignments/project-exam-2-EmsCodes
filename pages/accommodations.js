@@ -38,8 +38,10 @@ function Accommodations(props) {
       </Head>
       <div className={styles.heroContainer}>
         <HeroSection
+          containerStyle={styles.container}
           img={hotelImg}
           alt="modern looking hotel room, with big twin bed, and walk-in-closet"
+          style={styles.absolutePositioning}
         >
           {/* create breadcrumbs!!! */}
           <div className={styles.heroContent}>
@@ -51,10 +53,12 @@ function Accommodations(props) {
           </div>
         </HeroSection>
       </div>
-      <MenuBtn id="allHotels" onclickFunction={allHotels} name="All" />
-      <MenuBtn onclickFunction={onlyHotels} name="Hotels" />
-      <MenuBtn onclickFunction={onlyBandB} name="B&B" />
-      <MenuBtn onclickFunction={onlyGuesthouse} name="Guesthouse" />
+      <div className={styles.btnContainer}>
+        <MenuBtn id="allHotels" onclickFunction={allHotels} name="All" />
+        <MenuBtn onclickFunction={onlyHotels} name="Hotels" />
+        <MenuBtn onclickFunction={onlyBandB} name="B&B" />
+        <MenuBtn onclickFunction={onlyGuesthouse} name="Guesthouse" />
+      </div>
       <p>Results:{props.hotels.length}</p>
       <ul className={styles.ul}>
         {hotelTest.map((hotel) => {

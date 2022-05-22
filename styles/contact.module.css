@@ -1,6 +1,5 @@
 .container {
   position: relative;
-  padding: 0;
   height: 100vh;
 }
 .absolutePositioning {
@@ -10,18 +9,31 @@
   left: 0;
   right: 0;
   top: 20%;
-  text-align: center;
-  /* transform: translateY(-50%); */
+  width: 85%;
+  max-width: 400px;
+  border: none;
+  background: rgba(255, 255, 255, 0.764);
 }
 
+/* .heroContainer span {
+  position: static !important;
+} */
+
 @media screen and (min-width: 700px) {
+  .absolutePositioning {
+    position: initial;
+    background: var(--white);
+    padding-top: 10vh;
+    width: 100%;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
   .container div :first-child {
     width: 85%;
-    margin: 0 auto;
-    max-width: 500px;
+    min-width: 250px;
   }
 }

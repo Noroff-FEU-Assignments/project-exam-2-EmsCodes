@@ -2,7 +2,7 @@
   flex-direction: column;
   background: var(--blue-gradient);
   color: var(--secondary-white);
-  margin-top: 75px;
+  /* margin-top: 75px; */
 }
 .footer div {
   width: 90%;

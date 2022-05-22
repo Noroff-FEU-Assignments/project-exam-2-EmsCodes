@@ -1,5 +1,5 @@
 .nav {
-  background: rgb(34, 82, 255);
+  background: var(--main-blue);
   color: var(--secondary-white);
   border: 1px solid var(--secondary-white);
   padding: 10px;
@@ -9,4 +9,14 @@
   font-weight: 300;
   font-size: 1.2em;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1000px) {
+  .nav {
+    padding: 15px;
+    width: 25%;
+    transform: translateY(-50%);
+    position: relative;
+    z-index: 1;
+  }
 }
