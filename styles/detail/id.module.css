@@ -1,13 +1,14 @@
 .heroContainer span {
-  height: 55vh !important;
-  position: static !important;
+  height: 75vh !important;
+  position: relative !important;
 }
-.container {
+.hotelContainer {
   margin: 0 auto;
-  padding-left: 0 !important;
+  margin-top: 50px;
 }
 .heroContainer {
   width: 100vw;
+  padding: 0 !important;
 }
 .roomsContainer {
   width: 90vw;

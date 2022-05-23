@@ -57,7 +57,7 @@ function Details({ hotel }) {
           </Modal>
         </HeroSection>
       </div>
-      <div className={styles.container}>
+      <div className={styles.hotelContainer}>
         <div>
           <Heading size="2" content={`Welcome to ${hotel.attributes.name}`} />
           <Heading size="3" content="Rooms" />

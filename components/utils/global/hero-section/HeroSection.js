@@ -16,13 +16,7 @@ function HeroSection({
     //absolute positioning styling used for mobile only
     <div className={containerStyle}>
       <div className={style}>{children}</div>
-      <Image
-        src={img}
-        alt={altText}
-        className={styles.heroImg}
-        layout="fill"
-        objectFit="cover"
-      />
+      <Image src={img} alt={altText} className={styles.heroImg} layout="fill" />
     </div>
   );
 }

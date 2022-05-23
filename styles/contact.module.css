@@ -8,7 +8,7 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 20%;
+  top: 12%;
   width: 85%;
   max-width: 400px;
   border: none;
@@ -23,8 +23,8 @@
   .absolutePositioning {
     position: initial;
     background: var(--white);
-    padding-top: 10vh;
     width: 100%;
+    max-width: none;
   }
 
   .container {
