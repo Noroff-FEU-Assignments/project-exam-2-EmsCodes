@@ -10,9 +10,8 @@ function SearchField({ hotel }) {
 
   const handleChange = (e) => {
     setSearchValue(e.target.value.trim().toLowerCase());
-    if (e.target.value.trim() === 0) {
+    if (e.target.value.trim().length === 0) {
       setSearchValue();
-      setResult([]);
     }
 
     const filteredHotels = hotel.filter((item) => {
@@ -21,6 +20,7 @@ function SearchField({ hotel }) {
         item.attributes.short_description.toLowerCase().includes(searchValue)
       );
     });
+
     setResult(filteredHotels);
   };
 
