@@ -1,9 +1,9 @@
 .cardContainer {
   position: relative;
   height: 250px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  max-width: 450px;
+  max-width: 400px;
 }
 
 .content {

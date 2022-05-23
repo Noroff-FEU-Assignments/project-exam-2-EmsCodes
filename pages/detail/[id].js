@@ -82,8 +82,8 @@ function Details({ hotel }) {
             />
           </div>
         </div>
-        <div>
-          <Heading size="3" content="About us" />
+        <Heading size="3" content="About us" />
+        <div className={styles.about}>
           <p>{hotel.attributes.description}</p>
         </div>
       </div>

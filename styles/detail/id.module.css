@@ -10,14 +10,24 @@
   height: 75vh;
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 .hotelContainer {
   margin: 0 auto;
   margin-top: 50px;
+  width: 90vw;
 }
 /* fonts */
+.heroContainer h1 {
+  font-size: calc(35px + (45 - 35) * ((100vw - 320px) / (2000 - 320)));
+}
+.heroContainer p {
+  font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (2000 - 320)));
+  width: 75vw;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
 .hotelContainer h2,
 .hotelContainer h3 {
   width: 90%;
@@ -33,13 +43,16 @@
   font-weight: 400;
   margin-top: 35px;
   margin-bottom: 25px;
+  width: 90%;
+  border-bottom: 0.5px solid var(--text-color);
+  padding-bottom: 10px;
 }
 .heroContainer {
   width: 100vw;
 }
 .roomsContainer {
-  width: 100%;
   display: grid;
+  width: 90%;
   grid-template-rows: repeat(3, 1fr);
   margin: 0 auto;
   row-gap: 25px;
@@ -67,6 +80,11 @@
   background: none;
   border: none;
 }
+.about {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 150px;
+}
 
 @media screen and (min-width: 700px) {
   .heroContainer::before {
@@ -89,5 +107,11 @@
   }
   .heroContainer p {
     font-weight: lighter;
+  }
+  .roomsContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: none;
+    gap: 25px;
+    width: 100%;
   }
 }
