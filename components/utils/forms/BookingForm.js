@@ -7,6 +7,7 @@ import { HOLIDAZE_BASE_URL } from "../../data/api";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import styles from "./BookingForm.module.css";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
@@ -56,7 +57,7 @@ export default function BookingEnquiry() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       {error && <ValidationError>{error}</ValidationError>}
       <fieldset disabled={submitting}>
         <div>
@@ -121,12 +122,15 @@ export default function BookingEnquiry() {
         </div>
         <div>
           <input
+            className="srOnly"
             name="message"
             value={dateRange}
             {...register("message", { required: true })}
           />
         </div>
-        <button>{submitting ? "Submitting..." : "Book"}</button>
+        <button className={styles.cta}>
+          {submitting ? "Submitting..." : "Book"}
+        </button>
       </fieldset>
     </form>
   );

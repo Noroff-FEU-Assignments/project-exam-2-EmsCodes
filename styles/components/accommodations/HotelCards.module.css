@@ -1,6 +1,9 @@
 .cardContainer {
   position: relative;
   height: 250px;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 450px;
 }
 
 .content {
@@ -20,7 +23,7 @@
   z-index: 0;
 }
 
-.content h3 {
+.content h4 {
   font-family: var(--body-text-font);
   margin-bottom: 0;
   margin-top: 0;

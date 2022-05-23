@@ -10,21 +10,35 @@
   height: 75vh;
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 .hotelContainer {
   margin: 0 auto;
   margin-top: 50px;
 }
+/* fonts */
+.hotelContainer h2,
+.hotelContainer h3 {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hotelContainer h2 {
+  font-weight: 300;
+}
+.hotelContainer h3 {
+  font-family: var(--body-text-font);
+  font-weight: 400;
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
 .heroContainer {
   width: 100vw;
 }
-/* .containerStyle {
-  position: relative;
-} */
 .roomsContainer {
-  width: 90vw;
+  width: 100%;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   margin: 0 auto;
@@ -45,4 +59,35 @@
 .modal {
   width: 90%;
   margin: 0 auto;
+  max-width: 400px;
+  margin-top: 10vh;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+}
+
+@media screen and (min-width: 700px) {
+  .heroContainer::before {
+    background: none;
+  }
+  .absolutePositioning {
+    position: initial;
+    text-align: center;
+    background: var(--blue-gradient);
+    padding-top: 10vh;
+    width: 100%;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .container div :first-child {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  .heroContainer p {
+    font-weight: lighter;
+  }
 }

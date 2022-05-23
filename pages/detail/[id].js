@@ -4,10 +4,9 @@ import Heading from "../../components/utils/global/heading/Heading";
 import Layout from "../../components/layout/Layout";
 import HeroSection from "../../components/utils/global/hero-section/HeroSection";
 import styles from "../../styles/detail/id.module.css";
-import Cta from "../../components/utils/buttons/Cta";
 import HotelCards from "../../components/utils/accommodations/HotelCards";
 import { useState } from "react";
-import { Modal } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
 import BookingEnquiry from "../../components/utils/forms/BookingForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -40,20 +39,23 @@ function Details({ hotel }) {
             <Heading content={hotel.attributes.name} />
             <p>{hotel.attributes.short_description}</p>
           </div>
-          <button variant="primary" onClick={handleShow}>
-            Launch demo modal
+          <button className="cta" onClick={handleShow}>
+            Book a room
           </button>
 
           <Modal show={show} onHide={handleClose} className={styles.modal}>
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title>
+                <span>{hotel.attributes.name}</span> - Booking
+              </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <BookingEnquiry />
             </Modal.Body>
             <Modal.Footer>
-              <button onClick={handleClose}>Close</button>
-              <button onClick={handleClose}>Send request</button>
+              <button className={styles.closeBtn} onClick={handleClose}>
+                Close
+              </button>
             </Modal.Footer>
           </Modal>
         </HeroSection>

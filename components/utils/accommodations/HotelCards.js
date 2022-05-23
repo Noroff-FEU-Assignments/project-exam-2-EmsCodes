@@ -18,10 +18,10 @@ function HotelCards({ name, price, img, priceText, rating }) {
       <div className={styles.rating}>
         <p>{rating}</p>
       </div>
-      <Image src={img} alt={name} layout="fill" />
+      <Image src={img} alt={name} layout="fill" objectFit="cover" />
       <div className={styles.content}>
         <div>
-          <Heading size="3" content={name} />
+          <Heading size="4" content={name} />
           <p>Place</p>
         </div>
         <p className={styles.price}>

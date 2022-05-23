@@ -21,11 +21,6 @@
   background: none;
 }
 
-.form input:focus,
-.form textarea:focus {
-  outline: 1px solid var(--orange);
-  border-bottom: none;
-}
 .form textarea {
   margin-bottom: 45px;
 }
