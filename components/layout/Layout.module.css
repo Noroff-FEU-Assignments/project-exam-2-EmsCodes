@@ -1,7 +1,7 @@
 .header {
   background: var(--main-blue);
   padding: 0;
-  height: 6vh;
+  height: 8vh;
   display: flex;
   justify-content: space-between;
   z-index: 100;
@@ -31,7 +31,7 @@
   position: absolute;
   inset: 0;
   max-height: 600px;
-  top: 5vh;
+  top: 8vh;
   background-color: var(--white);
   z-index: 10;
   animation: slideInMenu 0.3s ease-in-out 1;

@@ -7,7 +7,7 @@ import styles from "../../styles/detail/id.module.css";
 import Cta from "../../components/utils/buttons/Cta";
 import HotelCards from "../../components/utils/accommodations/HotelCards";
 import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import BookingEnquiry from "../../components/utils/forms/BookingForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -30,6 +30,7 @@ function Details({ hotel }) {
       </Head>
       <div className={styles.heroContainer}>
         <HeroSection
+          containerStyle={styles.containerStyle}
           img={hotel.attributes.main_image.data.attributes.url}
           alt="Showing a part of the place"
           style={styles.absolutePositioning}

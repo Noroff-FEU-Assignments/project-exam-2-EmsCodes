@@ -42,6 +42,9 @@ html {
   display: flex;
 }
 
+.container {
+  padding: 0 !important;
+}
 /* hides form label from users, only screen readers can "see" it */
 .srOnly {
   position: absolute;
