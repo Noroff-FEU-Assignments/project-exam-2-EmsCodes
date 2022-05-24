@@ -1,0 +1,51 @@
+.form fieldset {
+  border: none;
+  padding-left: 0;
+}
+.form {
+  padding: 35px 25px;
+}
+
+.heading {
+  padding-top: 20px;
+  font-size: calc(30px + (40 - 30) * ((100vw - 320px) / (2000 - 320)));
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.form input,
+.form textarea {
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+  margin-top: 20px;
+  width: 100%;
+  background: none;
+}
+
+.form textarea {
+  margin-bottom: 45px;
+}
+.form input,
+.form textarea {
+  padding: 7.5px;
+}
+.form button {
+  margin-top: 45px;
+}
+@media screen and (min-width: 700px) {
+  .form {
+    margin: 0 auto;
+    transform: translatey(40%);
+    max-width: 300px;
+  }
+  .form fieldset {
+    border: none;
+  }
+
+  .form input,
+  .form textarea {
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+    margin-top: 20px;
+    width: 90%;
+  }
+}

@@ -12,7 +12,7 @@
   width: 85%;
   max-width: 400px;
   border: none;
-  background: rgba(255, 255, 255, 0.764);
+  background: var(--white-form-background);
 }
 
 /* .heroContainer span {

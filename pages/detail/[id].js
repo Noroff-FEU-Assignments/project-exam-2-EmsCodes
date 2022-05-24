@@ -31,7 +31,7 @@ function Details({ hotel }) {
         <HeroSection
           containerStyle={styles.containerStyle}
           img={hotel.attributes.main_image.data.attributes.url}
-          alt="Showing a part of the place"
+          alt="Showing the place/accommodation"
           style={styles.absolutePositioning}
         >
           {/* create breadcrumbs!!! */}
@@ -62,7 +62,10 @@ function Details({ hotel }) {
       </div>
       <div className={styles.hotelContainer}>
         <div>
-          <Heading size="2" content={`Welcome to ${hotel.attributes.name}`} />
+          <div className={styles.welcomeText}>
+            <p>Welcome to</p>
+            <Heading size="2" content={hotel.attributes.name} />
+          </div>
           <Heading size="3" content="Rooms" />
           <div className={styles.roomsContainer}>
             <HotelCards

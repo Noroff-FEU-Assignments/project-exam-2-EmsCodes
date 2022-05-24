@@ -23,8 +23,6 @@
   font-size: calc(35px + (45 - 35) * ((100vw - 320px) / (2000 - 320)));
 }
 .heroContainer p {
-  font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (2000 - 320)));
-  width: 75vw;
   margin: 0 auto;
   margin-bottom: 50px;
 }
@@ -35,8 +33,19 @@
   margin: 0 auto;
 }
 
+.welcomeText p {
+  text-align: center;
+  font-family: var(--heading-font);
+  font-weight: 200;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  font-size: calc(20px + (25 - 20) * ((100vw - 320px) / (2000 - 320)));
+}
+
 .hotelContainer h2 {
   font-weight: 400;
+  font-size: calc(25px + (35 - 25) * ((100vw - 320px) / (2000 - 320)));
+  text-transform: capitalize;
 }
 .hotelContainer h3 {
   font-family: var(--heading-font);

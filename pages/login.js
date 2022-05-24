@@ -14,6 +14,7 @@ function Login() {
           <link rel="stylesheet" href="https://use.typekit.net/ckg1pdt.css" />
         </Head>
         <HeroSection
+          containerStyle={styles.container}
           img={mainImg}
           alt="modern looking hotel room, with big twin bed, and walk-in-closet"
           style={styles.absolutePositioning}

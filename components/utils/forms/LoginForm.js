@@ -7,8 +7,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { AuthContext } from "../../context/AuthContext";
 import ValidationError from "./FormError";
-import styles from "../../../styles/components/utils/forms/LoginForm.module.css";
+import styles from "./LoginForm.module.css";
 import Heading from "../global/heading/Heading";
+import cta from "../buttons/Cta.module.css";
 
 const url = HOLIDAZE_BASE_URL + AUTH_URL;
 
@@ -69,10 +70,12 @@ function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(OnSubmit)} className={styles.loginForm}>
-      <Heading content="Admin login" className={styles.headingOne} />
+    <form onSubmit={handleSubmit(OnSubmit)} className={styles.form}>
       {loginError && <ValidationError>{loginError}</ValidationError>}
       <fieldset disabled={submitting} className={styles.fieldSet}>
+        <legend>
+          <Heading content="Admin login" className={styles.heading} />
+        </legend>
         <div className={styles.inputContainer}>
           <label htmlFor="username" className="srOnly">
             Username
@@ -102,7 +105,9 @@ function LoginForm() {
             <ValidationError>{errors.password.message}</ValidationError>
           )}
         </div>
-        <button>{submitting ? "Logging in..." : "Login"}</button>
+        <button className={cta.btn}>
+          {submitting ? "Logging in..." : "Login"}
+        </button>
       </fieldset>
     </form>
   );

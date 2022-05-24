@@ -9,13 +9,7 @@
   right: 0;
   top: 20%;
   text-align: center;
-  /* transform: translateY(-50%); */
 }
-
-/* .heroContainer span {
-  height: 55vh !important;
-  position: static !important;
-} */
 
 @media screen and (min-width: 700px) {
   .absolutePositioning {
