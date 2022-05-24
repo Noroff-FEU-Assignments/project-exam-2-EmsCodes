@@ -30,6 +30,7 @@
   display: block;
   position: absolute;
   inset: 0;
+  min-height: 400px;
   max-height: 600px;
   top: 65px;
   background-color: var(--white);

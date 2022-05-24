@@ -36,16 +36,14 @@
 }
 
 .hotelContainer h2 {
-  font-weight: 300;
+  font-weight: 400;
 }
 .hotelContainer h3 {
-  font-family: var(--body-text-font);
-  font-weight: 400;
+  font-family: var(--heading-font);
+  font-weight: 300;
   margin-top: 35px;
   margin-bottom: 25px;
   width: 90%;
-  border-bottom: 0.5px solid var(--text-color);
-  padding-bottom: 10px;
 }
 .heroContainer {
   width: 100vw;
@@ -81,7 +79,6 @@
   border: none;
 }
 .about {
-  width: 90%;
   margin: 0 auto;
   margin-bottom: 150px;
 }
@@ -94,10 +91,10 @@
     position: initial;
     text-align: center;
     background: var(--blue-gradient);
-    padding-top: 10vh;
+    padding-top: 15vh;
     width: 100%;
   }
-  .container {
+  .containerStyle {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -107,6 +104,7 @@
   }
   .heroContainer p {
     font-weight: lighter;
+    width: 90%;
   }
   .roomsContainer {
     grid-template-columns: repeat(3, 1fr);

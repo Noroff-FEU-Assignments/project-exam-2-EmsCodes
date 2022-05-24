@@ -79,7 +79,7 @@
   }
   .ul li {
     list-style-type: none;
-    width: 42vw;
+    width: 40vw;
     box-shadow: var(--box-shadow);
   }
 }

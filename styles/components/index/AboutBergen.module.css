@@ -1,6 +1,7 @@
 .container {
   width: 85%;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .headingFour {
@@ -67,7 +68,11 @@
 .moreLink a {
   color: var(--main-blue);
 }
-
+@media screen and (min-width: 500px) {
+  .card {
+    height: 200px;
+  }
+}
 @media screen and (min-width: 1000px) {
   .aboutContent {
     margin-top: 20px;
@@ -75,5 +80,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
+  }
+  .card {
+    height: 175px;
   }
 }

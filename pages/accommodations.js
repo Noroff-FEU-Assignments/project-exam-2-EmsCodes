@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Head from "../components/utils/global/head/Head";
 import Layout from "../components/layout/Layout";
 import Heading from "../components/utils/global/heading/Heading";
@@ -12,13 +12,8 @@ import Link from "next/link";
 import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
 import HotelCards from "../components/utils/accommodations/HotelCards";
 
-function Accommodations(props) {
-  const [hotelTest, setHotel] = useState(props.hotels);
-  const [loading, setLoading] = useState(false);
+function Accommodations({ hotels }) {
   const [isActive, setActive] = useState(false);
-  const [rating, setRating] = useState(1);
-
-  console.log(props.hotels);
 
   function allHotels(event) {}
   function onlyHotels(event) {}
@@ -49,7 +44,7 @@ function Accommodations(props) {
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</p>
           </div>
           <div className={searchFieldStyles.formContainer}>
-            <SearchField hotel={props.hotels} />
+            <SearchField hotel={hotels} />
           </div>
         </HeroSection>
       </div>
@@ -59,25 +54,29 @@ function Accommodations(props) {
         <MenuBtn onclickFunction={onlyBandB} name="B&B" />
         <MenuBtn onclickFunction={onlyGuesthouse} name="Guesthouse" />
       </div>
-      <p>Results:{props.hotels.length}</p>
+      <p>Results:{hotels.length}</p>
       <ul className={styles.ul}>
-        {hotelTest.map((hotel) => {
-          return (
-            <li key={hotel.id}>
-              <Link href={`detail/${hotel.id}`}>
-                <a>
-                  <HotelCards
-                    rating={8.5}
-                    name={hotel.attributes.name}
-                    price={hotel.attributes.price_1}
-                    img={hotel.attributes.main_image.data.attributes.url}
-                    priceText="From"
-                  />
-                </a>
-              </Link>
-            </li>
-          );
-        })}
+        {!hotels ? (
+          <p>Loading content...</p>
+        ) : (
+          hotels.map((hotel) => {
+            return (
+              <li key={hotel.id}>
+                <Link href={`detail/${hotel.id}`}>
+                  <a>
+                    <HotelCards
+                      rating={8.5}
+                      name={hotel.attributes.name}
+                      price={hotel.attributes.price_1}
+                      img={hotel.attributes.main_image.data.attributes.url}
+                      priceText="From"
+                    />
+                  </a>
+                </Link>
+              </li>
+            );
+          })
+        )}
       </ul>
     </Layout>
   );
