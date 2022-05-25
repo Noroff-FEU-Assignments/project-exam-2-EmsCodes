@@ -1,5 +1,7 @@
 .container {
   position: relative;
+  height: 100vh;
+  max-width: 1200px;
 }
 .absolutePositioning {
   position: absolute;
@@ -9,15 +11,18 @@
   right: 0;
   top: 20%;
   text-align: center;
+  background: var(--white-form-background);
+  width: 85%;
 }
 
 @media screen and (min-width: 700px) {
   .absolutePositioning {
     position: initial;
     text-align: center;
-    background: var(--blue-gradient);
+    background: white;
     padding-top: 10vh;
     width: 100%;
+    max-width: none;
   }
 
   .container {
@@ -26,7 +31,7 @@
   }
 
   .container div :first-child {
-    width: 85%;
+    /* width: 85%; */
     margin: 0 auto;
     max-width: 500px;
   }

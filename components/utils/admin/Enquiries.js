@@ -15,40 +15,49 @@ function Enquiries() {
   async function getEnquiries() {
     try {
       const response = await http.get("api/enquiries");
+      console.log(response.data.data);
       setEnquiry(response.data.data);
+      setLoading(true);
     } catch (error) {
       setError(error.toString());
     } finally {
       setLoading(false);
     }
   }
-  // console.log(enquiry);
-
-  if (loading) {
-    return <div>Loading messages</div>;
-  }
 
   return (
     <div className={styles.container}>
       <ul>
-        {enquiry.map((message) => {
-          return (
-            <li key={message.id} className={styles}>
-              <div>
-                <span>Name: </span>
-                {message.attributes.name}
-              </div>
-              <div>
-                <span>Email: </span>
-                {message.attributes.email}
-              </div>
-              <div>
-                <span>Message: </span>
-                {message.attributes.message}
-              </div>
-            </li>
-          );
-        })}
+        {loading ? (
+          <div>Loading messages...</div>
+        ) : (
+          enquiry.map((message) => {
+            return (
+              <li key={message.id}>
+                <div>
+                  <span>Name: </span>
+                  {message.attributes.name}
+                </div>
+                <div>
+                  <span>Email: </span>
+                  {message.attributes.email}
+                </div>
+                <div>
+                  <span>Message: </span>
+                  {message.attributes.message}
+                </div>
+                <div>
+                  <span>Persons: </span>
+                  {message.attributes.persons}
+                </div>
+                <div>
+                  <span>Room: </span>
+                  {message.attributes.room_type}
+                </div>
+              </li>
+            );
+          })
+        )}
       </ul>
     </div>
   );

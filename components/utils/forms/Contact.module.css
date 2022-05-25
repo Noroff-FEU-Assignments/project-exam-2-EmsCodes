@@ -8,8 +8,8 @@
 
 .heading {
   padding-top: 20px;
-  font-size: calc(30px + (40 - 30) * ((100vw - 320px) / (2000 - 320)));
-  font-weight: 300;
+  font-size: calc(25px + (35 - 25) * ((100vw - 320px) / (2000 - 320)));
+  font-weight: 200;
   margin-bottom: 10px;
 }
 .form input,
@@ -17,11 +17,12 @@
   border: none;
   border-bottom: 1px solid var(--text-color);
   margin-top: 20px;
-  width: 100%;
+  width: 85%;
+
   background: none;
 }
 
-.form textarea {
+.form button {
   margin-bottom: 45px;
 }
 .form input,
@@ -32,10 +33,11 @@
   .form {
     margin: 0 auto;
     transform: translatey(40%);
-    max-width: 300px;
+    max-width: 500px;
   }
   .form fieldset {
     border: none;
+    margin: 0 auto;
   }
 
   .form input,

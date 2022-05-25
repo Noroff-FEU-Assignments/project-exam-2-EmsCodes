@@ -37,7 +37,7 @@ export default function Home({ hotels }) {
           <Cta
             content="Find your hotel"
             link="/accommodations"
-            styles={cta.btn}
+            styles={cta.ctaBtn}
           />
           <div className={searchFieldStyles.formContainer}>
             <SearchField hotel={hotels} />

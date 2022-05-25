@@ -1,0 +1,27 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.container h1 {
+  font-size: calc(30px + (45 - 25) * ((100vw - 320px) / (2000 - 320)));
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.container h2 {
+  font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (2000 - 320)));
+  font-weight: 300;
+  font-family: var(--body-text-font);
+  color: var(--text-color);
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.container span {
+  font-weight: 400;
+}

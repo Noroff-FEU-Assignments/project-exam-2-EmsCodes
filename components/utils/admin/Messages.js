@@ -18,6 +18,7 @@ function Messages() {
     async function getMessages() {
       try {
         const res = await http.get(url);
+        setLoading(false);
         console.log(res.data.data);
         setMessages(res.data.data);
       } catch (error) {

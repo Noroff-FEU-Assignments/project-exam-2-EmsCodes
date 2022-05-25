@@ -4,12 +4,13 @@
 }
 .form {
   padding: 35px 25px;
+  width: 85%;
 }
 
 .heading {
   padding-top: 20px;
-  font-size: calc(30px + (40 - 30) * ((100vw - 320px) / (2000 - 320)));
-  font-weight: 300;
+  font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (2000 - 320)));
+  font-weight: 200;
   margin-bottom: 10px;
 }
 .form input,
@@ -17,7 +18,7 @@
   border: none;
   border-bottom: 1px solid var(--text-color);
   margin-top: 20px;
-  width: 100%;
+  width: 85%;
   background: none;
 }
 
@@ -35,7 +36,6 @@
   .form {
     margin: 0 auto;
     transform: translatey(40%);
-    max-width: 300px;
   }
   .form fieldset {
     border: none;
