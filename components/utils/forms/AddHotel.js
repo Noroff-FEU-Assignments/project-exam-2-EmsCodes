@@ -6,6 +6,8 @@ import useAxios from "../../hooks/UseAxios";
 import ValidationError from "./FormError";
 import { HOLIDAZE_BASE_URL } from "../../data/api";
 import styles from "./AddHotel.module.css";
+import cta from "../buttons/Cta.module.css";
+
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
   short_description: yup
@@ -214,7 +216,9 @@ function AddHotel() {
           </div>
         </div>
         <div className={styles.btn}>
-          <button>{submitting ? "Submitting..." : "Submit"}</button>
+          <button className={cta.btn}>
+            {submitting ? "Submitting..." : "Submit"}
+          </button>
         </div>
       </fieldset>
     </form>

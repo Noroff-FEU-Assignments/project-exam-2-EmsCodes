@@ -81,6 +81,8 @@
   margin: 0 auto;
   max-width: 400px;
   margin-top: 10vh;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .closeBtn {
@@ -120,5 +122,9 @@
     grid-template-rows: none;
     gap: 25px;
     width: 100%;
+  }
+  .modal {
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 }

@@ -1,10 +1,10 @@
 .form fieldset {
-  border: none;
-  width: 95%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 .form {
   width: 95%;
@@ -18,10 +18,12 @@
   margin-bottom: 35px;
 }
 /* section one */
-.sectionOne input,
-.sectionOne textarea {
+.sectionOne:first-of-type input {
   border: none;
   border-bottom: var(--form-input-border);
+}
+.sectionOne input,
+.sectionOne textarea {
   width: 100%;
   padding: 5px;
   margin-top: 10px;
@@ -51,6 +53,8 @@
 .btn {
   display: block;
   width: 100%;
+  margin-bottom: 75px;
+  margin-top: 0;
 }
 
 /* section four */
