@@ -8,6 +8,8 @@ import axios from "axios";
 import styles from "./Contact.module.css";
 import Heading from "../global/heading/Heading";
 import cta from "../buttons/Cta.module.css";
+import Link from "next/link";
+import { Spinner } from "react-bootstrap";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
@@ -18,6 +20,7 @@ const schema = yup.object().shape({
 export default function CreateMessage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
 
   const {
     register,
@@ -39,7 +42,7 @@ export default function CreateMessage() {
       const response = await axios.post(HOLIDAZE_BASE_URL + MESSAGES, formData);
       console.log(response.data.data);
       if (response.data.data.attributes.createdAt) {
-        console.log("Message sent");
+        setSubmitted(true);
       }
     } catch (error) {
       console.log(error);
@@ -48,7 +51,15 @@ export default function CreateMessage() {
       setSubmitting(false);
     }
   }
-  return (
+  return submitted ? (
+    <div className={styles.messageConfirmation}>
+      <p>Thank you for your message!</p>
+      <p>The team at Holidaze will contact you shortly</p>
+      <Link href="/accommodations">
+        <a>Back to hotels</a>
+      </Link>
+    </div>
+  ) : (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       {error && <ValidationError>{error}</ValidationError>}
       <fieldset disabled={submitting}>

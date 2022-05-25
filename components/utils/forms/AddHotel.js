@@ -14,7 +14,7 @@ const schema = yup.object().shape({
     .string()
     .required("Please add a short description, max 20 characters"),
   description: yup.string().required("Please add description"),
-  main_image: yup.object().required("Please add main image"),
+  // main_image: yup.object().required("Please add main image"),
   price_1: yup.number().min(1).required("Please add price"),
   price_2: yup.number().min(1).required("Please add price"),
   price_3: yup.number().min(1).required("Please add price"),
@@ -24,6 +24,7 @@ function AddHotel() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const http = useAxios();
+  const [submitted, setSubmitted] = useState(false);
   // const [file, setFile] = useState();
 
   const {
@@ -65,6 +66,10 @@ function AddHotel() {
         HOLIDAZE_BASE_URL + "api/hotels",
         formData
       );
+
+      if (response.data.data.attributes.createdAt) {
+        setSubmitted(true);
+      }
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -74,7 +79,9 @@ function AddHotel() {
     }
   }
 
-  return (
+  return submitted ? (
+    <p>New establishment successfully added!</p>
+  ) : (
     <form
       onSubmit={handleSubmit(onSubmit)}
       className={styles.form}
@@ -200,6 +207,10 @@ function AddHotel() {
             {errors.main_image && (
               <ValidationError>{errors.main_image.message}</ValidationError>
             )}
+            <p>
+              Max size around 200kb. Minimum width 2000px, minimum height
+              1000px.
+            </p>
           </div>
           <div>
             <label htmlFor="images">Room 1</label>
@@ -213,6 +224,13 @@ function AddHotel() {
             {errors.images && (
               <ValidationError>{errors.images.message}</ValidationError>
             )}
+            <p>
+              Max size around 200kb. Minimum width 1000px, minimum height 500px.
+            </p>
+            <p>
+              <span>Important!</span> Choos - and add - all room images at the
+              same time
+            </p>
           </div>
         </div>
         <div className={styles.btn}>

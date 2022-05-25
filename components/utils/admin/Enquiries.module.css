@@ -27,6 +27,7 @@
 
 .container li span {
   font-weight: bold;
+  display: block;
 }
 
 @media screen and (min-width: 600px) {

@@ -20,7 +20,7 @@ const schema = yup.object().shape({
 export default function BookingEnquiry() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
-
+  const [submitted, setSubmitted] = useState(false);
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
 
@@ -47,6 +47,9 @@ export default function BookingEnquiry() {
         HOLIDAZE_BASE_URL + "api/enquiries",
         formData
       );
+      if (response.data.data.attributes.createdAt) {
+        setSubmitted(true);
+      }
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -56,7 +59,12 @@ export default function BookingEnquiry() {
     }
   }
 
-  return (
+  return submitted ? (
+    <div>
+      <p>Booking submitted!</p>
+      <p>You will hear from us shortly</p>
+    </div>
+  ) : (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       {error && <ValidationError>{error}</ValidationError>}
       <fieldset disabled={submitting}>
