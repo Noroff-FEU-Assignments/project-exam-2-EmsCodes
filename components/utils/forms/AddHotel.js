@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import useAxios from "../../hooks/UseAxios";
 import ValidationError from "./FormError";
 import { HOLIDAZE_BASE_URL } from "../../data/api";
-
+import styles from "./AddHotel.module.css";
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
   short_description: yup
@@ -75,44 +75,46 @@ function AddHotel() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="FileUpload"
+      className={styles.form}
       encType="multipart/form-data"
     >
       {error && <ValidationError>{error}</ValidationError>}
       <fieldset disabled={submitting}>
-        <div>
-          <input
-            name="name"
-            placeholder="Name"
-            {...register("name", { required: true })}
-          />
-          {errors.name && (
-            <ValidationError>{errors.name.message}</ValidationError>
-          )}
+        <div className={styles.sectionOne}>
+          <div>
+            <input
+              name="name"
+              placeholder="Name"
+              {...register("name", { required: true })}
+            />
+            {errors.name && (
+              <ValidationError>{errors.name.message}</ValidationError>
+            )}
+          </div>
+          <div>
+            <input
+              name="short_description"
+              placeholder="Short description"
+              {...register("short_description", { required: true })}
+            />
+            {errors.shortDescription && (
+              <ValidationError>
+                {errors.short_description.message}
+              </ValidationError>
+            )}
+          </div>
+          <div>
+            <textarea
+              name="description"
+              placeholder="Description"
+              {...register("description", { required: true })}
+            />
+            {errors.description && (
+              <ValidationError>{errors.description.message}</ValidationError>
+            )}
+          </div>
         </div>
-        <div>
-          <input
-            name="short_description"
-            placeholder="Short description"
-            {...register("short_description", { required: true })}
-          />
-          {errors.shortDescription && (
-            <ValidationError>
-              {errors.short_description.message}
-            </ValidationError>
-          )}
-        </div>
-        <div>
-          <textarea
-            name="description"
-            placeholder="Description"
-            {...register("description", { required: true })}
-          />
-          {errors.description && (
-            <ValidationError>{errors.description.message}</ValidationError>
-          )}
-        </div>
-        <div>
+        <div className={styles.sectionTwo}>
           <div>
             <label htmlFor="hotel">Hotel</label>
             <input
@@ -141,76 +143,79 @@ function AddHotel() {
               {...register("guesthouse", { required: false })}
             />
           </div>
+        </div>
+        <div></div>
+        <div className={styles.sectionThree}>
           <div>
-            <div>
-              <label htmlFor="price_1">Price for room one</label>
-              <input
-                type="number"
-                id="price_1"
-                defaultValue={0}
-                name="price_1"
-                {...register("price_1", { required: true })}
-              />
-              {errors.price_1 && (
-                <ValidationError>{errors.price_1.message}</ValidationError>
-              )}
-            </div>
-            <div>
-              <label htmlFor="price_2">Price for room two</label>
-              <input
-                type="number"
-                id="price_2"
-                name="price_2"
-                defaultValue={0}
-                {...register("price_2", { required: true })}
-              />
-              {errors.price_2 && (
-                <ValidationError>{errors.price_2.message}</ValidationError>
-              )}
-            </div>
-            <div>
-              <label htmlFor="price_3">Price for room three</label>
-              <input
-                type="number"
-                defaultValue={0}
-                id="price_3"
-                name="price_3"
-                {...register("price_3", { required: true })}
-              />
-              {errors.price_3 && (
-                <ValidationError>{errors.price_3.message}</ValidationError>
-              )}
-            </div>
+            <label htmlFor="price_1">Price for room one</label>
+            <input
+              type="number"
+              id="price_1"
+              defaultValue={0}
+              name="price_1"
+              {...register("price_1", { required: true })}
+            />
+            {errors.price_1 && (
+              <ValidationError>{errors.price_1.message}</ValidationError>
+            )}
           </div>
           <div>
-            <div>
-              <label htmlFor="main_image">Main image</label>
-              <input
-                type="file"
-                id="main_image"
-                name="main_image"
-                {...register("main_image", { required: true })}
-              />
-              {errors.main_image && (
-                <ValidationError>{errors.main_image.message}</ValidationError>
-              )}
-            </div>
-            <div>
-              <label htmlFor="images">Room 1</label>
-              <input
-                multiple
-                type="file"
-                id="images"
-                name="images"
-                {...register("images", { required: true })}
-              />
-              {errors.images && (
-                <ValidationError>{errors.images.message}</ValidationError>
-              )}
-            </div>
+            <label htmlFor="price_2">Price for room two</label>
+            <input
+              type="number"
+              id="price_2"
+              name="price_2"
+              defaultValue={0}
+              {...register("price_2", { required: true })}
+            />
+            {errors.price_2 && (
+              <ValidationError>{errors.price_2.message}</ValidationError>
+            )}
+          </div>
+          <div>
+            <label htmlFor="price_3">Price for room three</label>
+            <input
+              type="number"
+              defaultValue={0}
+              id="price_3"
+              name="price_3"
+              {...register("price_3", { required: true })}
+            />
+            {errors.price_3 && (
+              <ValidationError>{errors.price_3.message}</ValidationError>
+            )}
           </div>
         </div>
-        <button>{submitting ? "Submitting..." : "Submit"}</button>
+        <div className={styles.sectionFour}>
+          <div>
+            <label htmlFor="main_image">Main image</label>
+            <input
+              type="file"
+              id="main_image"
+              name="main_image"
+              {...register("main_image", { required: true })}
+            />
+            {errors.main_image && (
+              <ValidationError>{errors.main_image.message}</ValidationError>
+            )}
+          </div>
+          <div>
+            <label htmlFor="images">Room 1</label>
+            <input
+              multiple
+              type="file"
+              id="images"
+              name="images"
+              {...register("images", { required: true })}
+            />
+            {errors.images && (
+              <ValidationError>{errors.images.message}</ValidationError>
+            )}
+          </div>
+        </div>
+        <div className={styles.btn}>
+          <button>{submitting ? "Submitting..." : "Submit"}</button>
+        </div>
       </fieldset>
     </form>
   );

@@ -19,7 +19,7 @@ export default function Admin({ messages }) {
           <Heading content="Messages" size="2" />
           <Messages />
         </div>
-        <div>
+        <div className={styles.enquiries}>
           <Heading content="Enquiries" size="2" />
           <Enquiries />
         </div>

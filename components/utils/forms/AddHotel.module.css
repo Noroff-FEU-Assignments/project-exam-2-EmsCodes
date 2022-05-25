@@ -1,0 +1,69 @@
+.form fieldset {
+  border: none;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.form {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.sectionOne,
+.sectionTwo,
+.sectionThree,
+.sectionFour {
+  margin-bottom: 35px;
+}
+/* section one */
+.sectionOne input,
+.sectionOne textarea {
+  border: none;
+  border-bottom: var(--form-input-border);
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+/* section two */
+.sectionTwo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionTwo div {
+  margin-right: 10px;
+}
+
+/* section three */
+.sectionThree label {
+  display: block;
+  margin-top: 10px;
+}
+.sectionThree input {
+  border: none;
+  border-bottom: var(--form-input-border);
+  padding: 5px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+}
+
+/* section four */
+
+.sectionFour label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.sectionFour input {
+  margin-bottom: 10px;
+}
+.sectionFour input button {
+  border: none;
+}

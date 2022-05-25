@@ -1,8 +1,9 @@
 .container {
-  max-height: 400px;
+  height: 400px;
   overflow: scroll;
   margin: 0 auto;
-  border: 0.5px solid var(--light-gray);
+  margin-bottom: 25px;
+  width: 90%;
 }
 
 .container ul {
@@ -11,6 +12,9 @@
   font-family: var(--body-text-font);
   display: flex;
   flex-flow: wrap;
+  margin: 0 auto;
+  width: 90%;
+  background: var(--white);
 }
 
 .container li {
@@ -18,7 +22,7 @@
   padding: 10px 15px;
   margin: 0 auto;
   margin-top: 25px;
-  width: 90%;
+  width: 80%;
 }
 
 .container li span {
@@ -27,12 +31,12 @@
 
 @media screen and (min-width: 600px) {
   .container li {
-    width: 45%;
+    width: 40%;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .container li {
-    width: 30%;
+    width: 28%;
   }
 }

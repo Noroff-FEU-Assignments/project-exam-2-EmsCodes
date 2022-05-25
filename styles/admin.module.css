@@ -1,5 +1,4 @@
 .container {
-  width: 90%;
   margin: 0 auto;
   max-width: 1200px;
 }
@@ -16,12 +15,17 @@
   font-weight: 300;
   font-family: var(--body-text-font);
   color: var(--text-color);
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 15px;
   margin-top: 15px;
+  padding-top: 35px;
 }
 
 .container span {
   font-weight: 400;
+}
+.enquiries {
+  background: rgb(215, 215, 215);
+  padding-bottom: 25px;
 }
