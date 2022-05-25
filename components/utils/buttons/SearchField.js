@@ -43,17 +43,17 @@ function SearchField({ hotel }) {
       </form>
       <div className={searchValue ? styles.searchResult : ""}>
         <ul>
-          {result.map((hotelResult) => {
-            return result ? (
-              <li key={hotelResult.id}>
-                <Link href={`detail/${hotelResult.id}`}>
-                  <a>{hotelResult.attributes.name}</a>
-                </Link>
-              </li>
-            ) : (
-              <div>No result</div>
-            );
-          })}
+          {result.length === 0
+            ? "No results!"
+            : result.map((hotelResult) => {
+                return (
+                  <li key={hotelResult.id}>
+                    <Link href={`detail/${hotelResult.id}`}>
+                      <a>{hotelResult.attributes.name}</a>
+                    </Link>
+                  </li>
+                );
+              })}
         </ul>
       </div>
     </div>
