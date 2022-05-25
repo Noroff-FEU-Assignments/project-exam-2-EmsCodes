@@ -16,7 +16,7 @@
 .form input,
 .form textarea {
   border: none;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: var(--form-input-border);
   margin-top: 20px;
   width: 85%;
   background: none;
