@@ -33,7 +33,7 @@
   left: 0;
   right: 0;
   text-align: center;
-  background-color: var(--main-blue);
+  background-color: var(--secondary-blue);
   margin-bottom: 0;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -41,10 +41,11 @@
 
 .listItem span {
   height: 35vh !important;
+  min-height: 200px;
   max-height: 300px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

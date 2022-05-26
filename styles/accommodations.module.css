@@ -68,7 +68,7 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 20%;
+  top: 25%;
   text-align: center;
   /* transform: translateY(-50%); */
 }
@@ -92,7 +92,7 @@
     position: initial;
     text-align: center;
     background: var(--blue-gradient);
-    padding-top: 10vh;
+    padding-top: 18vh;
     width: 100%;
   }
   .container {

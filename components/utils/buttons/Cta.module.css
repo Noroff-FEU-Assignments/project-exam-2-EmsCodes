@@ -1,5 +1,5 @@
 .btn {
-  background: #0f34b1;
+  background: var(--orange);
   margin: 0 auto;
   padding: 15px 20px;
   text-decoration: none;
@@ -20,7 +20,7 @@
 }
 
 .ctaBtn {
-  background: #0f34b1;
+  background: var(--orange);
   margin: 0 auto;
   padding: 15px 20px;
   border-radius: 50px;
@@ -31,7 +31,12 @@
   color: white;
   text-align: center;
   font-family: var(--heading-font);
-  font-size: 1em;
+  font-size: calc(18px + (25 - 18) * ((100vw - 320px) / (2000 - 320)));
   border: none;
+  font-family: var(--body-text-font);
   cursor: pointer;
+}
+
+.ctaBtn:hover {
+  background: var(--secondary-blue);
 }

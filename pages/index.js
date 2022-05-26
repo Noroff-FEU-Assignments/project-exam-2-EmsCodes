@@ -52,6 +52,8 @@ export default function Home({ hotels }) {
         <Image
           src={img}
           alt="a woman and a man smiling while looking at an iphone"
+          layout="responsive"
+          objectFit="cover"
         />
         <div>
           <Heading

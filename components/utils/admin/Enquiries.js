@@ -2,6 +2,7 @@ import { MESSAGES } from "../../data/api";
 import { useEffect, useState } from "react";
 import useAxios from "../../hooks/UseAxios";
 import styles from "./Enquiries.module.css";
+import { Spinner } from "react-bootstrap";
 
 function Enquiries() {
   const [loading, setLoading] = useState(true);
@@ -29,7 +30,7 @@ function Enquiries() {
     <div className={styles.container}>
       <ul>
         {loading ? (
-          <div>Loading messages...</div>
+          <Spinner animation="border" />
         ) : (
           enquiry.map((message) => {
             return (

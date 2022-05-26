@@ -80,12 +80,6 @@
   margin-left: 10px !important;
 }
 
-/* search field  */
-
-.menuSearchField form {
-  display: none;
-}
-
 @media screen and (min-width: 700px) {
   .displayed {
     inset: 0 0 0 50vw;

@@ -20,7 +20,7 @@ function HeroSection({
         src={img}
         alt={altText}
         className={styles.heroImg}
-        layout="responsive"
+        layout="fill"
         objectFit="cover"
       />
     </div>

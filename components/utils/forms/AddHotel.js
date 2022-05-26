@@ -7,6 +7,7 @@ import ValidationError from "./FormError";
 import { HOLIDAZE_BASE_URL } from "../../data/api";
 import styles from "./AddHotel.module.css";
 import cta from "../buttons/Cta.module.css";
+import Alert from "react-bootstrap/Alert";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
@@ -80,15 +81,20 @@ function AddHotel() {
     }
   }
 
-  return submitted ? (
-    <p>New establishment successfully added!</p>
-  ) : (
+  return (
     <form
       onSubmit={handleSubmit(onSubmit)}
       className={styles.form}
       encType="multipart/form-data"
     >
       {error && <ValidationError>{error}</ValidationError>}
+      {submitted ? (
+        <Alert variant="success">
+          <Alert.Heading>New establishement created!</Alert.Heading>
+        </Alert>
+      ) : (
+        ""
+      )}
       <fieldset disabled={submitting}>
         <div className={styles.sectionOne}>
           <div>
