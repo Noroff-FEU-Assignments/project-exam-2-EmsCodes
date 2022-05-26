@@ -12,9 +12,10 @@ const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
   short_description: yup
     .string()
+    .max(20)
     .required("Please add a short description, max 20 characters"),
   description: yup.string().required("Please add description"),
-  // main_image: yup.object().required("Please add main image"),
+  main_image: yup.mixed().required("Please add main image"),
   price_1: yup.number().min(1).required("Please add price"),
   price_2: yup.number().min(1).required("Please add price"),
   price_3: yup.number().min(1).required("Please add price"),
@@ -106,7 +107,7 @@ function AddHotel() {
               placeholder="Short description"
               {...register("short_description", { required: true })}
             />
-            {errors.shortDescription && (
+            {errors.short_description && (
               <ValidationError>
                 {errors.short_description.message}
               </ValidationError>
