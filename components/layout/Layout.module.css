@@ -30,7 +30,7 @@
   display: block;
   position: absolute;
   inset: 0;
-  min-height: 400px;
+  min-height: 500px;
   max-height: 600px;
   top: 65px;
   background-color: var(--white);
@@ -83,8 +83,7 @@
 @media screen and (min-width: 700px) {
   .displayed {
     inset: 0 0 0 50vw;
-    top: 6vh;
-    max-height: 55vh;
+    top: 65px;
   }
 }
 
