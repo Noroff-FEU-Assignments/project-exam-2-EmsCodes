@@ -5,7 +5,6 @@ import logo from "../../public/holidaze-logo.png";
 import React, { useState } from "react";
 import Image from "next/image";
 import Footer from "./Footer";
-import SearchField from "../utils/buttons/SearchField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import dynamic from "next/dynamic";
@@ -74,9 +73,6 @@ function Layout({ children }) {
               <AdminSection />
             </ul>
           </nav>
-          <div className={styles.menuSearchField}>
-            <SearchField />
-          </div>
         </div>
       </div>
 
