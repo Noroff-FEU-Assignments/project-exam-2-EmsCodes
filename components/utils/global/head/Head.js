@@ -9,7 +9,7 @@ function Head({ title = "" }) {
         {title ? " | " : ""} Holidaze
       </title>
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta charset="UTF-8" />
+      <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="author" content="Endre Makra-Stenkløv" />
       <meta
