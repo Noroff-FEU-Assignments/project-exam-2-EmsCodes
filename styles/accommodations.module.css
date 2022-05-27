@@ -68,9 +68,8 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 25%;
+  top: 25px;
   text-align: center;
-  /* transform: translateY(-50%); */
 }
 
 @media screen and (min-width: 450px) {

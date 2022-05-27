@@ -9,9 +9,10 @@
 
 .heading {
   padding-top: 20px;
-  font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (2000 - 320)));
+  font-size: calc(25px + (35 - 25) * ((100vw - 320px) / (2000 - 320)));
   font-weight: 200;
   margin-bottom: 10px;
+  font-family: var(--body-text-font);
 }
 .form input,
 .form textarea {

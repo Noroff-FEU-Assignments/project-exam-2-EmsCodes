@@ -9,13 +9,16 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import BookingEnquiry from "../../components/utils/forms/BookingForm";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Link from "next/link";
+import BreadCrumbs from "../../components/utils/global/BreadCrumbs";
+import { useRouter } from "next/router";
 
 function Details({ hotel }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const router = useRouter();
   return (
     <Layout>
       <Head title="Accommodation details page">
@@ -34,7 +37,30 @@ function Details({ hotel }) {
           alt="Showing the place/accommodation"
           style={styles.absolutePositioning}
         >
-          {/* create breadcrumbs!!! */}
+          <BreadCrumbs>
+            <nav>
+              <ul>
+                <li>
+                  <Link href="/">
+                    <a>Home</a>
+                  </Link>
+                </li>
+                <div>/</div>
+                <li>
+                  <Link href="/accommodations">
+                    <a>Accomomdations</a>
+                  </Link>
+                </li>
+                <div>/</div>
+
+                <li>
+                  <Link href="/">
+                    <a className="activeBreadCrumb">{hotel.attributes.name}</a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </BreadCrumbs>
           <div>
             <Heading content={hotel.attributes.name} />
             <p>{hotel.attributes.short_description}</p>

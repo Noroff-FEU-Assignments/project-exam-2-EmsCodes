@@ -25,6 +25,8 @@
 .heroContainer p {
   margin: 0 auto;
   margin-bottom: 50px;
+  width: 85%;
+  max-width: 400px;
 }
 .hotelContainer h2,
 .hotelContainer h3 {
@@ -39,6 +41,7 @@
   font-weight: 200;
   color: var(--text-color);
   margin-bottom: 5px;
+
   font-size: calc(20px + (25 - 20) * ((100vw - 320px) / (2000 - 320)));
 }
 
@@ -70,9 +73,8 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 20%;
+  top: 25px;
   text-align: center;
-  width: 85%;
   color: var(--secondary-white);
 }
 

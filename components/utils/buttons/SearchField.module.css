@@ -13,6 +13,8 @@
   margin: 0 auto;
   margin-top: 10vh;
   text-align: center;
+  position: relative;
+  max-width: 500px;
 }
 .formContainer input {
   padding: 15px 20px;
@@ -20,7 +22,6 @@
   border-radius: 50px 0 0 50px;
   font-size: 1em;
   width: 50%;
-  position: relative;
 }
 .formContainer form {
   margin: 0 auto;
@@ -28,20 +29,23 @@
 .searchResult {
   background: var(--white);
   position: absolute;
-  width: 50vw;
-  max-width: 500px;
-  left: 22%;
-  border-top: 1px solid var(--text-color);
+  max-width: 54%;
+  left: 20%;
+  right: 26%;
+  border: 0.5px solid var(--text-color);
 }
 .searchResult ul {
   list-style-type: none;
   text-align: start;
-  width: 85%;
+  margin: 0 auto;
   margin-top: 35px;
   margin-bottom: 35px;
+  padding: 0;
+  width: 80%;
 }
 .searchResult li {
-  margin-top: 10px;
+  margin-top: 20px;
+  border-bottom: 0.5px solid var(--light-gray);
 }
 .searchResult a {
   text-decoration: none;

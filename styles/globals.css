@@ -109,4 +109,8 @@ form textarea:focus {
   font-family: var(--heading-font);
 }
 
-/* modal */
+/* active link */
+
+.activeBreadCrumb {
+  font-weight: 500 !important;
+}

@@ -1,0 +1,26 @@
+.container ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 55px;
+}
+
+.container li {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.container a,
+.container div {
+  color: var(--white);
+  font-weight: 100;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.container a:hover {
+  font-weight: 300;
+  text-decoration: underline;
+}

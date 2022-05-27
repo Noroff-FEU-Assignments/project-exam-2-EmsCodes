@@ -11,10 +11,12 @@ import styles from "../styles/accommodations.module.css";
 import Link from "next/link";
 import { HOLIDAZE_BASE_URL, HOTELS } from "../components/data/api";
 import HotelCards from "../components/utils/accommodations/HotelCards";
+import BreadCrumbs from "../components/utils/global/BreadCrumbs";
+import { useRouter } from "next/router";
 
 function Accommodations({ hotels }) {
   const [isActive, setActive] = useState(false);
-
+  const router = useRouter();
   function allHotels(event) {}
   function onlyHotels(event) {}
   function onlyBandB(event) {}
@@ -38,7 +40,32 @@ function Accommodations({ hotels }) {
           alt="modern looking hotel room, with big twin bed, and walk-in-closet"
           style={styles.absolutePositioning}
         >
-          {/* create breadcrumbs!!! */}
+          <BreadCrumbs>
+            <nav>
+              <ul>
+                <li>
+                  <Link href="/">
+                    <a>Home</a>
+                  </Link>
+                </li>
+                <div>/</div>
+                <li>
+                  <Link href="/accommodations" className="active">
+                    <a
+                      className={
+                        router.pathname == "/accommodations"
+                          ? "activeBreadCrumb"
+                          : ""
+                      }
+                    >
+                      Accomomdations
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </BreadCrumbs>
+
           <div className={styles.heroContent}>
             <Heading content="Accommodations" />
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</p>
