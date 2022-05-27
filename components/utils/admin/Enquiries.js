@@ -28,37 +28,43 @@ function Enquiries() {
 
   return (
     <div className={styles.container}>
+      {error ? (
+        <div className="error-message">
+          <p className="error-text">An error occured!</p>
+          <p>Reload the page, or try logging out and in again.</p>
+        </div>
+      ) : (
+        ""
+      )}
       <ul>
-        {loading ? (
-          <Spinner animation="border" />
-        ) : (
-          enquiry.map((message) => {
-            return (
-              <li key={message.id}>
-                <div>
-                  <span>Name: </span>
-                  {message.attributes.name}
-                </div>
-                <div>
-                  <span>Email: </span>
-                  {message.attributes.email}
-                </div>
-                <div>
-                  <span>Message: </span>
-                  {message.attributes.message}
-                </div>
-                <div>
-                  <span>Persons: </span>
-                  {message.attributes.persons}
-                </div>
-                <div>
-                  <span>Room: </span>
-                  {message.attributes.room_type}
-                </div>
-              </li>
-            );
-          })
-        )}
+        {loading
+          ? "Loading enquiries"
+          : enquiry.map((message) => {
+              return (
+                <li key={message.id}>
+                  <div>
+                    <span>Name: </span>
+                    {message.attributes.name}
+                  </div>
+                  <div>
+                    <span>Email: </span>
+                    {message.attributes.email}
+                  </div>
+                  <div>
+                    <span>Message: </span>
+                    {message.attributes.message}
+                  </div>
+                  <div>
+                    <span>Persons: </span>
+                    {message.attributes.persons}
+                  </div>
+                  <div>
+                    <span>Room: </span>
+                    {message.attributes.room_type}
+                  </div>
+                </li>
+              );
+            })}
       </ul>
     </div>
   );

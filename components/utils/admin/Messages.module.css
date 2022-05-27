@@ -3,6 +3,7 @@
   max-height: 400px;
   overflow: scroll;
   margin: 0 auto;
+  margin-bottom: 100px;
 }
 
 .container ul {

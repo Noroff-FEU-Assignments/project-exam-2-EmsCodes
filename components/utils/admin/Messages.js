@@ -33,6 +33,15 @@ function Messages() {
 
   return (
     <div className={styles.container}>
+      {error ? (
+        <div className="error-message">
+          <p className="error-text">An error occured!</p>
+          <p>Reload the page, or try logging out and in again.</p>
+        </div>
+      ) : (
+        ""
+      )}
+
       <ul>
         {messages.map((message) => {
           //   console.log(message);
