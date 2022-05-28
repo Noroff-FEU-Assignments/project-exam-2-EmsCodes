@@ -68,7 +68,7 @@ html {
 /* cta */
 
 .cta {
-  background: #0f34b1;
+  background: var(--orange);
   margin: 0 auto;
   padding: 10px 15px;
   border-radius: 50px;
@@ -82,6 +82,9 @@ html {
   font-size: 1em;
   border: none;
   cursor: pointer;
+}
+.cta:hover {
+  background: var(--secondary-blue);
 }
 
 /* forms */

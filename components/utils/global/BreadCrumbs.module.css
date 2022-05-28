@@ -2,14 +2,19 @@
   display: flex;
   list-style-type: none;
   padding: 0;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
-  margin-bottom: 55px;
+  margin-bottom: 15vh;
+  padding-bottom: 5px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.35);
 }
 
 .container li {
   margin-right: 5px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
+}
+.container ul div {
+  margin-right: 5px;
 }
 
 .container a,
@@ -23,4 +28,10 @@
 .container a:hover {
   font-weight: 300;
   text-decoration: underline;
+}
+
+@media screen and (min-width: 700px) {
+  .container ul {
+    margin-bottom: 10vh;
+  }
 }

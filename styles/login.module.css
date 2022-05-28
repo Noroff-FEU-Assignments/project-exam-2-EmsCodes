@@ -9,10 +9,11 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 20%;
+  top: 15%;
   text-align: center;
   background: var(--white-form-background);
   width: 85%;
+  max-width: 350px;
 }
 
 @media screen and (min-width: 700px) {
@@ -20,7 +21,7 @@
     position: initial;
     text-align: center;
     background: white;
-    padding-top: 10vh;
+    padding-top: 5vh;
     width: 100%;
     max-width: none;
   }

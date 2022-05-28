@@ -70,7 +70,7 @@
   display: block;
 }
 .ul a:hover {
-  background: var(--main-blue);
+  background: var(--secondary-blue);
   color: var(--white);
 }
 .logo a span {

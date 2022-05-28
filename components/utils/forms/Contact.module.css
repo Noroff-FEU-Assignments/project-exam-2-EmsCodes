@@ -17,12 +17,12 @@
   border: none;
   border-bottom: 1px solid var(--text-color);
   margin-top: 20px;
-  width: 85%;
+  width: 95%;
   background: none;
 }
 
 .form button {
-  margin-bottom: 45px;
+  margin-bottom: 20px;
 }
 .form input,
 .form textarea {

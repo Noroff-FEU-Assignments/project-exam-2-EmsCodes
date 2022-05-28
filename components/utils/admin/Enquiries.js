@@ -2,7 +2,7 @@ import { MESSAGES } from "../../data/api";
 import { useEffect, useState } from "react";
 import useAxios from "../../hooks/UseAxios";
 import styles from "./Enquiries.module.css";
-import { Spinner } from "react-bootstrap";
+import Link from "next/link";
 
 function Enquiries() {
   const [loading, setLoading] = useState(true);
@@ -62,6 +62,9 @@ function Enquiries() {
                     <span>Room: </span>
                     {message.attributes.room_type}
                   </div>
+                  <Link href={`mailto:${message.attributes.email}`}>
+                    <a>Respond</a>
+                  </Link>
                 </li>
               );
             })}

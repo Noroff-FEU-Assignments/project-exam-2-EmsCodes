@@ -5,12 +5,13 @@
 .form {
   padding: 35px 25px;
   width: 85%;
+  max-width: 400px;
 }
 
 .heading {
   padding-top: 20px;
   font-size: calc(25px + (35 - 25) * ((100vw - 320px) / (2000 - 320)));
-  font-weight: 200;
+  font-weight: 200 !important;
   margin-bottom: 10px;
   font-family: var(--body-text-font);
 }
@@ -19,7 +20,7 @@
   border: none;
   border-bottom: var(--form-input-border);
   margin-top: 20px;
-  width: 85%;
+  width: 95%;
   background: none;
 }
 

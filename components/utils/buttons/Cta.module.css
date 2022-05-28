@@ -16,7 +16,7 @@
 }
 
 .btn:hover {
-  background: #bf5f00;
+  background: var(--secondary-blue);
 }
 
 .ctaBtn {
@@ -38,4 +38,5 @@
 
 .ctaBtn:hover {
   background: var(--secondary-blue);
+  color: var(--white);
 }

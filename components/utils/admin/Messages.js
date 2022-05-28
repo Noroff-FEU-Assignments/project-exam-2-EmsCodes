@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Messages.module.css";
 import useAxios from "../../hooks/UseAxios";
 import { HOLIDAZE_BASE_URL, MESSAGES } from "../../data/api";
+import Link from "next/link";
 
 function Messages() {
   const [loading, setLoading] = useState(true);
@@ -59,6 +60,9 @@ function Messages() {
                 <span>Message: </span>
                 {message.attributes.message}
               </div>
+              <Link href={`mailto:${message.attributes.email}`}>
+                <a>Respond</a>
+              </Link>
             </li>
           );
         })}

@@ -22,7 +22,7 @@ const schema = yup.object().shape({
   price_3: yup.number().min(1).required("Please add price"),
 });
 
-function AddHotel() {
+function AddHotel(event) {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const http = useAxios();
@@ -41,6 +41,7 @@ function AddHotel() {
   async function onSubmit(data, e) {
     e.preventDefault();
     setSubmitting(true);
+    setSubmitted(false);
     setError(null);
 
     const formData = new FormData();
@@ -71,6 +72,7 @@ function AddHotel() {
 
       if (response.data.data.attributes.createdAt) {
         setSubmitted(true);
+        reset();
       }
       console.log(response.data);
     } catch (error) {
@@ -235,7 +237,7 @@ function AddHotel() {
               Max size around 200kb. Minimum width 1000px, minimum height 500px.
             </p>
             <p>
-              <span>Important!</span> Choos - and add - all room images at the
+              <span>Important!</span> Choose - and add - all room images at the
               same time
             </p>
           </div>
