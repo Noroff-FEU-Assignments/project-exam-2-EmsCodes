@@ -9,7 +9,6 @@ import styles from "./Contact.module.css";
 import Heading from "../global/heading/Heading";
 import cta from "../buttons/Cta.module.css";
 import Link from "next/link";
-import { Spinner } from "react-bootstrap";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please add name"),

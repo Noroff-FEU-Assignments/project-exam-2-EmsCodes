@@ -8,7 +8,7 @@ import hiking from "../../../public/images/styling/hiking.jpg";
 import shopping from "../../../public/images/styling/shopping.jpg";
 import spa from "../../../public/images/styling/spa.jpg";
 import Link from "next/link";
-import styles from "../../../styles/components/index/AboutBergen.module.css";
+import styles from "./AboutBergen.module.css";
 
 function AboutBergen() {
   return (

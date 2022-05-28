@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Heading from "../global/heading/Heading";
 import propTypes from "prop-types";
-import styles from "../../../styles/components/accommodations/HotelCards.module.css";
+import styles from "./HotelCards.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 

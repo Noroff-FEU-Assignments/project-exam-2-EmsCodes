@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../../../styles/components/index/HotelNavCards.module.css";
+import styles from "./HotelNavCards.module.css";
 import hotelImg from "../../../public/images/hotel-images/hotel-image.jpg";
 import b_and_bImg from "../../../public/images/hotel-images/b&b.jpg";
 import guesthouse from "../../../public/images/hotel-images/guesthouse.jpg";

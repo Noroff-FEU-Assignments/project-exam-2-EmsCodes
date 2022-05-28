@@ -1,8 +1,10 @@
 .container ul {
   display: flex;
   list-style-type: none;
+  justify-content: flex-start;
+  width: 25%;
   padding: 0;
-  width: 85%;
+  width: auto;
   margin: 0 auto;
   margin-bottom: 15vh;
   padding-bottom: 5px;
@@ -11,7 +13,7 @@
 
 .container li {
   margin-right: 5px;
-  /* margin-left: 5px; */
+  font-size: 0.9em;
 }
 .container ul div {
   margin-right: 5px;
@@ -33,5 +35,7 @@
 @media screen and (min-width: 700px) {
   .container ul {
     margin-bottom: 10vh;
+    font-size: 1em;
+    width: 85%;
   }
 }

@@ -1,5 +1,5 @@
 import propTypes from "prop-types";
-import styles from "../../../styles/components/utils/buttons/categoryBtn.module.css";
+import styles from "./MenuBtn.module.css";
 function MenuBtn({ onclickFunction, name, style }) {
   return (
     <button

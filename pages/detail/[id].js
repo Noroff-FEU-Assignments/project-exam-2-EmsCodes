@@ -34,11 +34,11 @@ function Details({ hotel }) {
         <HeroSection
           containerStyle={styles.containerStyle}
           img={hotel.attributes.main_image.data.attributes.url}
-          alt="Showing the place/accommodation"
+          altText="Showing the place/accommodation"
           style={styles.absolutePositioning}
         >
           <BreadCrumbs>
-            <nav>
+            <nav aria-label="breadcrumbs navigation">
               <ul>
                 <li>
                   <Link href="/">
@@ -48,7 +48,7 @@ function Details({ hotel }) {
                 <div>/</div>
                 <li>
                   <Link href="/accommodations">
-                    <a>Accomomdations</a>
+                    <a>Accomodations</a>
                   </Link>
                 </li>
                 <div>/</div>

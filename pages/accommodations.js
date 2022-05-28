@@ -41,7 +41,7 @@ function Accommodations({ hotels }) {
           style={styles.absolutePositioning}
         >
           <BreadCrumbs>
-            <nav>
+            <nav aria-label="breadcrumbs navigation">
               <ul>
                 <li>
                   <Link href="/">
@@ -51,15 +51,7 @@ function Accommodations({ hotels }) {
                 <div>/</div>
                 <li>
                   <Link href="/accommodations" className="active">
-                    <a
-                      className={
-                        router.pathname == "/accommodations"
-                          ? "activeBreadCrumb"
-                          : ""
-                      }
-                    >
-                      Accomomdations
-                    </a>
+                    <a className="activeBreadCrumb">Accomomdations</a>
                   </Link>
                 </li>
               </ul>
