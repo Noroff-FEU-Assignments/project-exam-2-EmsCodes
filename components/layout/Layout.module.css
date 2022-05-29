@@ -10,7 +10,7 @@
 }
 .logOutBtn {
   background: var(--white);
-  border: 1px solid var(--secondary-blue);
+  border: 1px solid var(--main-blue);
   padding: 15px 20px;
   cursor: pointer;
 }
