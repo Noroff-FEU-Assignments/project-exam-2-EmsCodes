@@ -67,7 +67,11 @@ export default function BookingEnquiry() {
       {error && <ValidationError>{error}</ValidationError>}
       <fieldset disabled={submitting}>
         <div>
+          <label htmlFor="name" className="srOnly">
+            Name
+          </label>
           <input
+            id="name"
             name="name"
             placeholder="Name"
             {...register("name", { required: true })}
@@ -77,9 +81,13 @@ export default function BookingEnquiry() {
           )}
         </div>
         <div>
+          <label htmlFor="email" className="srOnly">
+            Email
+          </label>
           <input
+            id="email"
             name="email"
-            placeholder="email"
+            placeholder="Email"
             {...register("email", { required: true })}
           />
           {errors.email && (
@@ -87,7 +95,11 @@ export default function BookingEnquiry() {
           )}
         </div>
         <div>
+          <label htmlFor="number" className="srOnly">
+            How many guests?
+          </label>
           <input
+            id="number"
             type="number"
             min="1"
             max="5"
@@ -100,7 +112,11 @@ export default function BookingEnquiry() {
           )}
         </div>
         <div>
+          <label htmlFor="room-type" className="srOnly">
+            Select room type
+          </label>
           <select
+            id="room-type"
             name="room_type"
             placeholder="room_type"
             {...register("room_type", { required: true })}
@@ -115,7 +131,11 @@ export default function BookingEnquiry() {
           )}
         </div>
         <div>
+          <label htmlFor="date" className="srOnly">
+            Choose a date
+          </label>
           <DatePicker
+            id="date"
             placeholderText="Choose a date..."
             selectsRange={true}
             startDate={startDate}
