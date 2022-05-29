@@ -33,6 +33,7 @@
   left: 20%;
   right: 26%;
   border: 0.5px solid var(--text-color);
+  z-index: 10;
 }
 .searchResult ul {
   list-style-type: none;
