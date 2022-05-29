@@ -55,7 +55,7 @@ export default function Home({ hotels }) {
           layout="responsive"
           objectFit="cover"
         />
-        <div>
+        <div className={styles.container}>
           <Heading
             size="3"
             content="Why choose us?"

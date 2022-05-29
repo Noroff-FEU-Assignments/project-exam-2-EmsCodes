@@ -56,7 +56,6 @@
 }
 .whyUsSection span {
   height: 100%;
-  max-height: 400px;
 }
 .iconsContainer {
   display: flex;
@@ -64,10 +63,11 @@
   justify-content: center;
   margin: 0 auto;
   padding-top: 20px;
-  background: var(--secondary-white);
   padding-bottom: 30px;
 }
-
+.container {
+  background: var(--secondary-white);
+}
 .text {
   font-family: var(--heading-font);
   font-size: 1em;
@@ -87,5 +87,9 @@
   .whyUsSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    height: 450px;
+  }
+  .container {
+    height: 450px;
   }
 }

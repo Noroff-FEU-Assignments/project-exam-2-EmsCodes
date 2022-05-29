@@ -50,8 +50,8 @@ function Accommodations({ hotels }) {
                 </li>
                 <div>/</div>
                 <li>
-                  <Link href="/accommodations" className="active">
-                    <a className="activeBreadCrumb">Accomomdations</a>
+                  <Link href="/accommodations">
+                    <a className="activeBreadCrumb">Accommodations</a>
                   </Link>
                 </li>
               </ul>

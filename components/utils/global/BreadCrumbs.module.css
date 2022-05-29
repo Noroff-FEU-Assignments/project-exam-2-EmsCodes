@@ -1,14 +1,13 @@
 .container ul {
   display: flex;
   list-style-type: none;
-  justify-content: flex-start;
-  width: 25%;
+  width: 85%;
   padding: 0;
-  width: auto;
   margin: 0 auto;
   margin-bottom: 15vh;
   padding-bottom: 5px;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.35);
+  font-family: var(--heading-font);
 }
 
 .container li {
