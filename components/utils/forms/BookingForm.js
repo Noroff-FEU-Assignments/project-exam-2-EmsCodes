@@ -127,7 +127,7 @@ export default function BookingEnquiry() {
         </div>
         <div>
           <input
-            className="srOnly"
+            // className="srOnly"
             name="message"
             value={dateRange}
             {...register("message", { required: true })}
