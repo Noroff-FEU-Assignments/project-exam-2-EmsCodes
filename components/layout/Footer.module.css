@@ -20,6 +20,12 @@
   padding: 0;
   list-style-type: none;
 }
+.footer li {
+  margin-bottom: 10px;
+}
+.footer li:hover {
+  text-decoration: underline;
+}
 .footer a {
   text-decoration: none;
   color: var(--secondary-white);
