@@ -2,6 +2,7 @@
   width: 90%;
   max-height: 400px;
   overflow: scroll;
+  max-width: 1000px;
   margin: 0 auto;
   margin-bottom: 100px;
 }
@@ -9,8 +10,32 @@
 .container ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+.container li {
+  border: 0.5px solid var(--text-color);
+  width: 85%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 .container li span {
   font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  .container li {
+    width: 40%;
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container li {
+    width: 25%;
+    max-width: 400px;
+  }
 }

@@ -103,7 +103,8 @@ form textarea:focus {
   font-size: 1.1em;
   padding: 10px;
   border: 1px solid var(--error-red);
-  width: 50%;
+  width: 75%;
+  max-width: 500px;
   margin: 0 auto;
   margin-top: 50px;
 }

@@ -63,7 +63,7 @@ function Enquiries() {
                     {message.attributes.room_type}
                   </div>
                   <Link href={`mailto:${message.attributes.email}`}>
-                    <a>Respond</a>
+                    <a>Reply</a>
                   </Link>
                 </li>
               );

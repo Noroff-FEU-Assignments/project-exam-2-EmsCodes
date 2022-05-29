@@ -61,7 +61,7 @@ function Messages() {
                 {message.attributes.message}
               </div>
               <Link href={`mailto:${message.attributes.email}`}>
-                <a>Respond</a>
+                <a>Reply</a>
               </Link>
             </li>
           );

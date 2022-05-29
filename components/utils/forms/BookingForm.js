@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -119,7 +119,6 @@ export default function BookingEnquiry() {
         <div>
           <DatePicker
             placeholderText="Choose a date..."
-            name="bookingDate"
             selectsRange={true}
             startDate={startDate}
             endDate={endDate}
@@ -130,7 +129,7 @@ export default function BookingEnquiry() {
         </div>
         <div>
           <input
-            className="srOnly"
+            // className="srOnly"
             name="message"
             value={dateRange}
             {...register("message", { required: true })}
