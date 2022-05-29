@@ -18,7 +18,6 @@ function Details({ hotel }) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const router = useRouter();
   return !hotel || hotel.length === 0 ? (
     <div className="error-message">
       <p className="error-text">An error occured!</p>

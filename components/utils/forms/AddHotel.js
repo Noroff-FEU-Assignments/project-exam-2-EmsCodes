@@ -13,8 +13,8 @@ const schema = yup.object().shape({
   name: yup.string().required("Please add name"),
   short_description: yup
     .string()
-    .max(20)
-    .required("Please add a short description, max 20 characters"),
+    .max(30)
+    .required("Please add a short description, max 30 characters"),
   description: yup.string().required("Please add description"),
   main_image: yup.mixed().required("Please add main image"),
   price_1: yup.number().min(1).required("Please add price"),
@@ -100,6 +100,9 @@ function AddHotel(event) {
       <fieldset disabled={submitting}>
         <div className={styles.sectionOne}>
           <div>
+            <label htmlFor="name" className="srOnly">
+              Name
+            </label>
             <input
               name="name"
               placeholder="Name"
@@ -110,9 +113,13 @@ function AddHotel(event) {
             )}
           </div>
           <div>
+            <label htmlFor="short_description" className="srOnly">
+              Short description
+            </label>
             <input
+              id="short_description"
               name="short_description"
-              placeholder="Short description"
+              placeholder="Short description, max 30 characters..."
               {...register("short_description", { required: true })}
             />
             {errors.short_description && (
@@ -122,6 +129,9 @@ function AddHotel(event) {
             )}
           </div>
           <div>
+            <label htmlFor="description" className="srOnly">
+              Description
+            </label>
             <textarea
               name="description"
               placeholder="Description"
@@ -134,7 +144,7 @@ function AddHotel(event) {
         </div>
         <div className={styles.sectionTwo}>
           <div>
-            <label htmlFor="hotel">Hotel</label>
+            <label htmlFor="hotel">Hotel checkbox</label>
             <input
               type="checkbox"
               id="hotel"
@@ -144,7 +154,7 @@ function AddHotel(event) {
             {}
           </div>
           <div>
-            <label htmlFor="B&B">B&B</label>
+            <label htmlFor="B&B">B&B checkbox</label>
             <input
               type="checkbox"
               id="B&B"
@@ -153,7 +163,7 @@ function AddHotel(event) {
             />
           </div>
           <div>
-            <label htmlFor="guesthouse">Guesthouse</label>
+            <label htmlFor="guesthouse">Guesthouse checkbox</label>
             <input
               type="checkbox"
               id="guesthouse"
