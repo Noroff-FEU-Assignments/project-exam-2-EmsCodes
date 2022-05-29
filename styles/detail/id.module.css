@@ -66,6 +66,7 @@
   grid-template-rows: repeat(3, 1fr);
   margin: 0 auto;
   row-gap: 25px;
+  max-width: 1000px;
 }
 .absolutePositioning {
   position: absolute;
@@ -94,6 +95,7 @@
 .about {
   margin: 0 auto;
   margin-bottom: 150px;
+  max-width: 1000px;
 }
 
 @media screen and (min-width: 700px) {
