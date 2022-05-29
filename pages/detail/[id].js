@@ -70,7 +70,7 @@ function Details({ hotel }) {
             <Heading content={hotel.attributes.name} />
             <p>{hotel.attributes.short_description}</p>
           </div>
-          <button className="cta" onClick={handleShow}>
+          <button className="cta" onClick={handleShow} onKeyDown={handleShow}>
             Book a room
           </button>
 
@@ -84,7 +84,11 @@ function Details({ hotel }) {
               <BookingEnquiry />
             </Modal.Body>
             <Modal.Footer>
-              <button className={styles.closeBtn} onClick={handleClose}>
+              <button
+                className={styles.closeBtn}
+                onClick={handleClose}
+                onKeyDown={handleClose}
+              >
                 Close
               </button>
             </Modal.Footer>

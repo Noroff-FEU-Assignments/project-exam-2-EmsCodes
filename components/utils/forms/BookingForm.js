@@ -65,6 +65,7 @@ export default function BookingEnquiry() {
   ) : (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       {error && <ValidationError>{error}</ValidationError>}
+      <legend className="srOnly">Booking form</legend>
       <fieldset disabled={submitting}>
         <div>
           <label htmlFor="name" className="srOnly">
