@@ -19,9 +19,10 @@
 .heroContainer p {
   max-width: 350px;
   margin: 0 auto;
+  font-weight: 200;
   margin-bottom: 50px;
   margin-top: 25px;
-  font-size: calc(18px + (35 - 18) * ((100vw - 320px) / (2000 - 320)));
+  font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (2000 - 320)));
 }
 
 .heroContent {
@@ -98,10 +99,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  /* .container div :first-child {
-    margin: 0 auto;
-    max-width: 500px;
-  } */
   .heroContainer p {
     font-weight: lighter;
   }

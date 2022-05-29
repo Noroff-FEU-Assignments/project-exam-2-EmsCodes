@@ -60,7 +60,7 @@ function Accommodations({ hotels }) {
 
           <div className={styles.heroContent}>
             <Heading content="Accommodations" />
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</p>
+            <p>Find your home away from home!</p>
           </div>
           <div className={searchFieldStyles.formContainer}>
             <SearchField hotel={hotels} />
