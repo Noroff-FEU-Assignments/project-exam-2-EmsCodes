@@ -13,6 +13,10 @@
 .nav:hover {
   background: var(--orange);
 }
+.btnContainer {
+  display: flex;
+  flex-flow: row wrap;
+}
 
 @media screen and (min-width: 1000px) {
   .nav {

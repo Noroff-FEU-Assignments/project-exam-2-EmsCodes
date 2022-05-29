@@ -79,9 +79,9 @@
 }
 .logo a span {
   flex: 1;
-  width: 75px !important;
+  width: 100px !important;
   height: auto;
-  margin-left: 10px !important;
+  margin-left: 15px !important;
 }
 
 @media screen and (min-width: 700px) {

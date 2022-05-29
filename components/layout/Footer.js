@@ -16,8 +16,8 @@ function Footer() {
                 <Image
                   src={logo}
                   alt="Holidaze logo, white on blue background"
-                  layout="responsive"
-                  objectFit="contain"
+                  height="25px"
+                  width="100px"
                 />
               </a>
             </Link>
