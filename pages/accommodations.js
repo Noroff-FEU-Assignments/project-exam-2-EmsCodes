@@ -75,8 +75,11 @@ function Accommodations({ hotels }) {
       </div>
       <p>Results:{hotels.length}</p>
       <ul className={styles.ul}>
-        {!hotels ? (
-          <p>Loading content...</p>
+        {hotels.length === 0 || !hotels ? (
+          <div className="error-message">
+            <p className="error-text">An error occured!</p>
+            <p>Try reloading the page.</p>
+          </div>
         ) : (
           hotels.map((hotel) => {
             return (
@@ -86,7 +89,7 @@ function Accommodations({ hotels }) {
                     <HotelCards
                       rating={8.5}
                       name={hotel.attributes.name}
-                      price={hotel.attributes.price_1}
+                      price={`${hotel.attributes.price_1}kr`}
                       img={hotel.attributes.main_image.data.attributes.url}
                       priceText="From"
                     />

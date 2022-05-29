@@ -2,6 +2,7 @@
   width: 85%;
   margin: 0 auto;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .headingFour {
@@ -24,9 +25,10 @@
   font-size: calc(18px + (25 - 18) * ((100vw - 320px) / (2000 - 320)));
   font-weight: 400;
   text-transform: capitalize;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   padding-bottom: 5px;
   font-family: var(--body-text-font);
+  margin-top: 35px;
 }
 
 .cardsContainer {

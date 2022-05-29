@@ -10,6 +10,9 @@
   font-size: 1.2em;
   cursor: pointer;
 }
+.nav:hover {
+  background: var(--orange);
+}
 
 @media screen and (min-width: 1000px) {
   .nav {

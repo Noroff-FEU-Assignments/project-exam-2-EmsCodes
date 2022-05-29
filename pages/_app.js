@@ -8,12 +8,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
       <div aria-hidden="true">
-        <NextNProgress color="#d96c00" height={4} />
+        <NextNProgress color="#d96c00" height={6} />
       </div>
       <div className="scroll-progress" aria-hidden="true">
         <ReactScrollProgress
           styles={{
-            height: "4px",
+            height: "6px",
+            colors: ["#b85c00", "#1a317e"],
           }}
         />
       </div>

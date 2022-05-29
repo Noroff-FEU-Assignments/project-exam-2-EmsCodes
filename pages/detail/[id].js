@@ -19,7 +19,12 @@ function Details({ hotel }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const router = useRouter();
-  return (
+  return !hotel || hotel.length === 0 ? (
+    <div className="error-message">
+      <p className="error-text">An error occured!</p>
+      <p>Try reloading the page.</p>
+    </div>
+  ) : (
     <Layout>
       <Head title="Accommodation details page">
         <link rel="stylesheet" href="https://use.typekit.net/ckg1pdt.css" />
