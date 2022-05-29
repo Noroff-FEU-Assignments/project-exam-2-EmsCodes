@@ -111,10 +111,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .container div :first-child {
+  /* .container div :first-child {
     margin: 0 auto;
     max-width: 500px;
-  }
+  } */
   .heroContainer p {
     font-weight: lighter;
     width: 90%;
