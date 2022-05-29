@@ -24,8 +24,6 @@ export default function BookingEnquiry() {
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
 
-  console.log(dateRange);
-
   const {
     register,
     handleSubmit,
@@ -129,7 +127,7 @@ export default function BookingEnquiry() {
         </div>
         <div>
           <input
-            // className="srOnly"
+            className="srOnly"
             name="message"
             value={dateRange}
             {...register("message", { required: true })}
