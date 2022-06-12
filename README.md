@@ -44,7 +44,7 @@ or
 ```
 yarn install
 ```
-3. Start developing
+###Running
 
 ```
 npm run dev
