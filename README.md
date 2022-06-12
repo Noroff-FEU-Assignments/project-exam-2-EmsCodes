@@ -19,7 +19,7 @@ Booking site
 ## Built With
 
 - [Strapi](https://strapi.io/)
-- [React-Bootstrap](https://getbootstrap.com](https://react-bootstrap.github.io/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 - Javascript/JSX
 - HTML/CSS
 - CSS-modules
