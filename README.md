@@ -2,39 +2,58 @@ Login:
 Username: endrestk@gmail.com
 Password: Password1234
 
-# Project exam 2 -Holidaze
+# Project-exam 2 -Holidaze
 
 ![Home page](public/images/main-images/home-main-img.jpg)
 
 ## Description
 
-Semester-project 2
+Project-exam 2
 
-Ecommerce shoe-shop
+Booking site
 
 - API made with Strapi
-- Admin login, where admin can create, change or delete products
-- Customers can add products to cart, which will display products and total price
+- Admin login, where admin can create new establishements
+- Users can book accommodations and contact the Holidaze crew
 
 ## Built With
 
 - [Strapi](https://strapi.io/)
-- [Bootstrap](https://getbootstrap.com)
-- Javascript
+- [React-Bootstrap]([https://getbootstrap.com](https://react-bootstrap.github.io/))
+- Javascript/JSX
 - HTML/CSS
-- [Sass](https://sass-lang.com/)
+- CSS-modules
 
 ## Getting Started
 
 ### Installing
 
-The project is built with HTML/CSS/JS. To use, clone the repo and open in VScode (or any other editor). There are currently no packages installed, so no need to install anything.
+The project is built with Next.js app. To use, clone the repo and open in VScode (or any other editor). 
 
 1. Clone the repo:
 
 ```bash
 git clone git@github.com:EmsCodes/SP2-Shoe-ecommerce.git
 ```
+2. Install the dependencies:
+```
+npm install
+```
+or 
+```
+yarn install
+```
+3. Start developing
+
+```
+npm run dev
+```
+or 
+
+```
+yarn run dev
+```
+
 
 ## Contact
 
