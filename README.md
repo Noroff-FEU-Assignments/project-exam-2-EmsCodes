@@ -19,10 +19,11 @@ Booking site
 ## Built With
 
 - [Strapi](https://strapi.io/)
-- [React-Bootstrap]([https://getbootstrap.com](https://react-bootstrap.github.io/))
+- [React-Bootstrap](https://getbootstrap.com](https://react-bootstrap.github.io/)
 - Javascript/JSX
 - HTML/CSS
 - CSS-modules
+- Deployed on [Vercel](https://vercel.com/)
 
 ## Getting Started
 
@@ -33,7 +34,7 @@ The project is built with Next.js app. To use, clone the repo and open in VScode
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:EmsCodes/SP2-Shoe-ecommerce.git
+git clone git@github.com:Noroff-FEU-Assignments/project-exam-2-EmsCodes
 ```
 2. Install the dependencies:
 ```
@@ -53,7 +54,6 @@ or
 ```
 yarn run dev
 ```
-
 
 ## Contact
 
