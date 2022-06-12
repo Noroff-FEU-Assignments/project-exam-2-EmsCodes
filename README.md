@@ -44,7 +44,7 @@ or
 ```
 yarn install
 ```
-###Running
+### Running
 
 ```
 npm run dev
